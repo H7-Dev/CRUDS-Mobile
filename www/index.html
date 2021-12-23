@@ -1,0 +1,109 @@
+<!-- *  hub=>FC_v1.0.0-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+        <!-- <meta name="format-detection" content="telephone=no"> -->
+        <!-- <meta name="msapplication-tap-highlight" content="no"> -->
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="shortcut icon" href="./../res/icon.png" type="image/x-icon">
+        <link rel="stylesheet" href="ASSETS/CSS/index.css">
+        <link rel="stylesheet" href="LIBS/CSS/base.css">
+        <link rel="stylesheet" href="LIBS/CSS/H.lib.v1.0.0.css">
+        <link rel="stylesheet" href="LIBS/CSS/nav.anime.my.1.0.0.css">
+        <title>Cruds Mobile + exporte e import -v1.0.0 </title>
+    </head>
+    <body>
+        <!-- #region android permissões -->
+        <div class="app">
+            <section class="solitations">
+                <img src="ASSETS/MIDIA/icon.png" class="logoApache col1-3"></img>
+                <h1 class="col1-3">Cruds Mobile + exporte e import -v1.0.0 </h1>
+                <p class="col1-3 event conectando piscarSuave" id="conectando">Conectando ao dispositivo</p>
+                <p class="col1-3 event conectado piscarSuave" id="conectado">O dispositivo está pronto</p>
+                <!-- * perm camera -->
+                <button class="btns_perms col1" id="btn_getPermCam">Solicitar</button>
+                <span class="spa_perms col2"  id="permCamStatus">Camera | Verificando</span>
+
+                <!-- * perm Escrever Armaz. Externo -->
+                <button class="btns_perms col1" id="btn_getPermWriteArmEx">Solicitar</button>
+                <span class="spa_perms col2"  id="permWriteArmExStatus">Escrever Armaz. Externo | Verificando</span>
+
+                <!-- * perm Ler Armaz. Externo -->
+                <button class="btns_perms col1" id="btn_getPermReadArmEx">Solicitar</button>
+                <span class="spa_perms col2"  id="permLerArmExStatus">Ler Armaz. Externo | Verificando</span>
+
+                <!-- * perm notificações -->
+                <button class="btns_perms col1" id="btn_getPermNotifications">Solicitar</button>
+                <span class="spa_perms col2"  id="permNotifications">Notificações | Verificando</span>
+
+                <!-- * perm vibração -->
+                <button class="btns_perms col1" id="btn_getPermVibrate">Solicitar</button>
+                <span class="spa_perms col2"  id="permVibrate">vibração | Verificando</span>
+
+                <!-- * perm gravar audio -->
+                <button class="btns_perms col1" id="btn_getPermGravarAudio">Solicitar</button>
+                <span class="spa_perms col2"  id="permGravarAudio">gravar audio | Verificando</span>
+
+                <!-- * perm acessMediaLocation -->
+                <button class="btns_perms col1" id="btn_getPermAcessMediaLocal">Solicitar</button>
+                <span class="spa_perms col2"  id="permAcessMediaLocal">acess media location | Verificando</span>
+
+                <!-- * perm gerenciador de documentos -->
+                <button class="btns_perms col1" id="btn_getPermGerenciadorDocs">Solicitar</button>
+                <span class="spa_perms col2"  id="permGerenciadorDocs">gerencianDocumentos | Verificando</span>
+
+                <!-- * perm Enviar SMS -->
+                <button class="btns_perms col1" id="btn_getPermEnviarSMS">Solicitar</button>
+                <span class="spa_perms col2"  id="permEnviarSMS">Enviar SMS | Verificando</span>
+
+                <br>
+                <button id="btn_entrarApp"  class=" ripple col1-3">Entrar</button>
+                <button id="btn_testAppVar"  class="testeBtn ripple col1-3">Testar app.variável</button>
+            </section>
+            <section class="log">
+                <span class="spa_perms col1"  id="camStatus">Camera | </span>
+                <span class="spa_perms col2"  id="camStatusRes"> ??? </span>
+                <!-- * -->
+                <span class="spa_perms col1"  id="escreArmExStatus">Escrever Armz Exter | </span>
+                <span class="spa_perms col2"  id="escreArmExStatusRes"> ??? </span>
+                <!-- * -->
+                <span class="spa_perms col1"  id="lerArmExStatus">Ler Armz Exter | </span>
+                <span class="spa_perms col2"  id="lerArmExStatusRes"> ??? </span>
+                <!-- * -->
+                <span class="spa_perms col1"  id="notficationsStatus">Notificações | </span>
+                <span class="spa_perms col2"  id="notficationsStatusRes"> ??? </span>
+                <!-- * -->
+                <span class="spa_perms col1"  id="vibrateStatus">Vibrar | </span>
+                <span class="spa_perms col2"  id="vibrateStatusRes"> ??? </span>
+                <!-- * -->
+                <span class="spa_perms col1"  id="gravarAudioStatus">Gravar Audio | </span>
+                <span class="spa_perms col2"  id="gravarAudioStatusRes"> ??? </span>
+
+                <!-- * acessMediaLocal -->
+                <span class="spa_perms col1"  id="acessMediaLocalStatus">acessMediaLocal | </span>
+                <span class="spa_perms col2"  id="acessMediaLocalStatusRes"> ??? </span>
+
+                <!-- * GERENCIAR _ DOCUMENTOS -->
+                <span class="spa_perms col1"  id="gerenciadorDocsStatus">gerencianDocumentos | </span>
+                <span class="spa_perms col2"  id="gerenciadorDocsStatusRes"> ??? </span>
+
+                <!-- * SEND_SMS -->
+                <span class="spa_perms col1"  id="enviarSmsStatus">Enviar SMS | </span>
+                <span class="spa_perms col2"  id="enviarSmsStatusRes"> ??? </span>
+
+
+            </section>
+        </div>
+        <section class="pageInter">
+            <button id="devlopPage" class="ripple">develop page</button>
+            <h1>page intermediária</h1>
+        </section>
+
+    </body>
+   <script src="cordova.js"></script>
+        <script src="LIBS/0-JQUERY/jquery-3.4.1.min.js"></script>
+        <script src="ASSETS/JS/script.js"></script>
+</html>

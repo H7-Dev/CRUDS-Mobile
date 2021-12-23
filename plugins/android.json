@@ -1,0 +1,24 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "br.com.crudsMob"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "br.com.crudsMob"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "br.com.crudsMob"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "br.com.crudsMob"
+    }
+  },
+  "dependent_plugins": {}
+}

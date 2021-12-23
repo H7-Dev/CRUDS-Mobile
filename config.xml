@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="br.com.crudsMob" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>CRUDS Mob</name>
+    <description>
+        Cruds Mobile + exporte e import -v1.0.0
+    </description>
+    <author email="herbert.dev.alfa@gmail.com" href="https://github.com/H7-Dev">
+        Herbert Pinheiro Pereira
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <preference name="LoadingDialog" value="Bitch, Wait for it" />
+        <preference name="HideKeyboardFormAccessoryBar" value="true" />
+        <preference name="Fullscreen" value="true" />
+        <config-file after="uses-permission" parent="/manifest" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
+            <uses-permission android:name="android.permission.VIBRATE" />
+            <uses-permission android:name="android.permission.RECORD_AUDIO" />
+            <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+            <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+            <uses-permission android:name="android.permission.SEND_SMS" />
+        </config-file>
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+    <preference name="AndroidExtraFilesystems" value="files,files-external,documents,sdcard,root" />
+    <icon src="./res/icon.png" />
+</widget>
