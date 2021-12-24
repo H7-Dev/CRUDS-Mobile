@@ -140,6 +140,7 @@ body {
                 padding: 0.6rem 0.9rem;
             }
         }
+
         >section.log {
             background-color: white;
 
@@ -155,8 +156,6 @@ body {
             }
         }
     }
-
-
     >.pageInter {
         background-color: gainsboro;
         min-height: 100vh;
@@ -178,4 +177,11 @@ body {
 
     }
 
+    >section.menuInit {
+        background-color: lightcoral;
+        min-height: 100vh;
+        width: 100%;
+
+        display: flex;
+    }
 }

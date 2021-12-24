@@ -1,0 +1,57 @@
+.barraSwipe {
+    background-color: white;
+    padding: 0.0rem 0.0rem 0.0rem 0.5rem;
+    height: 100vh;
+    width: 250px;
+
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: 1fr min-content;
+
+    position: absolute;
+    left: -250px; // ! igual a argura do el
+    z-index: 99;
+    // transform: translate(-97%, 0%);
+    transition: left 0.4s ease-in-out;
+
+    > button.btnSwipeArea {
+        background-color: transparent;
+        height: 100%;
+        width: 12px;
+
+        position: absolute;
+        right: -12px;
+
+        border: none;
+        outline: none;
+    }
+
+    > header {
+        background-color: white;
+        height: 150px;
+        min-height: 150px;
+        max-height: 150px;
+        width: 100%;
+    }
+    > main {
+        background-color: lightgray;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+.open-sidebar {
+    transform: translate(98%, 0px) ;
+
+    // button.btnSwipeArea {
+    //     background-color: #647dff2e !important;
+    //     background-color: #00000047 !important;
+    //     min-width: 500vw !important;
+    //     right: -590px !important;
+    //     z-index: -1 !important;
+    // }
+}
+.hide-sidebar {
+    transform: translate(10%, 0px) ;
+}

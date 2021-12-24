@@ -7,7 +7,7 @@ const app = {
         }, 400);
     },
     Ouvintes: () => {
-        // #region eventos
+        // #region Permissões Android
 
         // → add on click a todos os els classificados com ripple
         els.doc.on('click', '.ripple',function(e){
@@ -30,7 +30,7 @@ const app = {
                     'fadeOutUp',    // * transição de saída
                     $('.app'),      // * el de saída
                     'fadeIn',       // * transição de entrada
-                    $('.pageInter') // * el de entrada
+                    $('.menuInit') // * el de entrada
                 )
             }, 1000)
         })
@@ -40,22 +40,17 @@ const app = {
             }, 1200)
         })
 
-        // #endregion
-
-        // #region funções
-        // →-ct set variáveis do tipo arry
         let ocultarEls = [els.conectando],
             mostrarEls = [els.btn_entrarApp, els.conectado]
 
-        app.altEl(ocultarEls, mostrarEls) // →-c ocultar/mostrar multiplos els
+        app.altEl(ocultarEls, mostrarEls)
         els.doc.on("click", els.btn_testeDynElEvents, function () {app.testeDynElEvents()})
 
-        // #endregion
-
-        // #region métodos jquery
-            elDynTest = `<button id="btn_testeDynElEvents" class="col1-3 testeBtn ripple">Testar Evento de El Dyn create</button>`
-            els.btn_entrarApp.after(elDynTest);
+        elDynTest = `<button id="btn_testeDynElEvents" class="col1-3 testeBtn ripple">Testar Evento de El Dyn create</button>`
+        els.btn_entrarApp.after(elDynTest);
         //#endregion
+
+
 
     },
     aplicarRippple: function(e, el){
