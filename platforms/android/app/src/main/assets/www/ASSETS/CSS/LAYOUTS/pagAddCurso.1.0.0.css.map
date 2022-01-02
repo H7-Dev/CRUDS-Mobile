@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAE;EACV,KAAK,EAAE,MAAM;EACb,WAAW,EAAE,IAAI;EACjB,SAAS,EAAE,MAAM;EAEjB,gBAAgB,EAAE,IAAI;EACtB,UAAU,EAAE,KAAK;EACjB,KAAK,EAAE,IAAI;EAEX,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,aAAa,EAAE,MAAM;EAErB,QAAQ,EAAE,QAAQ;EAClB,QAAQ,EAAE,MAEd;CAAC",
+    "sources": [
+        "pagAddCurso.1.0.0.scss"
+    ],
+    "names": [],
+    "file": "pagAddCurso.1.0.0.css"
+}
