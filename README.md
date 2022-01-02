@@ -8,6 +8,47 @@
 
 
 ### ⚜️ ramo => master
+
+
+## ⚜️ ramo => 04.00-setting-pages-ehomePage
+#####  00.04 save(ctAddRg.1.0.0.js + scss + debug)
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ delay 700 para abrir
+>   - ✅ delay 1000 para fechar
+>   - ✅ Fehcar (que é na verdade remover) o el overAddRg
+>   - ✅ Abrir (que é na verdade criar) o el overAddRg atravé do método append (que insere o elmento em último)
+
+```
+els.doc.on('click', els.btn_Add,function(e){
+    console.log($(this))
+    setTimeout(function () {
+
+        var el_overAddRg = ''
+        el_overAddRg += `
+        <div class="overAddRg">
+            <div class="ctAddRg">
+                <header><span>Add Pessoa / Curso</span><button class="btnFechar ripple">✘</button></header>
+                <main>
+                    <button class="ripple" >Add Curso</button>
+                    <button class="ripple" >Add Pessoa</button>
+                </main>
+            </div>
+        </div>
+        `
+        $('body').append(el_overAddRg);
+    }, 700)
+})
+```
+>   - ⬆️ recursos novos ↖️
+
+
+>  ### 👉 resultados 👇
+> ![00 04 save(ctAddRg 1 0 0 js + scss + debug)](https://user-images.githubusercontent.com/93455937/147891532-afa3a908-307f-4474-8257-05a1ce88319a.gif)
+
+
+
+
 #### 🏁 Primeiro Commit
 >  #### 👍 recursos
 >  - [ ] Check

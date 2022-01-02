@@ -1,0 +1,86 @@
+div.overAddRg {
+  background-color: rgba(54, 54, 54, 0.38);
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 99;
+}
+
+div.overAddRg div.ctAddRg {
+  background-color: white;
+  padding: 0.5rem;
+  min-height: 40%;
+  max-height: 40%;
+  min-width: 75%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: baseline;
+  justify-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+div.overAddRg div.ctAddRg > header {
+  padding: 0 8px;
+  height: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-family: 'Oswald Light','Segoe UI', sans-serif;
+}
+
+div.overAddRg div.ctAddRg > header button {
+  background-color: transparent;
+  color: red;
+  font-size: 1.1rem;
+  padding: 4px;
+  height: 31px;
+  width: 31px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  align-self: end;
+  justify-self: flex-end;
+  border: 0px solid white;
+  border-radius: 50%;
+  outline: none;
+}
+
+div.overAddRg div.ctAddRg > main {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  gap: 28px;
+  align-items: center;
+  justify-items: center;
+}
+
+div.overAddRg div.ctAddRg > main > button {
+  padding: 8px 4px;
+  min-width: 75%;
+  outline: 0;
+  border: 0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-family: 'Open Sans Regular','Segoe UI', sans-serif;
+}
+
+div.overAddRg div.ctAddRg > main > button:first-child {
+  background-color: lightslategray;
+  align-self: end;
+}
+
+div.overAddRg div.ctAddRg > main > button:nth-child(2) {
+  background-color: lightsteelblue;
+  align-self: flex-start;
+}
+/*# sourceMappingURL=ctAddRg.1.0.0.css.map */

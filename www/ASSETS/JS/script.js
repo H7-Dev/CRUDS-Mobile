@@ -1,21 +1,37 @@
-console.log('Dispositivo | Web | build: 14/15');
 const app = {
     init: () => {
         setTimeout(function () {
-            console.log('script')
             app.Ouvintes()
         }, 400);
     },
     Ouvintes: () => {
-        // #region Permissões Android
 
         // → add on click a todos os els classificados com ripple
         els.doc.on('click', '.ripple',function(e){
-            console.log($(this))
+            // console.log($(this))
             app.aplicarRippple(
                 e,
                 $(this)
             )
+        })
+        els.doc.on('click', els.btn_Add,function(e){
+            console.log($(this))
+            setTimeout(function () {
+
+                var el_overAddRg = ''
+                el_overAddRg += `
+                <div class="overAddRg">
+                    <div class="ctAddRg">
+                        <header><span>Add Pessoa / Curso</span><button class="btnFechar ripple">✘</button></header>
+                        <main>
+                            <button class="ripple" >Add Curso</button>
+                            <button class="ripple" >Add Pessoa</button>
+                        </main>
+                    </div>
+                </div>
+                `
+                $('body').append(el_overAddRg);
+            }, 700)
         })
 
         /*  Exemplo de Evento click com efeito onda e feitos de transição
@@ -32,7 +48,7 @@ const app = {
                     'fadeIn',       // * transição de entrada
                     $('.menuInit') // * el de entrada
                 )
-            }, 1000)
+            }, 700)
         })
         els.devlopPage.on("click", els.devlopPage, function () { // →-ct ir para =>els
             setTimeout(function () {
@@ -48,9 +64,6 @@ const app = {
 
         elDynTest = `<button id="btn_testeDynElEvents" class="col1-3 testeBtn ripple">Testar Evento de El Dyn create</button>`
         els.btn_entrarApp.after(elDynTest);
-        //#endregion
-
-
 
     },
     aplicarRippple: function(e, el){
@@ -64,7 +77,7 @@ const app = {
             el.append(rippleElement)
             setTimeout(function () {
                 $('.rippleElement').remove();
-            }, 800);
+            }, 500);
         })
     },
     altElEfects: function (_efeitoIn, _ocultar, _efeitoOut, _mostrar) {
@@ -92,7 +105,7 @@ const app = {
         }
     },
     testeDynElEvents: function () {
-        console.log(els.btn_testAppVar)
+        // console.log(els.btn_testAppVar)
     }
 }
 const ready = "cordova" in window ? "deviceready" : "DOMContentLoaded";

@@ -40,33 +40,6 @@
   background-position-y: center;
 }
 
-.ripple {
-  position: relative;
-  overflow: hidden;
-}
-
-span.rippleElement {
-  position: absolute;
-  background: #fff;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  border-radius: 50%;
-  animation: animate 1s linear forwards;
-}
-
-@keyframes animate {
-  0% {
-    width: 0px;
-    height: 0px;
-    opacity: 0.5;
-  }
-  100% {
-    width: 500px;
-    height: 500px;
-    opacity: 0;
-  }
-}
-
 .sombra-d01 {
   -webkit-box-shadow: 0px -1px 6px 0px rgba(0, 0, 0, 0.31);
   box-shadow: 0px -1px 6px 0px rgba(0, 0, 0, 0.31);
@@ -174,7 +147,7 @@ div.clickSwipeAreaTrans {
 
 span.rippleElement {
   position: absolute;
-  background: #fff;
+  background: rgba(45, 45, 45, 0.7);
   transform: translate(-50%, -50%);
   pointer-events: none;
   border-radius: 50%;
