@@ -5,20 +5,7 @@ const app = {
         }, 400);
     },
     Ouvintes: () => {
-        console.log(els.btnVoltar)
-
-        els.doc.on("click", els.btnVoltar, function () {
-            setTimeout(function () {
-                //* Abaixo a função que aplica o efeito de transição
-                app.altElEfects(
-                    'fadeOutUp',    // * transição de saída
-                    $('.pagAddCurso'),      // * el de saída
-                    'fadeIn',       // * transição de entrada
-                    $('.menuInit') // * el de entrada
-                )
-            }, 700)
-        })
-
+        // #region main
         // → add on click a todos os els classificados com ripple
         els.doc.on('click', '.ripple',function(e){
             // console.log($(this))
@@ -27,26 +14,6 @@ const app = {
                 $(this)
             )
         })
-        els.doc.on('click', els.btn_Add,function(e){
-            console.log($(this))
-            setTimeout(function () {
-
-                var el_overAddRg = ''
-                el_overAddRg += `
-                <div class="overAddRg">
-                    <div class="ctAddRg">
-                        <header><span>Add Pessoa / Curso</span><button class="btnFechar ripple">✘</button></header>
-                        <main>
-                            <button class="ripple" >Add Curso</button>
-                            <button class="ripple" >Add Pessoa</button>
-                        </main>
-                    </div>
-                </div>
-                `
-                $('body').append(el_overAddRg);
-            }, 700)
-        })
-
         /*  Exemplo de Evento click com efeito onda e feitos de transição
             * É necessário que o el seja classifica com ripple (setimeout está em 800)
             * dentro do evento do el antes de qualquer código add um setTimeout(1000)
@@ -77,7 +44,39 @@ const app = {
 
         elDynTest = `<button id="btn_testeDynElEvents" class="col1-3 testeBtn ripple">Testar Evento de El Dyn create</button>`
         els.btn_entrarApp.after(elDynTest);
+        //#endregion main
 
+        // * outros
+        els.doc.on('click', els.btn_Add,function(e){
+            console.log($(this))
+            setTimeout(function () {
+
+                var el_overAddRg = ''
+                el_overAddRg += `
+                <div class="overAddRg">
+                    <div class="ctAddRg">
+                        <header><span>Add Pessoa / Curso</span><button class="btnFechar ripple">✘</button></header>
+                        <main>
+                            <button class="ripple" >Add Curso</button>
+                            <button class="ripple" >Add Pessoa</button>
+                        </main>
+                    </div>
+                </div>
+                `
+                $('body').append(el_overAddRg);
+            }, 700)
+        })
+        els.doc.on("click", els.btnVoltar, function () {
+            setTimeout(function () {
+                //* Abaixo a função que aplica o efeito de transição
+                app.altElEfects(
+                    'fadeOutUp',    // * transição de saída
+                    $('.pagAddCurso'),      // * el de saída
+                    'fadeIn',       // * transição de entrada
+                    $('.menuInit') // * el de entrada
+                )
+            }, 700)
+        })
     },
     aplicarRippple: function(e, el){
         // !aplicarRippple com jqueyr
