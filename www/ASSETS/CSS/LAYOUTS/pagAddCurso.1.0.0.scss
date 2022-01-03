@@ -55,8 +55,9 @@
         display: grid;
         gap: 10px;
         justify-items: center;
-        grid-template-rows:  auto 1fr;
+        grid-template-rows:  min-content min-content min-content;
 
+        
         >label {
             // background-color: gainsboro;
             padding: 4px;
@@ -82,7 +83,7 @@
                 color: #707277;
                 // background-color: gainsboro; /* desktop*/
                 background-color: #f5f6fa; /* mobile */
-                
+
                 padding: 0.5rem 0.3rem;
                 width: 100%;
                 border: none;

@@ -1,3 +1,15 @@
+$(document).ready(function () {
+            console.log('script')
+            $(document).dropdownMenu(
+                els.btn_dropDown,
+                els.btn_dropDownOptions,
+                els.dropdown,
+                els.optsDropdown,
+                'active_dropdown',
+                'activeBloco',
+                els.widthDropdown
+            )
+        })
 const app = {
     init: () => {
         setTimeout(function () {
@@ -45,6 +57,7 @@ const app = {
         elDynTest = `<button id="btn_testeDynElEvents" class="col1-3 testeBtn ripple">Testar Evento de El Dyn create</button>`
         els.btn_entrarApp.after(elDynTest);
         //#endregion main
+
 
         // * outros
         els.doc.on('click', els.btn_Add,function(e){

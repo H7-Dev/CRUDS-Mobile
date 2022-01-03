@@ -52,7 +52,7 @@
   display: grid;
   gap: 10px;
   justify-items: center;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: min-content min-content min-content;
 }
 
 .pagAddCurso > main > label {
