@@ -5,6 +5,19 @@ const app = {
         }, 400);
     },
     Ouvintes: () => {
+        console.log(els.btnVoltar)
+
+        els.doc.on("click", els.btnVoltar, function () {
+            setTimeout(function () {
+                //* Abaixo a função que aplica o efeito de transição
+                app.altElEfects(
+                    'fadeOutUp',    // * transição de saída
+                    $('.pagAddCurso'),      // * el de saída
+                    'fadeIn',       // * transição de entrada
+                    $('.menuInit') // * el de entrada
+                )
+            }, 700)
+        })
 
         // → add on click a todos os els classificados com ripple
         els.doc.on('click', '.ripple',function(e){

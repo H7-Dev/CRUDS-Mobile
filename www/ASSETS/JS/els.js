@@ -1,5 +1,6 @@
 const els = {
         doc: $(document),
+        btnVoltar            : '.pagAddCurso > header > .btnVoltar',
         overAddRg            : $('#overAddRg'),
         btn_Add              : '#btn_Add',
         ripple               : $('.ripple'),
