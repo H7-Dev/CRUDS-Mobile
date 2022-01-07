@@ -1,18 +1,17 @@
 .dropdown {
-  background-color: white;
+  background-color: #f5f6fa;
+  /* mobile */
   min-width: fit-content;
   display: grid;
   gap: 0px 5px;
   grid-auto-flow: column;
   grid-auto-columns: 12fr auto;
-  align-items: center;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.21);
   border-radius: 4px;
 }
 
 .dropdown > button {
   /* width: 12px; */
-  background-color: white;
+  background-color: transparent;
   border-radius: 50%;
   padding: 5px;
   /* height: 100%; */
@@ -38,24 +37,24 @@
 }
 
 .dropdown > input {
-  padding: 0 4px;
+  font-size: 1.0rem;
+  font-family: 'Open Sans SemiBold','Segoe UI',sans-serif;
+  color: #707277;
+  background-color: transparent;
+  padding: 0.5rem 0.3rem;
   width: 100%;
-  min-height: 100%;
-  cursor: pointer;
   border: none;
   outline: none;
-  color: #787878;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 0.8em;
-  font-weight: 400;
-  letter-spacing: normal;
-  line-height: normal;
-  text-align: left;
+  border-radius: 4px;
 }
 
-.dropdown > input::-webkit-input-placeholder {
-  font-size: 0.9em;
-  line-height: 3;
+.dropdown > input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-size: 1.0rem;
+  font-family: 'Open Sans Regular','Segoe UI',sans-serif;
+  color: #b9babe;
+  opacity: 1;
+  /* Firefox */
 }
 
 .dropdown > div.optsDropdown {
@@ -65,7 +64,7 @@
 
 .dropdown > div.optsDropdown > div {
   position: absolute;
-  top: 16px;
+  top: 40px;
   width: 100%;
   background-color: white;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -79,10 +78,9 @@
 .dropdown > div.optsDropdown > div > div {
   padding: 8px 12px;
   cursor: pointer;
-  color: #787878;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 0.8em;
-  font-weight: 400;
+  color: #9d9ea2;
+  font-size: 0.9rem;
+  font-family: 'Open Sans Bold','Segoe UI',sans-serif;
   letter-spacing: normal;
   line-height: normal;
   text-align: left;

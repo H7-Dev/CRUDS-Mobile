@@ -1,12 +1,12 @@
 .pagAddCurso  {
 
     background-color: blue;
-    min-height: 100vh;
+    height: 100vh;
     width: 100%;
 
     display: none;
-    align-items: center;
-    justify-items: center;
+    // align-items: center;
+    // justify-items: center;
     grid-template-rows: min-content 1fr;
     position: relative;
     overflow: hidden;
@@ -48,14 +48,28 @@
         }
     }
     > main {
+        // background-color: white;
+        // padding: 25px 5px 5px 5px;
+        // height: 100%;
+        // width: 100%;
+        // display: grid;
+        // gap: 10px;
+        // justify-items: center;
+        // grid-template-rows:  min-content min-content min-content;
         background-color: white;
         padding: 25px 5px 5px 5px;
         height: 100%;
         width: 100%;
-        display: grid;
+        display: flex;
         gap: 10px;
         justify-items: center;
-        grid-template-rows:  auto 1fr;
+        /* grid-template-rows: min-content min-content min-content; */
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        align-content: center;
+        overflow: scroll;
+        
 
         >label {
             // background-color: gainsboro;
@@ -82,7 +96,7 @@
                 color: #707277;
                 // background-color: gainsboro; /* desktop*/
                 background-color: #f5f6fa; /* mobile */
-                
+
                 padding: 0.5rem 0.3rem;
                 width: 100%;
                 border: none;
