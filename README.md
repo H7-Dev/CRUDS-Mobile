@@ -5,12 +5,23 @@
 [Ver mais tarde](https://github.com/H7-Dev/FC_v1.0.0/blob/master/www/ASSETS/GITHUB/PAGES/vermaistarde.md) |
 [emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet) |
 [📝 Legendas](https://github.com/H7-Dev/FC_v1.0.0/blob/master/www/ASSETS/GITHUB/PAGES/legendas.md) |
+<!-- 🚩 -->
+
+### ⚜️ ramo => master
+
+#####  01.01 save(Leiaute responsivo ao teclado android)
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ 🚩 Rodapé Fixado + Impedir redimensionamento do laiute quando usar o teclado (a partir do método `<preference name="Fullscreen" value="true" />` em config.xml ). Falta melhorias
+>   - ⬆️ recursos novos ↖️
+
+
+>  ### 👉 resultados 👇
+> ![00 04 save(ctAddRg 1 0 0 js + scss + debug)](https://user-images.githubusercontent.com/93455937/147891532-afa3a908-307f-4474-8257-05a1ce88319a.gif)
 
 
 ### ⚜️ ramo => master
 
-
-## ⚜️ ramo => 04.00-setting-pages-ehomePage
 #####  00.04 save(ctAddRg.1.0.0.js + scss + debug)
 >  ### 👍 recursos
 >   - ⬇️ recursos novos ↙️
