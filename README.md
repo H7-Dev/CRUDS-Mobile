@@ -9,6 +9,23 @@
 
 ### ⚜️ ramo => master
 
+
+#####  00.02 save(Imagem from galeria)
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ 🚩 Obter Imagens do telefone como galerias arquivos etc. Falta melhorias
+>   - ⬆️ recursos novos ↖️
+
+
+
+#####  01.01 save(Leiaute responsivo ao teclado android)
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ 🚩 . Falta melhorias
+>   - ⬆️ recursos novos ↖️
+
+
+
 #####  01.01 save(Leiaute responsivo ao teclado android)
 >  ### 👍 recursos
 >   - ⬇️ recursos novos ↙️

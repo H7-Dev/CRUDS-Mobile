@@ -10,6 +10,10 @@
     "cordova-plugin-android-permissions": {
       "PACKAGE_NAME": "br.com.crudsMob"
     },
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "br.com.crudsMob"
+    },
     "cordova-plugin-file": {
       "PACKAGE_NAME": "br.com.crudsMob"
     },
@@ -17,10 +21,6 @@
       "PACKAGE_NAME": "br.com.crudsMob"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "br.com.crudsMob"
-    },
-    "cordova-plugin-camera": {
-      "ANDROID_SUPPORT_V4_VERSION": "27.+",
       "PACKAGE_NAME": "br.com.crudsMob"
     }
   },

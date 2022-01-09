@@ -10,47 +10,47 @@
           "/manifest": [
             {
               "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
-              "count": 48,
+              "count": 13,
               "after": "uses-permission"
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-              "count": 48,
+              "count": 13,
               "after": "uses-permission"
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
-              "count": 48,
+              "count": 13,
               "after": "uses-permission"
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.BIND_NOTIFICATION_LISTENER_SERVICE\" />",
-              "count": 48,
+              "count": 13,
               "after": "uses-permission"
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
-              "count": 48,
+              "count": 13,
               "after": "uses-permission"
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />",
-              "count": 48,
+              "count": 13,
               "after": "uses-permission"
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.ACCESS_MEDIA_LOCATION\" />",
-              "count": 48,
+              "count": 13,
               "after": "uses-permission"
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.MANAGE_DOCUMENTS\" />",
-              "count": 48,
+              "count": 13,
               "after": "uses-permission"
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.SEND_SMS\" />",
-              "count": 48,
+              "count": 13,
               "after": "uses-permission"
             }
           ],
@@ -76,6 +76,10 @@
               "count": 1
             },
             {
+              "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
+              "count": 1
+            },
+            {
               "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
             },
@@ -90,10 +94,6 @@
             {
               "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
-            },
-            {
-              "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
-              "count": 1
             }
           ]
         }
@@ -104,6 +104,10 @@
     "cordova-plugin-android-permissions": {
       "PACKAGE_NAME": "br.com.crudsMob"
     },
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "br.com.crudsMob"
+    },
     "cordova-plugin-file": {
       "PACKAGE_NAME": "br.com.crudsMob"
     },
@@ -111,10 +115,6 @@
       "PACKAGE_NAME": "br.com.crudsMob"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "br.com.crudsMob"
-    },
-    "cordova-plugin-camera": {
-      "ANDROID_SUPPORT_V4_VERSION": "27.+",
       "PACKAGE_NAME": "br.com.crudsMob"
     }
   },
@@ -126,6 +126,38 @@
       "pluginId": "cordova-plugin-android-permissions",
       "clobbers": [
         "cordova.plugins.permissions"
+      ]
+    },
+    {
+      "id": "cordova-plugin-camera.Camera",
+      "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
+      "pluginId": "cordova-plugin-camera",
+      "clobbers": [
+        "Camera"
+      ]
+    },
+    {
+      "id": "cordova-plugin-camera.CameraPopoverOptions",
+      "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
+      "pluginId": "cordova-plugin-camera",
+      "clobbers": [
+        "CameraPopoverOptions"
+      ]
+    },
+    {
+      "id": "cordova-plugin-camera.camera",
+      "file": "plugins/cordova-plugin-camera/www/Camera.js",
+      "pluginId": "cordova-plugin-camera",
+      "clobbers": [
+        "navigator.camera"
+      ]
+    },
+    {
+      "id": "cordova-plugin-camera.CameraPopoverHandle",
+      "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
+      "pluginId": "cordova-plugin-camera",
+      "clobbers": [
+        "CameraPopoverHandle"
       ]
     },
     {
@@ -316,45 +348,13 @@
       "clobbers": [
         "window.FileTransfer"
       ]
-    },
-    {
-      "id": "cordova-plugin-camera.Camera",
-      "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
-      "pluginId": "cordova-plugin-camera",
-      "clobbers": [
-        "Camera"
-      ]
-    },
-    {
-      "id": "cordova-plugin-camera.CameraPopoverOptions",
-      "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
-      "pluginId": "cordova-plugin-camera",
-      "clobbers": [
-        "CameraPopoverOptions"
-      ]
-    },
-    {
-      "id": "cordova-plugin-camera.camera",
-      "file": "plugins/cordova-plugin-camera/www/Camera.js",
-      "pluginId": "cordova-plugin-camera",
-      "clobbers": [
-        "navigator.camera"
-      ]
-    },
-    {
-      "id": "cordova-plugin-camera.CameraPopoverHandle",
-      "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
-      "pluginId": "cordova-plugin-camera",
-      "clobbers": [
-        "CameraPopoverHandle"
-      ]
     }
   ],
   "plugin_metadata": {
     "cordova-plugin-android-permissions": "1.1.2",
+    "cordova-plugin-camera": "5.0.3",
     "cordova-plugin-file": "6.0.2",
     "cordova-plugin-file-transfer": "1.7.1",
-    "cordova-plugin-whitelist": "1.3.5",
-    "cordova-plugin-camera": "5.0.3"
+    "cordova-plugin-whitelist": "1.3.5"
   }
 }
