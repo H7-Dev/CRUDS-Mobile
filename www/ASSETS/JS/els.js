@@ -1,5 +1,6 @@
 const els = {
         doc: $(document),
+        btn_selImg            : '.selFoto > .imgSrcOptions',
         btn_dropDown          : '.dropdown > button',
         btn_dropDownOptions   : '.dropdown > .optsDropdown > div > div',
         dropdown              : '.dropdown',
