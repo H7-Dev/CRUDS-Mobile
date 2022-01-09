@@ -78,6 +78,25 @@ const app = {
                 `
                 $('body').append(el_overAddRg);
             }, 700)
+        }),
+        // * outros
+        els.doc.on('click', els.btn_selImg,function(e){
+            setTimeout(function () {
+
+                var el_overAddRg = ''
+                el_overAddRg += `
+                <div class="overOpcaoSrcImg">
+                    <div class="ctOpcao">
+                        <header><span>Tira Foto/ Selecionar Foto</span><button class="btnFechar ripple">✘</button></header>
+                        <main>
+                            <button id='but_take'>Tirar Foto</button>
+                            <button id='but_select'>Selecinar Foto</button>
+                        </main>
+                    </div>
+                </div>
+                `
+                $('body').append(el_overAddRg);
+            }, 900)
         })
         els.doc.on("click", els.btnVoltar, function () {
             setTimeout(function () {

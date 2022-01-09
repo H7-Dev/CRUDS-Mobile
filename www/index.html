@@ -37,38 +37,7 @@
 
         <!-- <script type="text/javascript" src="cordova.js" ></script> -->
         <script type='text/javascript' src='LIBS/0-JQUERY/jquery-3.0.0.js' ></script>
-        <script type='text/javascript'>
-        $(document).ready(function(){
 
-            // take picture from camera
-            $('#but_take').click(function(){
-                navigator.camera.getPicture(onSuccess, onFail, { quality: 20,
-                    destinationType: Camera.DestinationType.FILE_URL
-                });
-            });
-
-            // upload select
-            $("#but_select").click(function(){
-                navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-                    sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-                    allowEdit: true,
-                    destinationType: Camera.DestinationType.FILE_URI
-                });
-
-            });
-
-            // Change image source
-            function onSuccess(imageData) {
-                var image = document.getElementById('img');
-                image.src = imageData  + '?' + Math.random();
-            }
-
-            function onFail(message) {
-                alert('Failed because: ' + message);
-            }
-
-        })
-        </script>
     </head>
     <body>
         <!-- #region android permissões -->
@@ -266,9 +235,9 @@
                 <!-- <div class="selFoto" style="margin:0 auto; width:30%!important;text-align: center;"> -->
                 <div class="selFoto" >
                     <!-- <img src="ASSETS/MIDIA/cam2.jpg"  style="width: 100px; height: 100px;"> -->
-                    <div class="imgSrc imgSrcOptions ripple" style="background-image: url(ASSETS/MIDIA/cam2.jpg);"></div>
+                    <!-- <div class="imgSrc imgSrcOptions ripple" style="background-image: url(ASSETS/MIDIA/cam2.jpg);"></div> -->
+                    <img id="img" class=" imgSrcOptions ripple" src="ASSETS/MIDIA/cam2.jpg" style="width: 100px; height: 100px;">
                 </div>
-
                 <label for="in_compraVenda">
                     <span>Cursos</span>
                     <div class="dropdown" >
@@ -338,7 +307,7 @@
             </div>
         </div> -->
     </body>
-   <!-- <script src="cordova.js"></script> -->
+   <script src="cordova.js"></script>
         <script src="LIBS/0-JQUERY/jquery-3.4.1.min.js"></script>
         <script src="LIBS/0-JQUERY/jquery-3.0.0.js"></script>
         <!-- <script src="LIBS/0-JQUERY/jquery.touchSwipe.min.js"></script> -->
@@ -356,5 +325,38 @@
         <script src="ASSETS/JS/els.js"></script>
         <script src="PLUGIN/JS/plug.dropdown.menu1.0.2.js"></script>
         <script src="ASSETS/JS/script.js"></script>
+        <script type='text/javascript'>
+            $(document).ready(function(){
+
+                // tirar foto da câmera
+                $(document).on('click', '#but_take',function () {
+                    console.log('Teste but_take #2b')
+                    navigator.camera.getPicture(onSuccess, onFail, { quality: 90,
+                        destinationType: Camera.DestinationType.FILE_URL
+                    })
+                })
+                // Carregar foto selecionado.
+                $(document).on('click', '#but_select',function () {
+                    console.log('Teste but_take #2c')
+                    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+                        sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+                        allowEdit: false,
+                        destinationType: Camera.DestinationType.FILE_URI
+                    })
+                })
+                // Alterar fonte de imagem
+                function onSuccess(imageData) {
+                    console.log(imageData)
+                    // $('.imgSrc').css('background-image', 'url('+imageData+')');
+                    var image = document.getElementById('img');
+                    image.src = imageData  + '?' + Math.random();
+                    
+                }
+                function onFail(message) {
+                    alert('Falhou porque: ' + message);
+                    console.log(message)
+                }
+            })
+            </script>
 
 </html>

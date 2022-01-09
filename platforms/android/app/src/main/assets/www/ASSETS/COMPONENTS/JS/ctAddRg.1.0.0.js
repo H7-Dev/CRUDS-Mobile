@@ -6,7 +6,7 @@ const ctAddRg = {
     // $( "div span:first-child" )
     init: () => {
         setTimeout(function () {
-            console.log('init ctAddRg')
+            // console.log('init ctAddRg')
             ctAddRg.Ouvintes()
         }, 400);
     },

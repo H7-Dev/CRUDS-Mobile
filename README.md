@@ -7,6 +7,18 @@
 [📝 Legendas](https://github.com/H7-Dev/FC_v1.0.0/blob/master/www/ASSETS/GITHUB/PAGES/legendas.md) |
 <!-- 🚩 -->
 
+### ⚜️ ramo => 02.00-Selecionar-Foto-from-Galeria
+
+
+#####  02.03 save(Imagem from galeria)
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ 🚩 Tira Foto. Falta melhorias
+>   - ✅ 🚩 Seleciona Fotos a partir do telefone. Falta melhorias
+>   - ⬆️ recursos novos ↖️
+
+>   - ✅ 🚩 Obter Imagens do telefone como galerias arquivos etc. Falta melhorias
+
 ### ⚜️ ramo => master
 
 
