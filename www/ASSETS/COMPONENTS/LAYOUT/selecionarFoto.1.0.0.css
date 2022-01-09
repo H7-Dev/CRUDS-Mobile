@@ -1,0 +1,33 @@
+.selFoto {
+  background-color: cadetblue;
+  padding: 0.4px;
+  min-height: 100px;
+  min-width: 100px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+}
+
+.selFoto > div {
+  background-size: cover;
+  background-position: center;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+div.overOpcao {
+  background-color: rgba(54, 54, 54, 0.38);
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 99;
+}
+/*# sourceMappingURL=selecionarFoto.1.0.0.css.map */

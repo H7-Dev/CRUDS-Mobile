@@ -49,7 +49,7 @@
             $("#but_select").click(function(){
                 navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
                     sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-                    allowEdit: false,
+                    allowEdit: true,
                     destinationType: Camera.DestinationType.FILE_URI
                 });
 
@@ -346,6 +346,6 @@
 
         <script src="ASSETS/JS/els.js"></script>
         <script src="PLUGIN/JS/plug.dropdown.menu1.0.2.js"></script>
-        <script src="ASSETS/JS/script.js"></script>
+        <!-- <script src="ASSETS/JS/script.js"></script> -->
 
 </html>

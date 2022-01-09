@@ -27,13 +27,15 @@
         <link rel="stylesheet" href="ASSETS/COMPONENTS/LAYOUT/conteudoDoc.css">
         <link rel="stylesheet" href="ASSETS/COMPONENTS/LAYOUT/navSwipe.1.0.1.css">
         <link rel="stylesheet" href="ASSETS/COMPONENTS/LAYOUT/ctAddRg.1.0.0.css">
+        <link rel="stylesheet" href="ASSETS/COMPONENTS/LAYOUT/selecionarFoto.1.0.0.css">
+
 
 
         <!-- * plugins -->
         <link rel="stylesheet" href="PLUGIN/LAYOUT/plug.dropdwon.menu.1.0.2.css">
 
 
-        <script type="text/javascript" src="cordova.js" ></script>
+        <!-- <script type="text/javascript" src="cordova.js" ></script> -->
         <script type='text/javascript' src='LIBS/0-JQUERY/jquery-3.0.0.js' ></script>
         <script type='text/javascript'>
         $(document).ready(function(){
@@ -49,7 +51,7 @@
             $("#but_select").click(function(){
                 navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
                     sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-                    allowEdit: false,
+                    allowEdit: true,
                     destinationType: Camera.DestinationType.FILE_URI
                 });
 
@@ -261,14 +263,10 @@
                 <span class="col2-7">Add Curso</span>
             </header>
             <main>
-                <div style="margin:0 auto; width:30%!important;text-align: center;">
-                    <img src="ASSETS/MIDIA/cam2.jpg" id='img' style="width: 100px; height: 100px;">
-                </div><br/>
-                <div style="width:100%; text-align:center; padding:10px;">
-
-                    <button id='but_take'>Take photo</button>
-                    <button id='but_select'>Select photo from Gallery</button>
-
+                <!-- <div class="selFoto" style="margin:0 auto; width:30%!important;text-align: center;"> -->
+                <div class="selFoto" >
+                    <!-- <img src="ASSETS/MIDIA/cam2.jpg"  style="width: 100px; height: 100px;"> -->
+                    <div class="imgSrc imgSrcOptions ripple" style="background-image: url(ASSETS/MIDIA/cam2.jpg);"></div>
                 </div>
 
                 <label for="in_compraVenda">
@@ -322,13 +320,16 @@
                     <span>Duração</span>
                     <input id="in_duracao" type="text" placeholder="Duração do curso">
                 </label>
-
             </main>
             <!-- <footer>
                 <span>Footer</span>
             </footer> -->
         </section>
         <!-- #endregion -->
+        <div class="overOpcao">
+            <button id='but_take'>Take photo</button>
+            <button id='but_select'>Select photo from Gallery</button>
+        </div>
     </body>
    <!-- <script src="cordova.js"></script> -->
         <script src="LIBS/0-JQUERY/jquery-3.4.1.min.js"></script>
@@ -343,6 +344,7 @@
         <!-- <script src="ASSETS/COMPONENTS/JS/barraSwipe.1.0.0.js"></script> -->
         <!-- <script src="ASSETS/COMPONENTS/JS/alt.abas.outside.1.0.0.js"></script> -->
         <script src="./ASSETS/COMPONENTS/JS/ctAddRg.1.0.0.js"></script>
+        <script src="./ASSETS/COMPONENTS/JS/selFoto.1.0.0.js"></script>
 
         <script src="ASSETS/JS/els.js"></script>
         <script src="PLUGIN/JS/plug.dropdown.menu1.0.2.js"></script>
