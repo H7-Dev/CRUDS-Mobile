@@ -7,9 +7,21 @@
 [📝 Legendas](https://github.com/H7-Dev/FC_v1.0.0/blob/master/www/ASSETS/GITHUB/PAGES/legendas.md) |
 <!-- 🚩 -->
 
+
 ### ⚜️ ramo => 02.00-Selecionar-Foto-from-Galeria
+#####  🚧⛔ 02.04 -s Tirar Foto Obter Img From Android
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ Tira Foto (Funcional).
+>   - ✅ Seleciona Fotos a partir do telefone. (Funcional)
+>   - ⬆️ recursos novos ↖️
+
+>   - ✅ 🚩 Melhorias para próximas versões
+>      - Ao tirar foto: Permitir rotacionar
+>      - Ao Selecinar foto: Permitir recortar
 
 
+### ⚜️ ramo => 02.00-Selecionar-Foto-from-Galeria
 #####  02.03 save(Imagem from galeria)
 >  ### 👍 recursos
 >   - ⬇️ recursos novos ↙️
@@ -20,8 +32,6 @@
 >   - ✅ 🚩 Obter Imagens do telefone como galerias arquivos etc. Falta melhorias
 
 ### ⚜️ ramo => master
-
-
 #####  00.02 save(Imagem from galeria)
 >  ### 👍 recursos
 >   - ⬇️ recursos novos ↙️
@@ -29,13 +39,11 @@
 >   - ⬆️ recursos novos ↖️
 
 
-
 #####  01.01 save(Leiaute responsivo ao teclado android)
 >  ### 👍 recursos
 >   - ⬇️ recursos novos ↙️
 >   - ✅ 🚩 . Falta melhorias
 >   - ⬆️ recursos novos ↖️
-
 
 
 #####  01.01 save(Leiaute responsivo ao teclado android)

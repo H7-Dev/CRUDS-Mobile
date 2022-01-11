@@ -235,8 +235,8 @@
                 <!-- <div class="selFoto" style="margin:0 auto; width:30%!important;text-align: center;"> -->
                 <div class="selFoto" >
                     <!-- <img src="ASSETS/MIDIA/cam2.jpg"  style="width: 100px; height: 100px;"> -->
-                    <!-- <div class="imgSrc imgSrcOptions ripple" style="background-image: url(ASSETS/MIDIA/cam2.jpg);"></div> -->
                     <img id="img" class=" imgSrcOptions ripple" src="ASSETS/MIDIA/cam2.jpg" style="width: 100px; height: 100px;">
+                    <div class="imgSrc imgSrcOptions ripple" style="background-image: url(ASSETS/MIDIA/cam2.jpg);"></div>
                 </div>
                 <label for="in_compraVenda">
                     <span>Cursos</span>
@@ -301,8 +301,8 @@
             <div class="ctOpcao">
                 <header><span>Tira Foto/ Selecionar Foto</span><button class="btnFechar ripple">✘</button></header>
                 <main>
-                    <button id='but_take'>Take photo</button>
-                    <button id='but_select'>Select photo from Gallery</button>
+                    <button id='btnTirarFoto'>Take photo</button>
+                    <button id='btnSelFoto'>Select photo from Gallery</button>
                 </main>
             </div>
         </div> -->
@@ -312,7 +312,6 @@
         <script src="LIBS/0-JQUERY/jquery-3.0.0.js"></script>
         <!-- <script src="LIBS/0-JQUERY/jquery.touchSwipe.min.js"></script> -->
         <!-- <script src="ASSETS/COMPONENTS/JS/swipe.g.1.0.0.js"></script> -->
-
 
 
         <!-- * componentes -->
@@ -328,34 +327,36 @@
         <script type='text/javascript'>
             $(document).ready(function(){
 
-                // tirar foto da câmera
-                $(document).on('click', '#but_take',function () {
-                    console.log('Teste but_take #2b')
-                    navigator.camera.getPicture(onSuccess, onFail, { quality: 90,
-                        destinationType: Camera.DestinationType.FILE_URL
-                    })
-                })
-                // Carregar foto selecionado.
-                $(document).on('click', '#but_select',function () {
-                    console.log('Teste but_take #2c')
-                    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-                        sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
-                        allowEdit: false,
-                        destinationType: Camera.DestinationType.FILE_URI
-                    })
-                })
-                // Alterar fonte de imagem
-                function onSuccess(imageData) {
-                    console.log(imageData)
-                    // $('.imgSrc').css('background-image', 'url('+imageData+')');
-                    var image = document.getElementById('img');
-                    image.src = imageData  + '?' + Math.random();
-                    
-                }
-                function onFail(message) {
-                    alert('Falhou porque: ' + message);
-                    console.log(message)
-                }
+            //     // tirar foto da câmera
+            //     $(document).on('click', '#btnTirarFoto',function () {
+            //         console.log('Teste btnTirarFoto #2b')
+            //         navigator.camera.getPicture(onSuccess, onFail, { quality: 90,
+            //             destinationType: Camera.DestinationType.FILE_URL
+            //         })
+            //     })
+            //     // Carregar foto selecionado.
+            //     $(document).on('click', '#btnSelFoto',function () {
+            //         console.log('Teste btnTirarFoto #2c')
+            //         navigator.camera.getPicture(onSuccess, onFail, { quality: 90,
+            //             sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+            //             allowEdit: false,
+            //             destinationType: Camera.DestinationType.FILE_URI
+            //         })
+            //     })
+            //     // Alterar fonte de imagem
+            //     function onSuccess(imageData) {
+            //         console.log(imageData)
+            //         // $('.imgSrc').css('background-image', 'url('+imageData+')');
+            //         var image = document.getElementById('img');
+            //         // image.src = imageData  + '?' + Math.random();
+            //         image.src = imageData
+            //         $('.imgSrc').css('background-image', 'url('+image.src+')');
+
+            //     }
+            //     function onFail(message) {
+            //         alert('Falhou porque: ' + message);
+            //         console.log(message)
+            //     }
             })
             </script>
 
