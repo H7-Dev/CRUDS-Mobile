@@ -13,6 +13,7 @@
     overflow: hidden;
 
     > header {
+
         background-color: white;
         padding: 0 5px;
         min-height: 48px;
@@ -43,6 +44,7 @@
         }
         > span {
             width: 100%;
+            color: black;
             font-size: 0.9rem;
             font-family: 'Open Sans ExtraBold','Segoe UI',sans-serif;
             text-align: center;

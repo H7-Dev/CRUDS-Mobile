@@ -37,6 +37,7 @@
 
 .pagAddCurso > header > span {
   width: 100%;
+  color: black;
   font-size: 0.9rem;
   font-family: 'Open Sans ExtraBold','Segoe UI',sans-serif;
   text-align: center;
