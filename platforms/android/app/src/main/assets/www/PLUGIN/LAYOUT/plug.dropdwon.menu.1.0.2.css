@@ -65,11 +65,13 @@
 .dropdown > div.optsDropdown > div {
   position: absolute;
   top: 40px;
+  min-height: 150px;
+  max-height: 150px;
   width: 100%;
   background-color: white;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  overflow: hidden;
+  overflow: scroll;
   transition: 0.5s;
   display: block;
   z-index: 9999;

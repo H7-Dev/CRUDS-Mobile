@@ -9,6 +9,18 @@
 
 
 ### ⚜️ ramo => 02.00-Selecionar-Foto-from-Galeria
+#####  02.05 save(Melhorias leiaute plug.dropdwon.menu.1.0.2)
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ Overflow.
+>   - ✅ Limite máx e min de altura
+>   - ⬆️ recursos novos ↖️
+
+>   - ✅ 🚩 Melhorias para próximas versões
+>      - Ao clicar no imput ocultar optsDropdown
+
+
+### ⚜️ ramo => 02.00-Selecionar-Foto-from-Galeria
 #####  🚧⛔ 02.04 -s Tirar Foto Obter Img From Android
 >  ### 👍 recursos
 >   - ⬇️ recursos novos ↙️
