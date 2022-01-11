@@ -31,10 +31,11 @@ const selcFoto = {
                 function onSuccess(imageData) {
                     console.log(imageData)
                     // $('.imgSrc').css('background-image', 'url('+imageData+')');
-                    var image = document.getElementById('img');
+                    // var image = document.getElementById('img');
                     // image.src = imageData  + '?' + Math.random();
-                    image.src = imageData
-                    $('.imgSrc').css('background-image', 'url('+image.src+')')
+                    var image = $('#img').attr('src');
+                    image = imageData
+                    $('.imgSrc').css('background-image', 'url('+image+')')
 
                     const getBase64FromUrl = async (url) => {
                         const data = await fetch(url);
@@ -70,9 +71,11 @@ const selcFoto = {
                 function onSuccess(imageData) {
                     console.log(imageData);
                     // $('.imgSrc').css('background-image', 'url('+imageData+')');
-                    var image = document.getElementById('img');
+                    // var image = document.getElementById('img');
                     // image.src = imageData  + '?' + Math.random();
-                    image.src = imageData;
+                    // image.src = imageData;
+                    var image = $('#img').attr('src');
+                    image = imageData
                     // $('.imgSrc').css('background-image', 'url('+image.src+')');
 
                 // convert to base64

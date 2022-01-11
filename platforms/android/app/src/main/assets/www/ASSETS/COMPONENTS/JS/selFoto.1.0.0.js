@@ -31,10 +31,11 @@ const selcFoto = {
                 function onSuccess(imageData) {
                     console.log(imageData)
                     // $('.imgSrc').css('background-image', 'url('+imageData+')');
-                    var image = document.getElementById('img');
+                    // var image = document.getElementById('img');
                     // image.src = imageData  + '?' + Math.random();
-                    image.src = imageData
-                    $('.imgSrc').css('background-image', 'url('+image.src+')')
+                    var image = $('#img').attr('src');
+                    image = imageData
+                    $('.imgSrc').css('background-image', 'url('+image+')')
 
                     const getBase64FromUrl = async (url) => {
                         const data = await fetch(url);
@@ -70,42 +71,42 @@ const selcFoto = {
                 function onSuccess(imageData) {
                     console.log(imageData);
                     // $('.imgSrc').css('background-image', 'url('+imageData+')');
-                    var image = document.getElementById('img');
+                    // var image = document.getElementById('img');
                     // image.src = imageData  + '?' + Math.random();
-                    image.src = imageData;
+                    // image.src = imageData;
+                    var image = $('#img').attr('src');
+                    image = imageData
                     // $('.imgSrc').css('background-image', 'url('+image.src+')');
 
-                    function getBase64Image(imgUrl, callback) {
+                // convert to base64
+                function getBase64Image(imgUrl, callback) {
+                    var img = new Image();
+                    // onload fires when the image is fully loadded, and has width and height
 
-                        var img = new Image();
+                    img.onload = function(){
 
-                        // onload fires when the image is fully loadded, and has width and height
+                      var canvas = document.createElement("canvas");
+                      canvas.width = img.width;
+                      canvas.height = img.height;
+                      var ctx = canvas.getContext("2d");
+                      ctx.drawImage(img, 0, 0);
+                      var dataURL = canvas.toDataURL(),
+                          dataURL = dataURL
 
-                        img.onload = function(){
+                      callback(dataURL); // the base64 string
+                    };
 
-                          var canvas = document.createElement("canvas");
-                          canvas.width = img.width;
-                          canvas.height = img.height;
-                          var ctx = canvas.getContext("2d");
-                          ctx.drawImage(img, 0, 0);
-                          var dataURL = canvas.toDataURL(),
-                              dataURL = dataURL
+                    // set attributes and src
+                    img.setAttribute('crossOrigin', 'anonymous'); //
+                    img.src = imgUrl;
 
-                          callback(dataURL); // the base64 string
-
-
-                        };
-
-                        // set attributes and src
-                        img.setAttribute('crossOrigin', 'anonymous'); //
-                        img.src = imgUrl;
-
-                    }
-                    getBase64Image(imageData, function(base64image){
-                        console.log('base64image');
-                        $('#in_imgDataBase64').val(base64image);
-                        $('.imgSrc').css('background-image', 'url('+imageData+')');
-                   })
+                }
+                // obter to base64
+                getBase64Image(imageData, function(base64image){
+                    console.log('base64image');
+                    $('#in_imgDataBase64').val(base64image);
+                    $('.imgSrc').css('background-image', 'url('+imageData+')');
+               })
                 }
                 function onFail(message) {
                     alert('Falhou porque: ' + message);
