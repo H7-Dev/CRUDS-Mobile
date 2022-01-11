@@ -63,8 +63,6 @@
         }
     }
     > div.optsDropdown {
-        background-color: red;
-        padding: 4px;
         position: absolute;
         display: none;
 
@@ -78,7 +76,7 @@
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.20);
             border-radius: 4px;
             overflow: scroll;
-            
+
             transition: 0.5s;
             display: block;
             z-index: 9999;

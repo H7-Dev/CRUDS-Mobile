@@ -58,8 +58,6 @@
 }
 
 .dropdown > div.optsDropdown {
-  background-color: red;
-  padding: 4px;
   position: absolute;
   display: none;
 }
