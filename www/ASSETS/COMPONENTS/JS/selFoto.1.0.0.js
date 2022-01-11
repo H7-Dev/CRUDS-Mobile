@@ -6,7 +6,7 @@ const selcFoto = {
     btnSelFoto: '.overOpcaoSrcImg > .ctOpcao > main > #btnSelFoto',
     init: () => {
         setTimeout(function () {
-            console.log('init selcFoto')
+            // console.log('init selcFoto')
             selcFoto.Ouvintes()
         }, 400);
     },

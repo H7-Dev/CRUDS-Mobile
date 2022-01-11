@@ -8,6 +8,18 @@
 <!-- 🚩 -->
 
 
+
+
+### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
+#####  03.01 -s bd e tb_curso
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ Banco de dados criado e funcional
+>   - ✅ tb_curso criada e funcional
+>   - ⬆️ recursos novos ↖️
+>  ### 👉 resultados 👇
+> ![#0001 - 03 01 -s bd e tb_curso](https://user-images.githubusercontent.com/93455937/149012955-343fb90f-ccee-4a50-b9f3-179b9d9daacb.gif)
+
 ### ⚜️ ramo => 02.00-Selecionar-Foto-from-Galeria
 #####  02.05 save(Melhorias leiaute plug.dropdwon.menu.1.0.2)
 >  ### 👍 recursos
