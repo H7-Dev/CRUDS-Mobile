@@ -1,5 +1,5 @@
 .selFoto {
-    background-color: cadetblue;
+    // background-color: cadetblue;
     padding: 0.4px;
     min-height: 100px;
     min-width: 100px;
@@ -10,7 +10,9 @@
     justify-items: center;
 
     position: relative;
+    border: 1px solid gainsboro;
     > div {background-size: cover; background-position: center;  min-width: 100%;min-height: 100%;}
+    > img { display: none;}
 }
 
 div.overOpcaoSrcImg {

@@ -89,8 +89,8 @@ const app = {
                     <div class="ctOpcao">
                         <header><span>Tira Foto/ Selecionar Foto</span><button class="btnFechar ripple">✘</button></header>
                         <main>
-                            <button id='but_take'>Tirar Foto</button>
-                            <button id='but_select'>Selecinar Foto</button>
+                            <button id='btnTirarFoto'>Tirar Foto</button>
+                            <button id='btnSelFoto'>Selecinar Foto</button>
                         </main>
                     </div>
                 </div>
