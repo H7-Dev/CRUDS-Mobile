@@ -7,6 +7,15 @@
 [📝 Legendas](https://github.com/H7-Dev/FC_v1.0.0/blob/master/www/ASSETS/GITHUB/PAGES/legendas.md) |
 <!-- 🚩 -->
 
+### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
+#####  03.02 save-g(sob observação)
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ Obtém base64 de uma imagem a partir da tag img `getBase64Image(imgUrl, callback)`
+>   - ✅ Set img\base64 em style background-image `getBase64Image(imageData, function(base64image)`
+>   - ⬆️ recursos novos ↖️
+
+> 🚩 Obs: também é possível obter através do input file, porém se faz necessário novos testes
 
 
 
