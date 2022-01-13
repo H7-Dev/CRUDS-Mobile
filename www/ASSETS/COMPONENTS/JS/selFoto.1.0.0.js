@@ -43,8 +43,7 @@ const selcFoto = {
             }, 1000);
         })
         selcFoto.doc.on('click', selcFoto.btnSelFoto, function (e) {
-            let $this = $(this)
-            console.log($this)
+            let $closestID = $(this).closest('.overOpcaoSrcImg').find('.ctOpcao > main > input').val()
             setTimeout(function () {
                 navigator.camera.getPicture(onSuccess, onFail, {
                     quality: 90,
@@ -57,7 +56,7 @@ const selcFoto = {
                     console.log(imageData);
                     function getBase64Image(imgUrl, callback) {
                         var img = new Image();
-                        // onload fires when the image is fully loadded, and has width and height
+                        // incêndios onload quando a imagem é totalmente carregada, e tem largura e altura
 
                         img.onload = function () {
 
@@ -78,10 +77,9 @@ const selcFoto = {
 
                     }
                     getBase64Image(imageData, function (base64image) {
-                        console.log(base64image);
-
-                        // $('#'++' > input').val(base64image);
-                        $('#selcFotoCurso > div').css('background-image', 'url(' + imageData + ')');
+                        // console.log(base64image);
+                        $('#'+$closestID+' > input').val(base64image);
+                        $('#'+$closestID+' >  div').css('background-image', 'url(' + imageData + ')');
                     })
                 }
 

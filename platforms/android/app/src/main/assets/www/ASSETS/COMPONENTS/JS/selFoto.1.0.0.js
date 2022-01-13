@@ -1,9 +1,9 @@
 const selcFoto = {
-    doc: $(document),
-    imgSrc: '#selcFotoCurso > .imgSrcOptions',
-    btn_fehcar: '.overOpcaoSrcImg > .ctOpcao > header > .btnFechar',
-    btnTirarFoto: '.overOpcaoSrcImg > .ctOpcao > main > #btnTirarFoto',
-    btnSelFoto: '.overOpcaoSrcImg > .ctOpcao > main > #btnSelFoto',
+    doc           : $(document),
+    imgSrc        : '#selcFotoCurso > .imgSrcOptions',
+    btn_fehcar    : '.overOpcaoSrcImg > .ctOpcao > header > .btnFechar',
+    btnTirarFoto  : '.overOpcaoSrcImg > .ctOpcao > main > #btnTirarFoto',
+    btnSelFoto    : '.overOpcaoSrcImg > .ctOpcao > main > #btnSelFoto',
     init: () => {
         setTimeout(function () {
             // console.log('init selcFoto')
@@ -43,9 +43,7 @@ const selcFoto = {
             }, 1000);
         })
         selcFoto.doc.on('click', selcFoto.btnSelFoto, function (e) {
-            console.log('evento onClick (T-00.01/btnTirarFoto)')
-            let $this = $(this)
-            console.log($this)
+            let $closestID = $(this).closest('.overOpcaoSrcImg').find('.ctOpcao > main > input').val()
             setTimeout(function () {
                 navigator.camera.getPicture(onSuccess, onFail, {
                     quality: 90,
@@ -56,10 +54,6 @@ const selcFoto = {
 
                 function onSuccess(imageData) {
                     console.log(imageData);
-                    // let image = $('#img').attr('src');
-                    // image = imageData
-
-                    // convert to base64
                     function getBase64Image(imgUrl, callback) {
                         var img = new Image();
                         // onload fires when the image is fully loadded, and has width and height
@@ -82,11 +76,12 @@ const selcFoto = {
                         img.src = imgUrl;
 
                     }
-                    // obter to base64
                     getBase64Image(imageData, function (base64image) {
-                        console.log(base64image);
-                        $('#selcFotoCurso > input').val(base64image);
-                        $('#selcFotoCurso > div').css('background-image', 'url(' + imageData + ')');
+                        // console.log(base64image);
+                        // console.log($this)
+
+                        $('#'+$closestID+' > input').val(base64image);
+                        $('#'+$closestID+' >  div').css('background-image', 'url(' + imageData + ')');
                     })
                 }
 

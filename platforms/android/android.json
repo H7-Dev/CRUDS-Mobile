@@ -10,47 +10,47 @@
           "/manifest": [
             {
               "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
-              "count": 53,
+              "count": 55,
               "after": "uses-permission"
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-              "count": 53,
+              "count": 55,
               "after": "uses-permission"
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
-              "count": 53,
+              "count": 55,
               "after": "uses-permission"
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.BIND_NOTIFICATION_LISTENER_SERVICE\" />",
-              "count": 53,
+              "count": 55,
               "after": "uses-permission"
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
-              "count": 53,
+              "count": 55,
               "after": "uses-permission"
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.RECORD_AUDIO\" />",
-              "count": 53,
+              "count": 55,
               "after": "uses-permission"
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.ACCESS_MEDIA_LOCATION\" />",
-              "count": 53,
+              "count": 55,
               "after": "uses-permission"
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.MANAGE_DOCUMENTS\" />",
-              "count": 53,
+              "count": 55,
               "after": "uses-permission"
             },
             {
               "xml": "<uses-permission android:name=\"android.permission.SEND_SMS\" />",
-              "count": 53,
+              "count": 55,
               "after": "uses-permission"
             }
           ],
