@@ -84,6 +84,7 @@ div.overOpcaoSrcImg > .ctOpcao > main {
   gap: 28px;
   align-items: center;
   justify-items: center;
+  align-content: center;
 }
 
 div.overOpcaoSrcImg > .ctOpcao > main > button:first-child {

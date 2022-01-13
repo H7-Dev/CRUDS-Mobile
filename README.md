@@ -8,6 +8,44 @@
 <!-- 🚩 -->
 
 
+### ⚜️ ramo => 03.07 03.00-banco-de-dados-e-tabelas
+#####  🚧⛔ 03.07 +best selFoto.1.0.0.js)
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ Tira foto e convert resultado `imgUrl` em base64 pronto para ser salvor em um banco de dados
+>   - ✅ Seleciona uma imagem a partir do android e convert resultado `imgUrl` em base64 pronto para ser salvor em um banco de dados
+>   - ⬆️ recursos novos ↖️
+
+>   - ✅ Obtém base64 de uma imagem a partir da tag img `getBase64Image(imgUrl, callback)`
+>   - ✅ Set img\base64 em style background-image `getBase64Image(imageData, function(base64image)`
+
+
+> 🚩 Obs: também é possível obter através do input file, porém se faz necessário novos testes
+
+
+
+### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
+#####  03.02 save-g(sob observação)
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ Obtém base64 de uma imagem a partir da tag img `getBase64Image(imgUrl, callback)`
+>   - ✅ Set img\base64 em style background-image `getBase64Image(imageData, function(base64image)`
+>   - ⬆️ recursos novos ↖️
+
+> 🚩 Obs: também é possível obter através do input file, porém se faz necessário novos testes
+
+
+
+### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
+#####  03.01 -s bd e tb_curso
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ Banco de dados criado e funcional
+>   - ✅ tb_curso criada e funcional
+>   - ⬆️ recursos novos ↖️
+>  ### 👉 resultados 👇
+> ![#0001 - 03 01 -s bd e tb_curso](https://user-images.githubusercontent.com/93455937/149012955-343fb90f-ccee-4a50-b9f3-179b9d9daacb.gif)
+
 ### ⚜️ ramo => 02.00-Selecionar-Foto-from-Galeria
 #####  02.05 save(Melhorias leiaute plug.dropdwon.menu.1.0.2)
 >  ### 👍 recursos

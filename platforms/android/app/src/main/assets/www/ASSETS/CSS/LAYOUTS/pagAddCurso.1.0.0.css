@@ -101,11 +101,21 @@
 }
 
 .pagAddCurso > footer {
-  background-color: lightslategray;
-  padding: 0 5px;
+  background-color: #ebf0f0;
+  padding: 0.5rem 1.0rem;
   min-height: 48px;
   min-width: 100%;
   display: grid;
-  gap: 10px;
+  justify-items: center;
+}
+
+.pagAddCurso > footer > button {
+  color: white;
+  background-color: cadetblue;
+  padding: 0.4rem;
+  width: fit-content;
+  border-radius: 4px;
+  outline: none;
+  border: none;
 }
 /*# sourceMappingURL=pagAddCurso.1.0.0.css.map */
