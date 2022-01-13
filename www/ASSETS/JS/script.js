@@ -81,6 +81,8 @@ const app = {
         }),
         // * outros
         els.doc.on('click', els.btn_selImg,function(e){
+            let a = $(this).closest('.selFoto').attr('id')
+                console.log(a)
             setTimeout(function () {
 
                 var el_overAddRg = ''
@@ -89,6 +91,7 @@ const app = {
                     <div class="ctOpcao">
                         <header><span>Tira Foto/ Selecionar Foto</span><button class="btnFechar ripple">✘</button></header>
                         <main>
+                            <input type="hidden" value="${a}">
                             <button id='btnTirarFoto'>Tirar Foto</button>
                             <button id='btnSelFoto'>Selecinar Foto</button>
                         </main>
