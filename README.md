@@ -7,6 +7,23 @@
 [📝 Legendas](https://github.com/H7-Dev/FC_v1.0.0/blob/master/www/ASSETS/GITHUB/PAGES/legendas.md) |
 <!-- 🚩 -->
 
+
+### ⚜️ ramo => 03.07 03.00-banco-de-dados-e-tabelas
+#####  🚧⛔ 03.07 +best selFoto.1.0.0.js)
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ Tira foto e convert resultado `imgUrl` em base64 pronto para ser salvor em um banco de dados
+>   - ✅ Seleciona uma imagem a partir do android e convert resultado `imgUrl` em base64 pronto para ser salvor em um banco de dados
+>   - ⬆️ recursos novos ↖️
+
+>   - ✅ Obtém base64 de uma imagem a partir da tag img `getBase64Image(imgUrl, callback)`
+>   - ✅ Set img\base64 em style background-image `getBase64Image(imageData, function(base64image)`
+
+
+> 🚩 Obs: também é possível obter através do input file, porém se faz necessário novos testes
+
+
+
 ### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
 #####  03.02 save-g(sob observação)
 >  ### 👍 recursos
