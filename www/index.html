@@ -228,6 +228,7 @@
                     <svg height="21px" viewBox="0 0 512 512"><path d="M486.8,261.4c-3.1,8.6-9.4,11.4-18.2,11.4c-129.2-0.1-258.3-0.1-387.5-0.1c-1.9,0-3.8,0-5.7,0c-0.4,0.6-0.9,1.1-1.3,1.7c1.5,0.9,3.2,1.6,4.4,2.8c37.6,36.5,75.1,73,112.7,109.5c4.3,4.2,7.1,8.9,5.6,15.1c-2.3,10.1-13.9,14.5-22.3,8.4c-1.4-1-2.7-2.4-4-3.6c-45.7-45.7-91.5-91.4-137.1-137.2c-2.6-2.6-4.4-5.9-6.6-8.9c0-2.4,0-4.8,0-7.2c2.8-3.6,5.3-7.5,8.5-10.8c44.9-45,89.9-90,134.9-135c8.1-8.1,16.3-9,22.7-2.6c6.5,6.5,5.6,14.7-2.4,22.8c-37.4,37.3-74.8,74.6-112.3,111.8c-1.2,1.1-2.6,2-3.9,3c0.2,0.5,0.4,1,0.6,1.4c1.7,0,3.3,0,5,0c129.4,0,258.9,0.1,388.3-0.1c8.8,0,15,2.7,18.3,11.1C486.8,257.2,486.8,259.3,486.8,261.4z"/></svg>
                 </button>
                 <span class="col2-7">Add Curso</span>
+                <input id="in_gID" name="in_gID"  type="hidden" >
             </header>
             <main>
                 <!-- <div class="selFoto" style="margin:0 auto; width:30%!important;text-align: center;"> -->
@@ -266,6 +267,11 @@
                     <span>Duração</span>
                     <input id="in_duracao" type="text" placeholder="Duração do curso">
                 </label>
+                <label for="in_dt">
+                    <span>Data</span>
+                    <input id="in_dt" name="in_dt"  type="date" >
+                    <input name="in_dtBr" id="in_dtBr" type="hidden" >
+                </label>
 
             </main>
             <footer>
@@ -275,11 +281,15 @@
         <!-- #endregion -->
 
     </body>
-   <script src="cordova.js"></script>
+   <!-- <script src="cordova.js"></script> -->
         <script src="LIBS/0-JQUERY/jquery-3.4.1.min.js"></script>
         <script src="LIBS/0-JQUERY/jquery-3.0.0.js"></script>
+        <script src="LIBS/JS/gerarID.js"></script>
         <!-- <script src="LIBS/0-JQUERY/jquery.touchSwipe.min.js"></script> -->
         <!-- <script src="ASSETS/COMPONENTS/JS/swipe.g.1.0.0.js"></script> -->
+
+        <!-- * Páginas -->
+        <script src="ASSETS/JS/PAGES/pag.AddCurso.1.0.0.js"></script>
 
         <!-- * componentes -->
         <!-- <script src="ASSETS/COMPONENTS/JS/navSwipe.1.0.0.js"></script> -->
