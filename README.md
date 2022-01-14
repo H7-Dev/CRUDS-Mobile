@@ -7,6 +7,21 @@
 [📝 Legendas](https://github.com/H7-Dev/FC_v1.0.0/blob/master/www/ASSETS/GITHUB/PAGES/legendas.md) |
 <!-- 🚩 -->
 
+### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
+#####  🏁 03.08 gerarID e tratarDtString()
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ Gerar id baseado em dia, mês, ano, hora, minutos, segundos e milisegundos
+>   - ✅ Tratar data from input:date formato en-US para formato pt-BR
+>   - ⬆️ recursos novos ↖️
+>
+>   - ✅ Tira foto e convert resultado `imgUrl` em base64 pronto para ser salvor em um banco de dados
+>   - ✅ Seleciona uma imagem a partir do android e convert resultado `imgUrl` em base64 pronto para ser salvor em um banco de dados
+>   - ✅ Obtém base64 de uma imagem a partir da tag img `getBase64Image(imgUrl, callback)`
+>   - ✅ Set img\base64 em style background-image `getBase64Image(imageData, function(base64image)`
+>
+>   ![🏁 03 08 gerarID e tratarDtString()](https://user-images.githubusercontent.com/93455937/149429132-4bff44f7-5d0a-4801-a2da-62cca889ca7f.gif)
+
 
 ### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
 #####  🚧⛔ 03.07 +best selFoto.1.0.0.js)
