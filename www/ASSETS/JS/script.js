@@ -1,5 +1,5 @@
 $(document).ready(function () {
-            console.log('script')
+            // console.log('script')
             $(document).dropdownMenu(
                 els.btn_dropDown,
                 els.btn_dropDownOptions,
