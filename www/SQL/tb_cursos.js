@@ -191,7 +191,7 @@ const tbCs = {
         }
     },
     mostrar_tbCursos: function mostrar_tbCursos() {
-        // console.log($('.pagInit > main > .container_cardCursos > main'))
+        console.log($('.pagInit > main > .container_cardCursos > main'))
         // var query = "SELECT * FROM tb_curso ORDER BY c_duracao DESC;";
         var query = "SELECT * FROM tb_curso ORDER BY c_duracao ;";
         // var query = "SELECT * FROM tb_curso;";
@@ -200,7 +200,7 @@ const tbCs = {
                 transaction.executeSql(query, [], function (transaction, results) {
                     var rows = results.rows;
                     // console.log(rows)
-                    // var lisarPessoa = '';
+                    var listarCursos = '';
 
                     for (var i = 0; i < rows.length; i++) {
                         // console.log(rows[i].c_dtMod)
@@ -220,21 +220,12 @@ const tbCs = {
                         var dataSetada = semana[dia] + ', '+splitData+ ' de ' +mes[nomeMes] + ' de ' + splitAno
 
 
-                        // lisarPessoa += `
-                        // <div class="cardData" id="${'cardMainID-'+rows[i].id}">
-                        //     <button class="col1 row1-3" type="button">
-                        //         <svg  height="21"  viewBox="0 0 7 28"><title>03.06-menu--menu--</title><path d="M16.3,1.84c.26.07.51.13.76.22a3.49,3.49,0,1,1-1.75-.17.31.31,0,0,0,.12,0Zm-3.93,14a3.5,3.5,0,1,0,3.49-3.5A3.5,3.5,0,0,0,12.37,15.84Zm3.53,7a3.5,3.5,0,1,0,3.47,3.53A3.51,3.51,0,0,0,15.9,22.84Z" transform="translate(-12.37 -1.84)"/></svg>
-                        //         <div class="popUpMenu">
-                        //             <a class="row1 btnEditarMercado" id="${rows[i].id}" style="background-color: cornflowerblue; color: white;" href="#">Editar</a>
-                        //             <a class="row2  btnDeleteMercado" id="${rows[i].id}" style="background-color: orangered; color: white;" href="#">Excluír</a>
-                        //         </div>
-                        //     </button>
-                        //     <div class="col2 row1-3 r1"></div>
-                        //     <div class="col3 row1 rG " style="color:cadetblue;"><b>Vix:</b> $30</div>
-                        //     <div class="col3 row2 rG cVermelho2" style="color: lightcoral;"><b>Loss:</b> $5</div>
-                        //     <div class="col4 row1-3 rG1" style="color: cornflowerblue;" ><b>Saldo:</b> $25</div>
-                        // </div>
-                        // `
+                        listarCursos += `
+                        <div class="cardCursos">
+                            <div class="img" style="background-image: url(ASSETS/MIDIA/IMG/html-5.png);"></div>
+                            <span>${rows[i].c_curso}5</span>
+                        </div>
+                        `
                         console.log('...... ... ... .......')
                         console.log('Cursos....: '+rows[i].c_curso)
                         console.log('Duração...: '+rows[i].c_duracao)
@@ -243,8 +234,8 @@ const tbCs = {
                         console.log(dataSetada)
 
                     }
-                    // $('.pagInit > main > .container_cardCursos > main').empty();
-                    // $('.pagInit > main > .container_cardCursos > main').html(lisarPessoa);
+                    $('.pagInit > main > .container_cardCursos > main').empty();
+                    $('.pagInit > main > .container_cardCursos > main').html(listarCursos);
                     // console.log('Registros econtrados: ' +rows.length)
                     // tbCs.dispTotalRg_pessoa.html('Registros econtrados: '+rows.length)
                 }, function (transaction, error) {
