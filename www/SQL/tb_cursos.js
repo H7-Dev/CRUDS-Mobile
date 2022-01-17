@@ -9,10 +9,10 @@ const tbCs = {
     in_dtimeFullBr  : getDtHoraFullBr(),
     init: () => {
         setTimeout(function () {
-            console.log('init tb_curso')
+            // console.log('init tb_curso')
             tbCs.addListeners()
             tbCs.onInit()
-            console.log(tbCs.in_dtBr.val())
+            // console.log(tbCs.in_dtBr.val())
             // console.log('datatime: '+getDtHoraFullBr())
             // tbCs.mostrar_tbCursos()
         }, 500);
@@ -191,33 +191,33 @@ const tbCs = {
         }
     },
     mostrar_tbCursos: function mostrar_tbCursos() {
-        console.log($('.pagInit > main > .container_cardCursos > main'))
-        // var query = "SELECT * FROM tbCs ORDER BY c_compraVenda;";
-        var query = "SELECT * FROM tb_curso;";
+        // console.log($('.pagInit > main > .container_cardCursos > main'))
+        // var query = "SELECT * FROM tb_curso ORDER BY c_duracao DESC;";
+        var query = "SELECT * FROM tb_curso ORDER BY c_duracao ;";
+        // var query = "SELECT * FROM tb_curso;";
         try {
             localDB.transaction(function (transaction) {
                 transaction.executeSql(query, [], function (transaction, results) {
                     var rows = results.rows;
-                    console.log(rows)
+                    // console.log(rows)
                     // var lisarPessoa = '';
 
                     for (var i = 0; i < rows.length; i++) {
-                        // console.log(rows[i].c_dt)
-                        // let originalString = new String(rows[i].c_dt) // ❗❗ é necessário convert o valor que do banco de dados em uma string
-                        //     seperarEntraEpacos = originalString.split(" "); // ❗❗ separa (split) os valores que estivem entre espaçoes em branco, neste caso, a data da hora
-                        //     seperarDataHora = new String(seperarEntraEpacos[0]) //
+                        // console.log(rows[i].c_dtMod)
+                        let originalString = new String(rows[i].c_dtMod) // ❗❗ é necessário convert o valor que do banco de dados em uma string
+                            seperarEntraEpacos = originalString.split(" "); // ❗❗ separa (split) os valores que estivem entre espaçoes em branco, neste caso, a data da hora
+                            seperarDataHora = new String(seperarEntraEpacos[0]) //
 
-                        // let semana = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
-                        //     mes = ["Janeiro","Fervereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
-                        //     data = seperarDataHora;
-                        //     arr = data.split("/").reverse();
-                        //     splitData = data.split('/')[0]
-                        //     splitAno = data.split('/')[2]
-                        //     teste = new Date(arr[0], arr[1] - 1, arr[2]);
-                        //     dia = teste.getDay();
-                        //     nomeMes = teste.getMonth();
-                        // var dataSetada = semana[dia] + ', '+splitData+ ' de ' +mes[nomeMes] + ' de ' + splitAno
-                        // // console.log(dataSetada)
+                        let semana = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
+                            mes = ["Janeiro","Fervereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+                            data = seperarDataHora;
+                            arr = data.split("/").reverse();
+                            splitData = data.split('/')[0]
+                            splitAno = data.split('/')[2]
+                            teste = new Date(arr[0], arr[1] - 1, arr[2]);
+                            dia = teste.getDay();
+                            nomeMes = teste.getMonth();
+                        var dataSetada = semana[dia] + ', '+splitData+ ' de ' +mes[nomeMes] + ' de ' + splitAno
 
 
                         // lisarPessoa += `
@@ -235,7 +235,13 @@ const tbCs = {
                         //     <div class="col4 row1-3 rG1" style="color: cornflowerblue;" ><b>Saldo:</b> $25</div>
                         // </div>
                         // `
-                        console.log(rows[i].c_curso)
+                        console.log('...... ... ... .......')
+                        console.log('Cursos....: '+rows[i].c_curso)
+                        console.log('Duração...: '+rows[i].c_duracao)
+                        console.log('Data......: '+rows[i].c_dt)
+                        console.log('Data Mod..: '+rows[i].c_dtMod)
+                        console.log(dataSetada)
+
                     }
                     // $('.pagInit > main > .container_cardCursos > main').empty();
                     // $('.pagInit > main > .container_cardCursos > main').html(lisarPessoa);

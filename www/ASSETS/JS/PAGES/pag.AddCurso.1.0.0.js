@@ -6,7 +6,7 @@ const pagAddCr = {
     btnAction            : $('.pagAddCurso > footer > .btnAction'),
     init: () => {
         setTimeout(function () {
-            console.log('init => pagAddCurso')
+            // console.log('init => pagAddCurso')
             pagAddCr.Ouvintes()
         }, 400);
     },

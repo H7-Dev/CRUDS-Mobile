@@ -72,7 +72,7 @@
         nullDataHandler: function (transaction, results) {},
         updateStatus: function updateStatus(status) {
             // document.getElementById('status').innerHTML = status;
-            console.log(status)
+            // console.log(status)
         }
     }
     bd.init()
