@@ -229,20 +229,21 @@
                 </button>
                 <span class="col2-7">Add Curso</span>
                 <input id="in_gID" name="in_gID"  type="hidden" >
+                <input id="in_dtime" name="in_dtime"  type="hidden" >
             </header>
             <main>
                 <!-- <div class="selFoto" style="margin:0 auto; width:30%!important;text-align: center;"> -->
                 <!-- * Selecinar Fotos  -->
                 <div class="selFoto" id="selcFotoCurso">
                     <img  class="imgSrcOptions" src="ASSETS/MIDIA/cam2.jpg" style="width: 100px; height: 100px;">
-                    <input type="hidden" >
+                    <input id="in_imgSrc" type="hidden" >
                     <div class="imgSrc imgSrcOptions" style="background-image: url(ASSETS/MIDIA/cam2.jpg);"></div>
                 </div>
                 <!-- * cursos -->
-                <label for="in_compraVenda">
+                <label for="in_curso">
                     <span>Cursos</span>
                     <div class="dropdown" >
-                        <input id="in_compraVenda" name="in_compraVenda" class="row1 textBox" type="text" placeholder="Curso">
+                        <input id="in_curso" name="in_curso" class="row1 textBox" type="text" placeholder="Curso">
                         <button class="btn_expRec" type="button"><div class=""></div></button>
                         <div class="optsDropdown">
                             <div class="outra" style="width: 114.5px;">
@@ -270,7 +271,7 @@
                 <label for="in_dt">
                     <span>Data</span>
                     <input id="in_dt" name="in_dt"  type="date" >
-                    <input name="in_dtBr" id="in_dtBr" type="hidden" >
+                    <input id="in_dtBr" name="in_dtBr"  type="hidden" >
                 </label>
 
             </main>
@@ -281,15 +282,14 @@
         <!-- #endregion -->
 
     </body>
-   <!-- <script src="cordova.js"></script> -->
+   <script src="cordova.js"></script>
         <script src="LIBS/0-JQUERY/jquery-3.4.1.min.js"></script>
         <script src="LIBS/0-JQUERY/jquery-3.0.0.js"></script>
         <script src="LIBS/JS/gerarID.1.0.0.js"></script>
+        <script src="LIBS/JS/getDtHoraFullBr.1.0.0.js"></script>
         <!-- <script src="LIBS/0-JQUERY/jquery.touchSwipe.min.js"></script> -->
         <!-- <script src="ASSETS/COMPONENTS/JS/swipe.g.1.0.0.js"></script> -->
 
-        <!-- * Páginas -->
-        <script src="ASSETS/JS/PAGES/pag.AddCurso.1.0.0.js"></script>
 
         <!-- * componentes -->
         <!-- <script src="ASSETS/COMPONENTS/JS/navSwipe.1.0.0.js"></script> -->
@@ -301,6 +301,9 @@
         <script src="ASSETS/JS/els.js"></script>
         <script src="PLUGIN/JS/plug.dropdown.menu1.0.2.js"></script>
         <script src="ASSETS/JS/script.js"></script>
+
+        <!-- * Páginas -->
+        <script src="./ASSETS/JS/PAGES/pag.AddCurso.1.0.0.js"></script>
 
         <!-- * tratar banco de dados e operações crud -->
         <script src="SQL/bd.js"></script>

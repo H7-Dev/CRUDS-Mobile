@@ -24,6 +24,8 @@ const pagAddCr = {
     tratarDtString: function () {
         let a = new String(pagAddCr.in_dt.val()).split("-").reverse()
         b = a[0]+'/'+a[1]+'/'+a[2]
+
+
         // console.log(pagAddCr.in_dtBr.val(b))
         return b
     }

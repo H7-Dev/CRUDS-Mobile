@@ -21,6 +21,7 @@ const ctAddRg = {
         ctAddRg.doc.on('click', ctAddRg.btn_a,function(e){
             console.log('Teste Btn A')
             let $this = $(this)
+
             setTimeout(function() {
                 ctAddRg.mostrar_pagAddCurso($this)
                 ctAddRg.remove_ctAddRg($this)
@@ -33,6 +34,7 @@ const ctAddRg = {
                         'fadeIn',       // * transição de entrada
                         $('.pagAddCurso') // * el de entrada
                     )
+                    console.log($('.pagAddCurso').find('header > input').val(gID.gerarID()))
                 }, 700)
             }, 1000);
         })
