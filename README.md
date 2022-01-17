@@ -33,7 +33,8 @@ tratarDtString: function () {
 >   - ✅ Seleciona uma imagem a partir do android e convert resultado `imgUrl` em base64 pronto para ser salvor em um banco de dados
 >   - ✅ Obtém base64 de uma imagem a partir da tag img `getBase64Image(imgUrl, callback)`
 >   - ✅ Set img\base64 em style background-image `getBase64Image(imageData, function(base64image)`
->
+>   
+>   👉 resultados 👇
 >   ![🚧⛔ 03 09 salvar dados no BD](https://user-images.githubusercontent.com/93455937/149831343-dfd9166b-e9d1-45fa-9f41-b82588837fde.gif)
 
 
@@ -50,6 +51,7 @@ tratarDtString: function () {
 >   - ✅ Obtém base64 de uma imagem a partir da tag img `getBase64Image(imgUrl, callback)`
 >   - ✅ Set img\base64 em style background-image `getBase64Image(imageData, function(base64image)`
 >
+>   👉 resultados 👇
 >   ![🏁 03 08 gerarID e tratarDtString()](https://user-images.githubusercontent.com/93455937/149429132-4bff44f7-5d0a-4801-a2da-62cca889ca7f.gif)
 
 
