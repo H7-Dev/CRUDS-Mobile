@@ -9,6 +9,21 @@
 
 
 ### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
+##### ⚠️ 03.13 Refused to load the because it violates the following
+> #### ⚠️ 00.03 ['img-src' was not explicitly set, so 'default-src' is used as a fallback](https://stackoverflow.com/questions/32166870/img-src-was-not-explicitly-set-so-default-src-is-used-as-a-fallback)
+>   - O que aconteceu....? Não estava sendo possível carregar imagem no app quando executado no android, porém sem problemas na web, o imagem que não carregava estava no estado de base64.
+>   - erroMesage.........: Refused to load the because it violates the following Content Security Policy directive: "default-src *". Note that 'img-src' was not explicitly set, so 'default-src' is used as a fallback.
+>   - causa..............: política de segurança de conteúdo no meta estava sem a permissão necessária.
+>   - resolução..........: add `"img-src 'self' data:;`, ou seja, concede a permissão necessária para sicronizar img data do tipo data ou base64
+> ```html
+>  <!-- errado: -->
+>  <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'" />
+>  <!-- certo: -->
+>  <meta http-equiv="Content-Security-Policy" content="img-src 'self' data:; default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'" />
+> ```
+>
+
+
 ##### 🚧⛔ 03.09 salvar dados no BD
 >  ### 👍 recursos
 >   - ⬇️ recursos novos ↙️
@@ -37,7 +52,7 @@ tratarDtString: function () {
 >   👉 resultados 👇
 >   ![🚧⛔ 03 09 salvar dados no BD](https://user-images.githubusercontent.com/93455937/149831343-dfd9166b-e9d1-45fa-9f41-b82588837fde.gif)
 
-   
+
 ### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
 #####  🏁 03.08 gerarID e tratarDtString()
 >  ### 👍 recursos

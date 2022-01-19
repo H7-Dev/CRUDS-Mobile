@@ -193,7 +193,8 @@ const tbCs = {
     mostrar_tbCursos: function mostrar_tbCursos() {
         console.log($('.pagInit > main > .container_cardCursos > main'))
         // var query = "SELECT * FROM tb_curso ORDER BY c_duracao DESC;";
-        var query = "SELECT * FROM tb_curso ORDER BY c_duracao ;";
+        // var query = "SELECT * FROM tb_curso ORDER BY c_duracao LIMIT 3;";
+        var query = "SELECT * FROM tb_curso ORDER BY c_duracao;";
         // var query = "SELECT * FROM tb_curso;";
         try {
             localDB.transaction(function (transaction) {
@@ -222,16 +223,18 @@ const tbCs = {
 
                         listarCursos += `
                         <div class="cardCursos">
-                            <div class="img" style="background-image: url(ASSETS/MIDIA/IMG/html-5.png);"></div>
+                            <div class="img" style="background-image: url(${rows[i].c_img});"></div>
                             <span>${rows[i].c_curso}5</span>
                         </div>
                         `
                         console.log('...... ... ... .......')
                         console.log('Cursos....: '+rows[i].c_curso)
+                        console.log('Img....: '+rows[i].c_img)
                         console.log('Duração...: '+rows[i].c_duracao)
                         console.log('Data......: '+rows[i].c_dt)
                         console.log('Data Mod..: '+rows[i].c_dtMod)
                         console.log(dataSetada)
+
 
                     }
                     $('.pagInit > main > .container_cardCursos > main').empty();

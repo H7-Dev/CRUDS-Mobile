@@ -107,9 +107,11 @@ const selcFoto = {
 
                     }
                     getBase64Image(imageData, function (base64image) {
-                        // console.log(base64image);
+                        console.log('base64image');
+                        // $('#'+$closestID+' > imf').val(base64image);
+                        $('#'+$closestID+' > img').attr("src", ""+base64image+"")
                         $('#'+$closestID+' > input').val(base64image);
-                        $('#'+$closestID+' >  div').css('background-image', 'url(' + imageData + ')');
+                        $('#'+$closestID+' >  div').css('background-image', 'url(' + base64image + ')');
                     })
                 }
 

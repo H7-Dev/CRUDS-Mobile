@@ -1,5 +1,12 @@
 # JQUERY MÉTODOS
 
+ - ✅ [Setar atributo src de uma tag img]()
+
+    - 👉⚡ Amostra
+
+    `$('seletor').attr("src", ""+base64image+"")`
+
+
  - ✅ [Selector label from 'for' attribute](https://stackoverflow.com/questions/2599627/how-to-select-label-for-xyz-in-css)
 
     - 👉⚡ Amostra
