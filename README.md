@@ -9,7 +9,7 @@
 
 
 ### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
-##### ⚠️ 03.13 Refused to load the because it violates the following
+##### ⚠️✅ 03.13 Refused to load the because it violates the following
 > #### ⚠️ 00.03 ['img-src' was not explicitly set, so 'default-src' is used as a fallback](https://stackoverflow.com/questions/32166870/img-src-was-not-explicitly-set-so-default-src-is-used-as-a-fallback)
 >   - O que aconteceu....? Não estava sendo possível carregar imagem no app quando executado no android, porém sem problemas na web, o imagem que não carregava estava no estado de base64.
 >   - erroMesage.........: Refused to load the because it violates the following Content Security Policy directive: "default-src *". Note that 'img-src' was not explicitly set, so 'default-src' is used as a fallback.
