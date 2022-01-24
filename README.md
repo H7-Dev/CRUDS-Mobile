@@ -8,6 +8,21 @@
 <!-- 🚩 -->
 
 
+
+### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
+#####  🏁 03.14 event => starttime endtime
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ Comprar touchstart starttime com touchend endtime
+>   - ⬆️ recursos novos ↖️
+>
+>   👉 resultados 👇
+>   ![🏁 03 14 event  starttime endtime ](https://user-images.githubusercontent.com/93455937/150751534-06668e98-c5e8-4c29-a2e3-16b564abd81f.gif)
+>
+> 🚩 Obs.: necessário aperfeiçoamentos
+
+
+
 ### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
 ##### ⚠️✅ 03.13 Refused to load the because it violates the following
 > #### ⚠️ 00.03 ['img-src' was not explicitly set, so 'default-src' is used as a fallback](https://stackoverflow.com/questions/32166870/img-src-was-not-explicitly-set-so-default-src-is-used-as-a-fallback)

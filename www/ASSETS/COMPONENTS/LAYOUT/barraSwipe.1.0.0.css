@@ -1,17 +1,18 @@
 .barraSwipe {
   background-color: white;
-  padding: 0.0rem 0.0rem 0.0rem 0.5rem;
+  padding: 0rem 0rem 0rem 0.5rem;
   height: 100vh;
   width: 250px;
   display: grid;
+  grid-template-rows: -webkit-min-content 1fr;
   grid-template-rows: min-content 1fr;
+  grid-template-columns: 1fr -webkit-min-content;
   grid-template-columns: 1fr min-content;
   position: absolute;
   left: -250px;
   z-index: 99;
   transition: left 0.4s ease-in-out;
 }
-
 .barraSwipe > button.btnSwipeArea {
   background-color: transparent;
   height: 100%;
@@ -21,7 +22,6 @@
   border: none;
   outline: none;
 }
-
 .barraSwipe > header {
   background-color: white;
   height: 150px;
@@ -29,7 +29,6 @@
   max-height: 150px;
   width: 100%;
 }
-
 .barraSwipe > main {
   background-color: lightgray;
   height: 100%;
@@ -42,5 +41,4 @@
 
 .hide-sidebar {
   transform: translate(10%, 0px);
-}
-/*# sourceMappingURL=barraSwipe.1.0.0.css.map */
+}/*# sourceMappingURL=barraSwipe.1.0.0.css.map */

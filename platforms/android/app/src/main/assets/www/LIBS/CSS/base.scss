@@ -119,11 +119,12 @@ div.clickSwipeAreaTrans {
 .ripple { position: relative; overflow: hidden; }
 span.rippleElement {
     position: absolute;
-    background: rgba(45, 45, 45, 0.700);
+    background: rgba(45, 45, 45, 0.500);
     transform: translate(-50%, -50%);
     pointer-events: none;
     border-radius: 50%;
-    animation: animate 1s linear forwards;
+    animation: animate 1.0s linear forwards;
+    // z-index: 101;
 }
 @keyframes animate {
   0% {

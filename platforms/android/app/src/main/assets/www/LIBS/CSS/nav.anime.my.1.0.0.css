@@ -1,15 +1,25 @@
-@keyframes fade {
+@-webkit-keyframes fade {
   from {
-    opacity: 1.0;
+    opacity: 1;
   }
   50% {
     opacity: 0.4;
   }
   to {
-    opacity: 1.0;
+    opacity: 1;
   }
 }
-
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .piscarSuave {
   animation: fade 3000ms infinite;
   -webkit-animation: fade 3000ms infinite;
@@ -23,25 +33,21 @@
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-
 @-webkit-keyframes fadeOutUp {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
   }
 }
-
 @keyframes fadeOutUp {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
   }
 }
@@ -54,25 +60,21 @@
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-
 @-webkit-keyframes fadeOutDown {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
   }
 }
-
 @keyframes fadeOutDown {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
   }
 }
@@ -85,29 +87,23 @@
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-
 @-webkit-keyframes fadeInDown {
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
   }
   100% {
     opacity: 1;
-    -webkit-transform: none;
     transform: none;
   }
 }
-
 @keyframes fadeInDown {
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
   }
   100% {
     opacity: 1;
-    -webkit-transform: none;
     transform: none;
   }
 }
@@ -120,29 +116,23 @@
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-
 @-webkit-keyframes fadeInUp {
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
   }
   100% {
     opacity: 1;
-    -webkit-transform: none;
     transform: none;
   }
 }
-
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
     transform: translate3d(0, 100%, 0);
   }
   100% {
     opacity: 1;
-    -webkit-transform: none;
     transform: none;
   }
 }
@@ -155,7 +145,6 @@
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-
 @-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
@@ -164,7 +153,6 @@
     opacity: 1;
   }
 }
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -182,18 +170,14 @@
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-
 @-webkit-keyframes slideOutUp {
   0% {
-    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
   100% {
-    -webkit-transform: translateY(10%);
     transform: translateY(10%);
   }
 }
-
 @keyframes slideOutUp {
   0% {
     opacity: 0.7;
@@ -216,26 +200,21 @@
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-
 @-webkit-keyframes fadeOutRight {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
   }
 }
-
 @keyframes fadeOutRight {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
-    -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
   }
-}
-/*# sourceMappingURL=nav.anime.my.1.0.0.css.map */
+}/*# sourceMappingURL=nav.anime.my.1.0.0.css.map */

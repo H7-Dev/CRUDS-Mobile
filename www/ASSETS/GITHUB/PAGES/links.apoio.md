@@ -56,6 +56,7 @@
 ---
 
 ### **Links de apoio - baixa prioridade ❕**
+> - [How to detect a key pressed for x seconds in javascript?](https://stackoverflow.com/questions/25134224/how-to-detect-a-key-pressed-for-x-seconds-in-javascript)
 > - [emoji-cheat-sheet](https://github.com/ikatyang/emoji-cheat-sheet)
 >    - [Checks box](https://github.com/ikatyang/emoji-cheat-sheet#other-symbol)
 >    - [other-symbol | Geometric](https://github.com/ikatyang/emoji-cheat-sheet#other-symbol)

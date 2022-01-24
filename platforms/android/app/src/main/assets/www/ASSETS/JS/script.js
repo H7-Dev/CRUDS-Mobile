@@ -124,7 +124,8 @@ const app = {
             el.append(rippleElement)
             setTimeout(function () {
                 $('.rippleElement').remove();
-            }, 500);
+                console.log('aqui')
+            }, 1600);
         })
     },
     altElEfects: function (_efeitoIn, _ocultar, _efeitoOut, _mostrar) {

@@ -1,0 +1,42 @@
+.menuOptsDt {
+    background-color: #f8fafb;
+    padding: 6px 4px;
+    min-height: fit-content;
+    max-height: fit-content;
+    width: 100%;
+    min-width: 100%;
+
+    display: none;
+    grid-auto-flow: column;
+    justify-items: center;
+    align-items: stretch;
+
+    position: absolute;
+    bottom: 0;
+    z-index: 101;
+
+    > button {
+        background-color: whitesmoke;
+        padding: 4px;
+        height: 31px;
+        width: 31px;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        // align-self: center;
+        // justify-self: flex-end;
+        border: 0px solid white;
+        border-radius: 4px;
+        outline: none;
+
+        > h5 {
+            display: none;
+        }
+        > svg {
+            fill: #607d8b;
+            stroke: #607d8b;
+        }
+    }
+
+
+}
