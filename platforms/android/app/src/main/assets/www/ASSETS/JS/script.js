@@ -112,6 +112,7 @@ const app = {
                 )
             }, 700)
         })
+
     },
     aplicarRippple: function(e, el){
         // !aplicarRippple com jqueyr
@@ -158,3 +159,6 @@ const app = {
 }
 const ready = "cordova" in window ? "deviceready" : "DOMContentLoaded";
 document.addEventListener(ready, app.init)
+
+
+

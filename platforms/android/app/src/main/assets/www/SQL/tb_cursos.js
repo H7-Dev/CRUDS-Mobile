@@ -223,7 +223,7 @@ const tbCs = {
 
 
                         listarCursos += `
-                        <div class="cardCursos">
+                        <div class="cardCursos" data-id="${rows[i].id}">
                             <div class="img" style="background-image: url(${rows[i].c_img});"></div>
                             <span>${rows[i].c_curso}</span>
                         </div>
@@ -242,9 +242,7 @@ const tbCs = {
                     }
                     tbCs.ctCardCrusos.empty()
                     tbCs.ctCardCrusos.html(listarCursos)
-                    tbCs.ctCardCrusos.append(`<button>
-                    <svg height="18" viewBox="0 0 24 24"><g id="_01_align_center" data-name="01 align center"><path d="M0,3v8H11V0H3A3,3,0,0,0,0,3ZM9,9H2V3A1,1,0,0,1,3,2H9Z"/><path d="M0,21a3,3,0,0,0,3,3h8V13H0Zm2-6H9v7H3a1,1,0,0,1-1-1Z"/><path d="M13,13V24h8a3,3,0,0,0,3-3V13Zm9,8a1,1,0,0,1-1,1H15V15h7Z"/><polygon points="17 11 19 11 19 7 23 7 23 5 19 5 19 1 17 1 17 5 13 5 13 7 17 7 17 11"/></g></svg>
-                    Ver Mais </button>`)
+                    tbCs.ctCardCrusos.append(`<button><svg height="18" viewBox="0 0 24 24"><g id="_01_align_center" data-name="01 align center"><path d="M0,3v8H11V0H3A3,3,0,0,0,0,3ZM9,9H2V3A1,1,0,0,1,3,2H9Z"/><path d="M0,21a3,3,0,0,0,3,3h8V13H0Zm2-6H9v7H3a1,1,0,0,1-1-1Z"/><path d="M13,13V24h8a3,3,0,0,0,3-3V13Zm9,8a1,1,0,0,1-1,1H15V15h7Z"/><polygon points="17 11 19 11 19 7 23 7 23 5 19 5 19 1 17 1 17 5 13 5 13 7 17 7 17 11"/></g></svg>Ver Mais </button>`)
                     // console.log('Registros econtrados: ' +rows.length)
                     // tbCs.dispTotalRg_pessoa.html('Registros econtrados: '+rows.length)
                 }, function (transaction, error) {

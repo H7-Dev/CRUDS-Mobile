@@ -1,9 +1,11 @@
-.ocultar      {display: none !important;}
-.activeGrade   {display: grid !important;}
-.activeFlex   {display: flex !important;}
-.activeBloco  {display: block !important;}
-.selc {background-color: red !important;}
-.selc-2 {background-color: cornflowerblue !important;}
+.ocultar     {display: none !important;}
+.activeGrade {display: grid !important;}
+.activeFlex  {display: flex !important;}
+.activeBloco {display: block !important;}
+.selc        {background-color: red !important;}
+.selc-2      {background-color: cornflowerblue !important;}
+.selc-3      {border: 1.2px solid #1C6EA4 !important; }
+
 // #EBEEF5
 .overlayImg {
     background-image:
@@ -22,8 +24,6 @@
     url(./../../ASSETS/MIDIA/WALLPAPER/00.01--pexels-arthur-brognoli-2342505--.jpg);
     background-size: cover; background-position-y: center;
 }
-
-
 .sombra-d01 {
     -webkit-box-shadow: 0px -1px 6px 0px rgba(0,0,0,0.31);
     box-shadow: 0px -1px 6px 0px rgba(0,0,0,0.31);

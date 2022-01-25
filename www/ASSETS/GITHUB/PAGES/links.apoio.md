@@ -1,6 +1,7 @@
 <!-- * 254: teste arquivos em nova janela, porém efetuando pull apartir da janela principal -->
 
 ### **Links de apoio - alta prioridade ❗❗**
+> - [❗❗❗ Long Click/Tap Event Detection With jQuery - long_tap.js ](https://www.jqueryscript.net/other/Long-Click-Tap-Detection-jQuery.html)
 > - [❗❗@ codepen | jQuery touchSwipe demo | Martin Luna ](https://codepen.io/uxmoon/details/VBxrgO)
 > - [▶️ Configurando rapidamente repositórios Git e Github pelo VS Code // Mão no Código #5](https://www.youtube.com/watch?v=H0SQAW9tmmE&t=702s)
 > - [▶️ Descomplicando Branches no Git usando VS Code // Mão no Código #6 // Mão no Código #5](https://www.youtube.com/watch?v=oXMgyQt0ce0&t=488s&ab_channel=C%C3%B3digoFonteTV)
