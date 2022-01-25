@@ -7,20 +7,21 @@
   outline: none;
   list-style-type: none;
 }
-
 * > *,
 *::before > *,
 *::after > * {
   -webkit-user-select: none;
-  user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
   -webkit-touch-callout: none;
   -webkit-user-drag: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 :root {
-  font-family: 'Segoe UI';
-  font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+  font-family: "Segoe UI";
+  font-family: system-ui, -apple-system, -apple-system-font, "Segoe UI", "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   outline: none;
@@ -39,7 +40,6 @@ body {
   display: flex;
   align-items: center;
 }
-
 body > .app {
   background-color: green;
   display: flex;
@@ -48,7 +48,6 @@ body > .app {
   width: 100%;
   overflow: scroll;
 }
-
 body > .app > section {
   background-color: lightblue;
   min-height: 100vh;
@@ -60,16 +59,13 @@ body > .app > section {
   justify-items: center;
   justify-content: center;
 }
-
 body > .app > section.solitations {
   background-color: gainsboro;
 }
-
 body > .app > section.solitations > img.logoApache {
   min-height: 150px;
   max-height: 150px;
 }
-
 body > .app > section.solitations > h1 {
   font-size: 24px;
   font-weight: normal;
@@ -78,11 +74,9 @@ body > .app > section.solitations > h1 {
   padding: 0px;
   text-align: center;
 }
-
 body > .app > section.solitations > button.event {
   font-size: 0.8em;
 }
-
 body > .app > section.solitations > span.spa_perms {
   font-size: 0.8em;
   justify-self: baseline;
@@ -91,32 +85,26 @@ body > .app > section.solitations > span.spa_perms {
   display: grid;
   align-self: flex-end;
 }
-
 body > .app > section.solitations > p {
   color: #FFFFFF;
   font-size: 0.8em;
   padding: 2px 0.5px;
   border-radius: 4px;
 }
-
 body > .app > section.solitations #deviceready.ready .event.conectando {
   display: none;
 }
-
 body > .app > section.solitations #deviceready.ready .event.conectado {
   display: block;
 }
-
 body > .app > section.solitations .event.conectando {
   background-color: #333333;
   display: block;
 }
-
 body > .app > section.solitations .event.conectado {
   background-color: #4B946A;
   display: none;
 }
-
 body > .app > section.solitations button#btn_entrarApp {
   font-size: 1em;
   letter-spacing: 2px;
@@ -133,16 +121,13 @@ body > .app > section.solitations button#btn_entrarApp {
   border: none;
   outline: none;
 }
-
 body > .app > section.solitations .testeBtn {
   background: gray;
   padding: 0.6rem 0.9rem;
 }
-
 body > .app > section.log {
   background-color: white;
 }
-
 body > .app > section.log > span.spa_perms {
   font-size: 0.8em;
   justify-self: baseline;
@@ -151,10 +136,11 @@ body > .app > section.log > span.spa_perms {
   display: grid;
   align-self: flex-end;
 }
-
 body > .pageInter {
   background-color: gainsboro;
   min-height: 100vh;
+  height: -webkit-min-content;
+  height: -moz-min-content;
   height: min-content;
   width: 100%;
   display: none;
@@ -164,15 +150,12 @@ body > .pageInter {
   justify-items: center;
   justify-content: center;
 }
-
 body > .pageInter > button {
   padding: 5px 8px;
 }
-
 body > section.menuInit {
   height: 100vh;
   width: 100%;
   display: flex;
   overflow: hidden;
-}
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

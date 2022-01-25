@@ -8,6 +8,8 @@
   padding: 0rem 0rem 0rem 0.4rem;
   min-height: 10.5rem;
   min-width: 48px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
   width: min-content;
   display: grid;
   position: absolute;
@@ -17,7 +19,6 @@
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
-
 .overNavSwipeAre > button.btnSwipeArea {
   background-color: transparent;
   height: 100%;
@@ -27,7 +28,6 @@
   border: none;
   outline: none;
 }
-
 .overNavSwipeAre nav.navSwipe {
   background-color: #2b2b2b;
   padding: 0.88rem 0.4rem 0.8rem 0rem;
@@ -37,11 +37,12 @@
   grid-auto-flow: row;
   align-items: center;
 }
-
 .overNavSwipeAre nav.navSwipe > * {
   /* Desativar a seleção do usuário */
   -webkit-user-select: none !important;
-  user-select: none !important;
+  -moz-user-select: none !important;
+   -ms-user-select: none !important;
+       user-select: none !important;
   /* Desativar longa pressione links*/
   -webkit-touch-callout: none;
   /* Desativar arrastar e soltar */
@@ -49,11 +50,12 @@
   /* Cor de destaque transparente. */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
 .overNavSwipeAre nav.navSwipe > a {
   background-color: #2b2b2b;
-  margin: 0.0rem 0rem;
+  margin: 0rem 0rem;
   padding: 0.6rem 1.1rem;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
   min-height: fit-content;
   display: grid;
   justify-items: center;
@@ -66,12 +68,13 @@
   position: relative;
   cursor: pointer;
 }
-
 .overNavSwipeAre nav.navSwipe > a > * {
   -webkit-touch-callout: none;
   -webkit-text-size-adjust: none;
   -webkit-user-select: none !important;
-  user-select: none !important;
+  -moz-user-select: none !important;
+   -ms-user-select: none !important;
+       user-select: none !important;
   /* disable user selection */
   -webkit-user-select: none;
   user-select: none;
@@ -82,7 +85,6 @@
   /* transparent highlight color */
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
 .overNavSwipeAre nav.navSwipe > a > svg {
   fill: #F2F2F2;
   stroke: #F2F2F2;
@@ -90,47 +92,38 @@
   min-height: 14px;
   max-height: 14px;
 }
-
 .overNavSwipeAre nav.navSwipe > a > span {
   color: #F2F2F2;
-  font-size: 00.85em;
+  font-size: 0.85em;
 }
-
 .overNavSwipeAre nav.navSwipe > a > b:nth-child(1) {
   display: flex;
 }
-
 .overNavSwipeAre nav.navSwipe > a > b:nth-child(2) {
   display: flex;
 }
-
 .overNavSwipeAre nav.navSwipe > a > b:nth-child(1)::before {
   display: flex;
 }
-
 .overNavSwipeAre nav.navSwipe > a > b:nth-child(2)::before {
-  content: '';
+  content: "";
   display: flex;
 }
-
 .overNavSwipeAre nav.navSwipe > a.activeGrade {
   background-color: #2D4B73;
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
 }
-
 .overNavSwipeAre nav.navSwipe > a.activeGrade > svg {
   fill: white;
   stroke: white;
 }
-
 .overNavSwipeAre nav.navSwipe > a.activeGrade > span {
   color: white;
 }
-
 .overNavSwipeAre nav.navSwipe > a.activeGrade > b:nth-child(1) {
   position: absolute;
-  left: -0px;
+  left: 0px;
   top: -14px;
   height: 15px;
   width: 77%;
@@ -138,10 +131,9 @@
   background-color: #2d4b73;
   overflow: initial;
 }
-
 .overNavSwipeAre nav.navSwipe > a.activeGrade > b:nth-child(2) {
   position: absolute;
-  left: -0px;
+  left: 0px;
   bottom: -14px;
   height: 15px;
   width: 77%;
@@ -149,9 +141,8 @@
   background-color: #2D4B73;
   overflow: initial;
 }
-
 .overNavSwipeAre nav.navSwipe > a.activeGrade > b:nth-child(1)::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -1px;
   left: 0px;
@@ -161,9 +152,8 @@
   background-color: #2b2b2b;
   border-bottom-left-radius: 15px;
 }
-
 .overNavSwipeAre nav.navSwipe > a.activeGrade > b:nth-child(2)::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 1px;
   right: 0px;
@@ -176,5 +166,4 @@
 
 .openNavSwipe {
   transform: translate(-98%, 0px);
-}
-/*# sourceMappingURL=navSwipe.1.0.1.css.map */
+}/*# sourceMappingURL=navSwipe.1.0.1.css.map */

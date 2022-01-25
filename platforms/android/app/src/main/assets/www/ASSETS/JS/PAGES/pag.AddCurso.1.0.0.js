@@ -6,7 +6,7 @@ const pagAddCr = {
     btnAction            : $('.pagAddCurso > footer > .btnAction'),
     init: () => {
         setTimeout(function () {
-            console.log('init => pagAddCurso')
+            // console.log('init => pagAddCurso')
             pagAddCr.Ouvintes()
         }, 400);
     },
@@ -24,8 +24,6 @@ const pagAddCr = {
     tratarDtString: function () {
         let a = new String(pagAddCr.in_dt.val()).split("-").reverse()
         b = a[0]+'/'+a[1]+'/'+a[2]
-
-
         // console.log(pagAddCr.in_dtBr.val(b))
         return b
     }

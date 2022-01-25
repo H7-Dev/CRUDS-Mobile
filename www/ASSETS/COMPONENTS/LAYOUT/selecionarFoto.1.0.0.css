@@ -8,14 +8,12 @@
   position: relative;
   border: 1px solid gainsboro;
 }
-
 .selFoto > div {
   background-size: cover;
   background-position: center;
   min-width: 100%;
   min-height: 100%;
 }
-
 .selFoto > img {
   display: none;
 }
@@ -34,7 +32,6 @@ div.overOpcaoSrcImg {
   transform: translate(-50%, 0);
   z-index: 99;
 }
-
 div.overOpcaoSrcImg > .ctOpcao {
   background-color: white;
   padding: 0.5rem;
@@ -48,7 +45,6 @@ div.overOpcaoSrcImg > .ctOpcao {
   overflow: hidden;
   border-radius: 8px;
 }
-
 div.overOpcaoSrcImg > .ctOpcao > header {
   padding: 0 8px;
   height: 32px;
@@ -57,9 +53,8 @@ div.overOpcaoSrcImg > .ctOpcao > header {
   flex-direction: row;
   justify-content: space-between;
   font-size: 1.1rem;
-  font-family: 'Oswald Light','Segoe UI', sans-serif;
+  font-family: "Oswald Light", "Segoe UI", sans-serif;
 }
-
 div.overOpcaoSrcImg > .ctOpcao > header > button {
   background-color: transparent;
   color: red;
@@ -76,7 +71,6 @@ div.overOpcaoSrcImg > .ctOpcao > header > button {
   border-radius: 50%;
   outline: none;
 }
-
 div.overOpcaoSrcImg > .ctOpcao > main {
   height: 100%;
   width: 100%;
@@ -86,12 +80,10 @@ div.overOpcaoSrcImg > .ctOpcao > main {
   justify-items: center;
   align-content: center;
 }
-
 div.overOpcaoSrcImg > .ctOpcao > main > button:first-child {
   background-color: lightslategray;
   align-self: end;
 }
-
 div.overOpcaoSrcImg > .ctOpcao > main > button {
   padding: 8px 4px;
   min-width: 75%;
@@ -99,11 +91,9 @@ div.overOpcaoSrcImg > .ctOpcao > main > button {
   border: 0;
   border-radius: 4px;
   font-size: 0.9rem;
-  font-family: 'Open Sans Regular','Segoe UI', sans-serif;
+  font-family: "Open Sans Regular", "Segoe UI", sans-serif;
 }
-
 div.overOpcaoSrcImg > .ctOpcao > main > button:nth-child(2) {
   background-color: lightsteelblue;
   align-self: flex-start;
-}
-/*# sourceMappingURL=selecionarFoto.1.0.0.css.map */
+}/*# sourceMappingURL=selecionarFoto.1.0.0.css.map */

@@ -1,6 +1,7 @@
 const tbCs = {
     localDB: null,
     doc: $(document),
+    ctCardCrusos    : $('.pagInit > main > .container_cardCursos > main'),
     btnAction       : '.pagAddCurso > footer > .btnAction',
     in_imgSrc       : $('#in_imgSrc'),
     in_curso        : $('#in_curso'),
@@ -9,10 +10,10 @@ const tbCs = {
     in_dtimeFullBr  : getDtHoraFullBr(),
     init: () => {
         setTimeout(function () {
-            console.log('init tb_curso')
+            // console.log('init tb_curso')
             tbCs.addListeners()
             tbCs.onInit()
-            console.log(tbCs.in_dtBr.val())
+            // console.log(tbCs.in_dtBr.val())
             // console.log('datatime: '+getDtHoraFullBr())
             // tbCs.mostrar_tbCursos()
         }, 500);
@@ -191,54 +192,57 @@ const tbCs = {
         }
     },
     mostrar_tbCursos: function mostrar_tbCursos() {
-        console.log($('.pagInit > main > .container_cardCursos > main'))
-        // var query = "SELECT * FROM tbCs ORDER BY c_compraVenda;";
-        var query = "SELECT * FROM tb_curso;";
+        // console.log($('.pagInit > main > .container_cardCursos > main'))
+        // var query = "SELECT * FROM tb_curso ORDER BY c_duracao DESC;";
+        var query = "SELECT * FROM tb_curso ORDER BY c_duracao LIMIT 3;";
+        // var query = "SELECT * FROM tb_curso ORDER BY c_duracao;";
+        // var query = "SELECT * FROM tb_curso;";
         try {
             localDB.transaction(function (transaction) {
                 transaction.executeSql(query, [], function (transaction, results) {
                     var rows = results.rows;
-                    console.log(rows)
-                    // var lisarPessoa = '';
+                    // console.log(rows)
+                    var listarCursos = '';
 
                     for (var i = 0; i < rows.length; i++) {
-                        // console.log(rows[i].c_dt)
-                        // let originalString = new String(rows[i].c_dt) // ❗❗ é necessário convert o valor que do banco de dados em uma string
-                        //     seperarEntraEpacos = originalString.split(" "); // ❗❗ separa (split) os valores que estivem entre espaçoes em branco, neste caso, a data da hora
-                        //     seperarDataHora = new String(seperarEntraEpacos[0]) //
+                        // console.log(rows[i].c_dtMod)
+                        let originalString = new String(rows[i].c_dtMod) // ❗❗ é necessário convert o valor que do banco de dados em uma string
+                            seperarEntraEpacos = originalString.split(" "); // ❗❗ separa (split) os valores que estivem entre espaçoes em branco, neste caso, a data da hora
+                            seperarDataHora = new String(seperarEntraEpacos[0]) //
 
-                        // let semana = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
-                        //     mes = ["Janeiro","Fervereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
-                        //     data = seperarDataHora;
-                        //     arr = data.split("/").reverse();
-                        //     splitData = data.split('/')[0]
-                        //     splitAno = data.split('/')[2]
-                        //     teste = new Date(arr[0], arr[1] - 1, arr[2]);
-                        //     dia = teste.getDay();
-                        //     nomeMes = teste.getMonth();
-                        // var dataSetada = semana[dia] + ', '+splitData+ ' de ' +mes[nomeMes] + ' de ' + splitAno
-                        // // console.log(dataSetada)
+                        let semana = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
+                            mes = ["Janeiro","Fervereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+                            data = seperarDataHora;
+                            arr = data.split("/").reverse();
+                            splitData = data.split('/')[0]
+                            splitAno = data.split('/')[2]
+                            teste = new Date(arr[0], arr[1] - 1, arr[2]);
+                            dia = teste.getDay();
+                            nomeMes = teste.getMonth();
+                        var dataSetada = semana[dia] + ', '+splitData+ ' de ' +mes[nomeMes] + ' de ' + splitAno
 
 
-                        // lisarPessoa += `
-                        // <div class="cardData" id="${'cardMainID-'+rows[i].id}">
-                        //     <button class="col1 row1-3" type="button">
-                        //         <svg  height="21"  viewBox="0 0 7 28"><title>03.06-menu--menu--</title><path d="M16.3,1.84c.26.07.51.13.76.22a3.49,3.49,0,1,1-1.75-.17.31.31,0,0,0,.12,0Zm-3.93,14a3.5,3.5,0,1,0,3.49-3.5A3.5,3.5,0,0,0,12.37,15.84Zm3.53,7a3.5,3.5,0,1,0,3.47,3.53A3.51,3.51,0,0,0,15.9,22.84Z" transform="translate(-12.37 -1.84)"/></svg>
-                        //         <div class="popUpMenu">
-                        //             <a class="row1 btnEditarMercado" id="${rows[i].id}" style="background-color: cornflowerblue; color: white;" href="#">Editar</a>
-                        //             <a class="row2  btnDeleteMercado" id="${rows[i].id}" style="background-color: orangered; color: white;" href="#">Excluír</a>
-                        //         </div>
-                        //     </button>
-                        //     <div class="col2 row1-3 r1"></div>
-                        //     <div class="col3 row1 rG " style="color:cadetblue;"><b>Vix:</b> $30</div>
-                        //     <div class="col3 row2 rG cVermelho2" style="color: lightcoral;"><b>Loss:</b> $5</div>
-                        //     <div class="col4 row1-3 rG1" style="color: cornflowerblue;" ><b>Saldo:</b> $25</div>
-                        // </div>
-                        // `
-                        console.log(rows[i].c_curso)
+                        listarCursos += `
+                        <div class="cardCursos" data-id="${rows[i].id}">
+                            <div class="img" style="background-image: url(${rows[i].c_img});"></div>
+                            <span>${rows[i].c_curso}</span>
+                        </div>
+                        `
+
+
+                        // console.log('...... ... ... .......')
+                        // console.log('Cursos....: '+rows[i].c_curso)
+                        // console.log('Img....: '+rows[i].c_img)
+                        // console.log('Duração...: '+rows[i].c_duracao)
+                        // console.log('Data......: '+rows[i].c_dt)
+                        // console.log('Data Mod..: '+rows[i].c_dtMod)
+                        // console.log(dataSetada)
+
+
                     }
-                    // $('.pagInit > main > .container_cardCursos > main').empty();
-                    // $('.pagInit > main > .container_cardCursos > main').html(lisarPessoa);
+                    tbCs.ctCardCrusos.empty()
+                    tbCs.ctCardCrusos.html(listarCursos)
+                    tbCs.ctCardCrusos.append(`<button><svg height="18" viewBox="0 0 24 24"><g id="_01_align_center" data-name="01 align center"><path d="M0,3v8H11V0H3A3,3,0,0,0,0,3ZM9,9H2V3A1,1,0,0,1,3,2H9Z"/><path d="M0,21a3,3,0,0,0,3,3h8V13H0Zm2-6H9v7H3a1,1,0,0,1-1-1Z"/><path d="M13,13V24h8a3,3,0,0,0,3-3V13Zm9,8a1,1,0,0,1-1,1H15V15h7Z"/><polygon points="17 11 19 11 19 7 23 7 23 5 19 5 19 1 17 1 17 5 13 5 13 7 17 7 17 11"/></g></svg>Ver Mais </button>`)
                     // console.log('Registros econtrados: ' +rows.length)
                     // tbCs.dispTotalRg_pessoa.html('Registros econtrados: '+rows.length)
                 }, function (transaction, error) {

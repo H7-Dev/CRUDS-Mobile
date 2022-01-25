@@ -1,0 +1,266 @@
+.pagInit {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-rows: -webkit-min-content 1fr;
+  grid-template-rows: min-content 1fr;
+  position: relative;
+  overflow: hidden;
+}
+.pagInit > div {
+  background-color: #f8fafb;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 349px;
+  max-height: 320px;
+  display: grid;
+  position: absolute;
+  z-index: 0;
+}
+.pagInit > header {
+  background-color: #f8fafb;
+  padding: 1.1rem 0.5rem 0.2rem 0.5rem;
+  width: 100%;
+  min-height: 140px;
+  max-height: 150px;
+  display: grid;
+  gap: 2px 4px;
+  grid-auto-flow: row;
+  justify-content: space-between;
+  grid-template-rows: -webkit-min-content -webkit-min-content 1fr;
+  grid-template-rows: min-content min-content 1fr;
+  grid-template-columns: auto auto 1fr 1fr 1fr 1fr 1fr 1fr;
+  z-index: 1;
+}
+.pagInit > header > * {
+  fill: #374956;
+  stroke: #374956;
+}
+@supports (-webkit-text-stroke: 1px #374956) {
+  .pagInit > header .textFillTrans {
+    text-transform: capitalize;
+    font-family: "Josefin Sans Light", Helvetica, sans-serif;
+    font-size: 2.2rem;
+    /* font-weight: 100; */
+    -webkit-text-stroke: 1px #374956;
+    -webkit-text-fill-color: transparent;
+  }
+}
+.pagInit > header .textFillTrans {
+  cursor: pointer;
+  position: relative;
+  text-shadow: 5px 5px 5px 5px #333;
+}
+.pagInit > header .textFillTrans:before {
+  content: attr(data-fill);
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  width: 0;
+}
+.pagInit > header > span {
+  color: #374956;
+  font-size: 1.1rem;
+  font-weight: bold;
+  font-family: "Oswald Light", "Lucida Sans Regular", sans-serif;
+  letter-spacing: normal;
+  align-self: end;
+  padding: 0.1rem 0.5rem;
+}
+.pagInit > header > h2 {
+  color: #374956 !important;
+  font-size: 1rem;
+  font-family: "Josefin Slab Regular", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.1rem;
+  align-self: flex-end;
+  justify-self: baseline;
+}
+.pagInit > header > button {
+  background-color: transparent;
+  padding: 4px;
+  height: 31px;
+  width: 31px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  align-self: end;
+  justify-self: flex-end;
+  border: 0px solid white;
+  border-radius: 50%;
+  outline: none;
+}
+.pagInit > header > button > .svgMenu {
+  height: 21px;
+  width: 24px;
+  stroke-width: 0.1px;
+}
+.pagInit > header > button > svg {
+  height: 21px;
+  stroke-width: 0.1px;
+}
+.pagInit > main {
+  background-color: white;
+  padding: 1rem 1rem 0rem 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  border-top-right-radius: 2.1rem;
+  border-top-left-radius: 2.1rem;
+  position: relative;
+  z-index: 1;
+}
+.pagInit > main button.btn_arrasta {
+  background-color: darkgray;
+  margin: 0rem 0rem 0.7rem 0rem;
+  min-height: 4px;
+  width: 50px;
+  border: 0;
+  outline: 0;
+  align-self: center;
+  border-radius: 4px;
+}
+.pagInit > main .container_cardCursos {
+  padding: 5px;
+  min-height: 195px;
+  max-height: 195px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.pagInit > main .container_cardCursos > header {
+  background-color: white;
+  padding: 0px 5px 5px 0px;
+  font-size: 1.1rem;
+  font-family: "Oswald Light", "Segoe UI", Verdana, sans-serif;
+  font-weight: bold;
+  letter-spacing: normal;
+}
+.pagInit > main .container_cardCursos > main {
+  padding: 10px 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+.pagInit > main .container_cardCursos > main > .cardCursos {
+  background-color: white;
+  background-color: #f8fafb;
+  margin: 0 12px 0 0;
+  height: 100%;
+  min-width: 90px;
+  max-width: 90px;
+  display: grid;
+  gap: 5px;
+  align-content: center;
+  grid-template-rows: 1fr;
+  border: 2px dashed #1C6EA4;
+  border: 1.2px dashed seagreen;
+}
+.pagInit > main .container_cardCursos > main > .cardCursos > .img {
+  background-color: white;
+  background-size: 70px;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 80px;
+  width: 100%;
+}
+.pagInit > main .container_cardCursos > main > .cardCursos > span {
+  color: #374956;
+  font-size: 0.9rem;
+  font-family: "Oswald Regular", "Segoe UI", Verdana, sans-serif;
+  font-weight: bold;
+  letter-spacing: normal;
+  width: 100%;
+  text-align: center;
+}
+.pagInit > main .container_cardCursos > main > button {
+  background-color: #f8fafb;
+  margin: 0 8px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-width: 90px;
+  max-width: 90px;
+  color: #607d8b;
+  font-size: 0.9rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: center;
+}
+.pagInit > main .container_cardCursos > main > button > svg {
+  fill: #607d8b;
+  stroke: #607d8b;
+  height: 21;
+}
+.pagInit > main .container_cardPessoas {
+  background-color: gainsboro;
+  background-color: white;
+  padding: -1px 0 0 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+}
+.pagInit > main .container_cardPessoas > span {
+  color: black;
+  font-size: 1.1rem;
+  font-family: "Oswald Light", "Segoe UI", Verdana, sans-serif;
+  font-weight: bold;
+  letter-spacing: normal;
+  display: flex;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+  background-color: whitesmoke;
+  min-width: 100%;
+  margin-bottom: 12px;
+}
+.pagInit > main .container_cardPessoas .cardPessoas {
+  background-color: white;
+  margin: 0 0 12px 0;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+  width: 100%;
+  display: grid;
+  gap: 2px 8px;
+  align-content: center;
+  align-items: center;
+  justify-content: start;
+  grid-template-columns: -webkit-min-content 1fr;
+  grid-template-columns: min-content 1fr;
+}
+.pagInit > main .container_cardPessoas .cardPessoas > .foto {
+  background-size: cover;
+  background-position: center;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  border: 1px solid seagreen;
+}
+.pagInit > main .container_cardPessoas .cardPessoas > span {
+  color: black;
+  font-size: 0.7rem;
+  font-family: "Open Sans Regular", "Segoe UI", Verdana, sans-serif;
+  font-weight: bold;
+  letter-spacing: normal;
+  display: flex;
+}/*# sourceMappingURL=pag.init.css.map */

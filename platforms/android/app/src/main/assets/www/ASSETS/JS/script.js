@@ -112,6 +112,7 @@ const app = {
                 )
             }, 700)
         })
+
     },
     aplicarRippple: function(e, el){
         // !aplicarRippple com jqueyr
@@ -124,7 +125,8 @@ const app = {
             el.append(rippleElement)
             setTimeout(function () {
                 $('.rippleElement').remove();
-            }, 500);
+                console.log('aqui')
+            }, 1600);
         })
     },
     altElEfects: function (_efeitoIn, _ocultar, _efeitoOut, _mostrar) {
@@ -157,3 +159,6 @@ const app = {
 }
 const ready = "cordova" in window ? "deviceready" : "DOMContentLoaded";
 document.addEventListener(ready, app.init)
+
+
+

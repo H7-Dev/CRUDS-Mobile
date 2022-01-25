@@ -11,7 +11,7 @@ const gID = {
         // }, 400);
     },
     Ouvintes: () => {
-        console.log('Gerador de ID '+gID.gerarID())
+        // console.log('Gerador de ID '+gID.gerarID())
     },
     gerarID: function () {
         var dt = new Date()
@@ -28,5 +28,3 @@ const gID = {
     }
 }
 gID.init()
-
-

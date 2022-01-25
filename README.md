@@ -7,8 +7,53 @@
 [📝 Legendas](https://github.com/H7-Dev/FC_v1.0.0/blob/master/www/ASSETS/GITHUB/PAGES/legendas.md) |
 <!-- 🚩 -->
 
+### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
+#####  🏁 03.15 Long Click/Tap Plugin
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ **long_tap_plugin.js** Long Click/Tap Plugin (Detectar quando e por quanto um determinado el está sendo clicado)
+>   - ✅ **callPlugins.js**     arquivo js onde serão chamados todos os plugins
+>   - ✅ **triggerOutSideEls.js** detectar quando o ocorre um click fora de um determanado el.
+>   - ✅ **obter data-id** do el clicado e set no input `$('#dataId').val(self.attr('data-id'))`
+>   - ⬆️ recursos novos ↖️
+>
+>   👉 resultados 👇
+>   ![🏁 03 15 Long Click Tap Plugin](https://user-images.githubusercontent.com/93455937/150974982-635bed5a-5e91-45ae-a199-4063bfbdfb13.gif)
+>
+> 🚩 Obs.: necessário aperfeiçoamentos
+
+
 
 ### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
+#####  🏁 03.14 event => starttime endtime
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ Comprar touchstart starttime com touchend endtime
+>   - ⬆️ recursos novos ↖️
+>
+>   👉 resultados 👇
+>   ![🏁 03 14 event  starttime endtime ](https://user-images.githubusercontent.com/93455937/150751534-06668e98-c5e8-4c29-a2e3-16b564abd81f.gif)
+>
+> 🚩 Obs.: necessário aperfeiçoamentos
+
+
+
+### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
+##### ⚠️✅ 03.13 Refused to load the because it violates the following
+> #### ⚠️ 00.03 ['img-src' was not explicitly set, so 'default-src' is used as a fallback](https://stackoverflow.com/questions/32166870/img-src-was-not-explicitly-set-so-default-src-is-used-as-a-fallback)
+>   - O que aconteceu....? Não estava sendo possível carregar imagem no app quando executado no android, porém sem problemas na web, o imagem que não carregava estava no estado de base64.
+>   - erroMesage.........: Refused to load the because it violates the following Content Security Policy directive: "default-src *". Note that 'img-src' was not explicitly set, so 'default-src' is used as a fallback.
+>   - causa..............: política de segurança de conteúdo no meta estava sem a permissão necessária.
+>   - resolução..........: add `"img-src 'self' data:;`, ou seja, concede a permissão necessária para sicronizar img data do tipo data ou base64
+> ```html
+>  <!-- errado: -->
+>  <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'" />
+>  <!-- certo: -->
+>  <meta http-equiv="Content-Security-Policy" content="img-src 'self' data:; default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'" />
+> ```
+>
+
+
 ##### 🚧⛔ 03.09 salvar dados no BD
 >  ### 👍 recursos
 >   - ⬇️ recursos novos ↙️
@@ -37,7 +82,7 @@ tratarDtString: function () {
 >   👉 resultados 👇
 >   ![🚧⛔ 03 09 salvar dados no BD](https://user-images.githubusercontent.com/93455937/149831343-dfd9166b-e9d1-45fa-9f41-b82588837fde.gif)
 
-   
+
 ### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
 #####  🏁 03.08 gerarID e tratarDtString()
 >  ### 👍 recursos

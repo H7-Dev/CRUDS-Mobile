@@ -3,7 +3,7 @@
         localDB: null,
         init: () => {
             setTimeout(function () {
-                // console.log('init bd')
+                console.log('init bd')
                 // bd.addListeners()
                 bd.onInit()
                 // console.log('datatime: '+getDtHoraFullBr())
@@ -72,7 +72,7 @@
         nullDataHandler: function (transaction, results) {},
         updateStatus: function updateStatus(status) {
             // document.getElementById('status').innerHTML = status;
-            console.log(status)
+            // console.log(status)
         }
     }
     bd.init()
