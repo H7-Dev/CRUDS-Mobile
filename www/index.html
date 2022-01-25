@@ -15,10 +15,11 @@
         <title>Cruds Mobile + exporte e import -v1.0.0 </title>
 
         <!-- css de páginas inteiras -->
-        <link rel="stylesheet" href="ASSETS/CSS/PAGES/pag.init.css">
 
         <!-- * páginas -->
+        <link rel="stylesheet" href="ASSETS/CSS/PAGES/pag.init.css">
         <link rel="stylesheet" href="ASSETS/CSS/PAGES/pagAddCurso.1.0.0.css">
+        <link rel="stylesheet" href="ASSETS/CSS/PAGES/pag.ViewEdit.1.0.0.css">
 
         <!-- * componentes  -->
         <link rel="stylesheet" href="ASSETS/COMPONENTS/LAYOUT/alt.abas.outside.1.0.0.css">
@@ -128,7 +129,7 @@
 
         <!-- #region menu iniciar -->
 
-        <section class="menuInit" style="display: grid;">
+        <section class="menuInit" style="display: none;">
             <div class="pagInit">
                 <div class=""></div>
                 <header>
@@ -307,6 +308,62 @@
                 <h5>Favoritar</h5>
             </button>
         </div>
+        <section class="pagViewEdit" style="display: grid;">
+            <header>
+                <button class="col1 btnVoltar ripple">
+                    <svg height="21px" viewBox="0 0 512 512"><path d="M486.8,261.4c-3.1,8.6-9.4,11.4-18.2,11.4c-129.2-0.1-258.3-0.1-387.5-0.1c-1.9,0-3.8,0-5.7,0c-0.4,0.6-0.9,1.1-1.3,1.7c1.5,0.9,3.2,1.6,4.4,2.8c37.6,36.5,75.1,73,112.7,109.5c4.3,4.2,7.1,8.9,5.6,15.1c-2.3,10.1-13.9,14.5-22.3,8.4c-1.4-1-2.7-2.4-4-3.6c-45.7-45.7-91.5-91.4-137.1-137.2c-2.6-2.6-4.4-5.9-6.6-8.9c0-2.4,0-4.8,0-7.2c2.8-3.6,5.3-7.5,8.5-10.8c44.9-45,89.9-90,134.9-135c8.1-8.1,16.3-9,22.7-2.6c6.5,6.5,5.6,14.7-2.4,22.8c-37.4,37.3-74.8,74.6-112.3,111.8c-1.2,1.1-2.6,2-3.9,3c0.2,0.5,0.4,1,0.6,1.4c1.7,0,3.3,0,5,0c129.4,0,258.9,0.1,388.3-0.1c8.8,0,15,2.7,18.3,11.1C486.8,257.2,486.8,259.3,486.8,261.4z"></path></svg>
+                </button>
+                <span class="col2-7">Atualizar | Cursos</span>
+                <input id="in_gID" name="in_gID" type="hidden">
+                <input id="in_dtime" name="in_dtime" type="hidden">
+            </header>
+            <main>
+                <div class="selFoto" id="selcFotoCurso">
+                    <img class="imgSrcOptions" src="ASSETS/MIDIA/cam2.jpg" style="width: 100px; height: 100px;">
+                    <input id="in_imgSrc" type="hidden">
+                    <div class="imgSrc imgSrcOptions" style="background-image: url(ASSETS/MIDIA/cam2.jpg);"></div>
+                </div>
+                <!-- * cursos -->
+                <label for="in_curso">
+                    <span>Cursos</span>
+                    <div class="dropdown">
+                        <input id="in_curso" name="in_curso" class="row1 textBox" type="text" placeholder="Curso">
+                        <button class="btn_expRec" type="button"><div class=""></div></button>
+                        <div class="optsDropdown">
+                            <div class="outra" style="width: 114.5px;">
+                                <div>Html</div>
+                                <div>Css</div>
+                                <div>Js</div>
+                                <div>PHP</div>
+                                <div>Python</div>
+                                <div>Java</div>
+                                <div>C#</div>
+                                <div>C++</div>
+                                <div>Sass</div>
+                                <div>Javascript Avançado</div>
+                                <div>PHP Avançado</div>
+                                <div>Python Avançado</div>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <!-- * duração -->
+                <label for="in_duracao">
+                    <span>Duração</span>
+                    <input id="in_duracao" type="text" placeholder="Duração do curso">
+                </label>
+                <!-- * data -->
+                <label for="in_dt">
+                    <span>Data</span>
+                    <input id="in_dt" name="in_dt" type="date">
+                    <input id="in_dtBr" name="in_dtBr" type="hidden">
+                </label>
+            </main>
+            <footer>
+                <button class="btnAction">Atualizar Curso</button>
+            </footer>
+        </section>
+
         <!-- #endregion -->
         <script src="cordova.js"></script>
             <script src="LIBS/0-JQUERY/jquery-3.5.1.min.js"></script>
@@ -332,6 +389,7 @@
             <!-- * Páginas -->
             <script src="./ASSETS/JS/PAGES/pag.AddCurso.1.0.0.js"></script>
             <script src="ASSETS/JS/PAGES/pag.init.js"></script>
+            <script src="ASSETS/JS/PAGES/pag.ViewEdit.1.0.0.js"></script>
 
             <!-- * tratar banco de dados e operações crud -->
             <script src="SQL/bd.js"></script>
