@@ -7,11 +7,15 @@ const app_p1 = {
     pagViewEdit   : $('.pagViewEdit'),
     in_gID        : $('.pagViewEdit > header > #in_gID'),
     btnVoltar     : '.pagViewEdit > header > button',
+    // * ↓ Formulário ↓
     in_curso      : '.pagViewEdit > main > label > #in_curso',
+    in_duracao    : '.pagViewEdit > main > label > #in_duracao',
+    in_dt         : '.pagViewEdit > main > label > #in_dt',
+    // * ↑ Formulário ↑
     btnFechar     : '#inibtnFechar',
     init: () => {
         setTimeout(function () {
-            console.log(app_p1.menuOptsDt)
+            // console.log(app_p1.menuOptsDt)
             // console.log('init teste -g')
             app_p1.Ouvintes()
         }, 400);
@@ -19,11 +23,11 @@ const app_p1 = {
     Ouvintes: () => {
         app_p1.doc.on('click', app_p1.btnAtualizar, function (e) {
             let $this = $(this)
-            console.log($this)
+            // console.log($this)
             setTimeout(function () {
                 app_p1.menuOptsDt.removeClass('activeGrade')
                 let dataId = app_p1.dataId.val()
-                console.log(dataId);
+                // console.log(dataId);
                 app_p1.in_gID.val(dataId)
                 tbCs.select_tb_mercados(dataId)
 

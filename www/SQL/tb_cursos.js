@@ -10,7 +10,7 @@ const tbCs = {
     in_dtimeFullBr  : getDtHoraFullBr(),
     init: () => {
         setTimeout(function () {
-            console.log('init tb_curso')
+            // console.log('init tb_curso')
             tbCs.addListeners()
             tbCs.onInit()
 
@@ -264,16 +264,20 @@ const tbCs = {
         try {
             bd.initDB().transaction(function (transaction) {
                 transaction.executeSql(query, [_id], function (transaction, results) {
-                    var rows = results.rows[0]
-                    console.log('id ........: '+rows.id)
-                    console.log('Curso .....: '+rows.c_curso)
-                    console.log('Duração ...: '+rows.c_duracao)
-                    $(app_p1.in_curso).val(rows.c_curso)
-                    console.log($(app_p1.in_curso))
-                    // tb_curso._id.val(rows.id)
-                    // tb_curso.in_pesNome.val(rows.c_compraVenda)
-                    // tb_curso.in_pesIdade.val(rows.c_valor)
-                    // tb_curso.in_pesEmail.val(rows.c_resultLP)
+                var rows = results.rows[0]
+
+                data = rows.c_dt; // exe entrada: 25/12/2021
+                arr = data.split("/").reverse();
+                splitDia = data.split('/')[0]
+                splitMes = data.split('/')[1]
+                splitAno = data.split('/')[2]
+                dtFmUS = splitAno+'-'+splitMes+'-'+splitDia
+
+
+                $(app_p1.in_curso).val(rows.c_curso)
+                $(app_p1.in_duracao).val(rows.c_duracao)
+                $(app_p1.in_dt).val(dtFmUS)
+
 
                 }, function (transaction, error) {
                     bd.updateStatus("Error: " + error.code + "<br>Message: " + error.message);
