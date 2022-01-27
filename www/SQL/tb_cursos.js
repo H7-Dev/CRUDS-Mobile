@@ -10,15 +10,18 @@ const tbCs = {
     in_dtimeFullBr  : getDtHoraFullBr(),
     init: () => {
         setTimeout(function () {
-            // console.log('init tb_curso')
+            console.log('init tb_curso')
             tbCs.addListeners()
             tbCs.onInit()
+
             // console.log(tbCs.in_dtBr.val())
             // console.log('datatime: '+getDtHoraFullBr())
             // tbCs.mostrar_tbCursos()
         }, 500);
     },
     addListeners: () => {
+        tbCs.select_tb_mercados('1712022195953-602')
+
         tbCs.doc.on('click', tbCs.btnAction,function(e){
             e.preventDefault();
             let $this = $(this)
@@ -257,18 +260,20 @@ const tbCs = {
         // var id = htmlLIElement.getAttribute("id");
         // var id = '2310202119825776';
 
-        query = "SELECT * FROM tbCs where id=?;";
+        query = "SELECT * FROM tb_curso where id=?;";
         try {
             bd.initDB().transaction(function (transaction) {
                 transaction.executeSql(query, [_id], function (transaction, results) {
                     var rows = results.rows[0]
-                    // console.log(rows.c_compraVenda)
-                    // console.log(rows.c_valor)
-                    // console.log(rows.c_resultLP)
-                    tbCs._id.val(rows.id)
-                    tbCs.in_pesNome.val(rows.c_compraVenda)
-                    tbCs.in_pesIdade.val(rows.c_valor)
-                    tbCs.in_pesEmail.val(rows.c_resultLP)
+                    console.log('id ........: '+rows.id)
+                    console.log('Curso .....: '+rows.c_curso)
+                    console.log('Duração ...: '+rows.c_duracao)
+                    $(app_p1.in_curso).val(rows.c_curso)
+                    console.log($(app_p1.in_curso))
+                    // tb_curso._id.val(rows.id)
+                    // tb_curso.in_pesNome.val(rows.c_compraVenda)
+                    // tb_curso.in_pesIdade.val(rows.c_valor)
+                    // tb_curso.in_pesEmail.val(rows.c_resultLP)
 
                 }, function (transaction, error) {
                     bd.updateStatus("Error: " + error.code + "<br>Message: " + error.message);
@@ -279,7 +284,7 @@ const tbCs = {
         }
     },
     limparForms: function () {
-        tbCs.in_pesNome.val('')
+        tb_curso.in_pesNome.val('')
         tbCs.in_pesIdade.val('')
         tbCs.in_duracao.val('')
         tbCs.btn_action.html('Salvar Registro')
