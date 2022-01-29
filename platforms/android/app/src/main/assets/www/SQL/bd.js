@@ -3,7 +3,7 @@
         localDB: null,
         init: () => {
             setTimeout(function () {
-                console.log('init bd')
+                // console.log('init bd')
                 // bd.addListeners()
                 bd.onInit()
                 // console.log('datatime: '+getDtHoraFullBr())

@@ -2,7 +2,7 @@ const pagAddCr = {
     doc: $(document),
     btnVoltar            : '.pagAddCurso > header > .btnVoltar',
     in_dt                : $('.pagAddCurso > main > label[for=in_dt] > input[name=in_dt]'),
-    in_dtBr                : $('.pagAddCurso > main > label[for=in_dt] > input[name=in_dtBr]'),
+    in_dtBr              : $('.pagAddCurso > main > label[for=in_dt] > input[name=in_dtBr]'),
     btnAction            : $('.pagAddCurso > footer > .btnAction'),
     init: () => {
         setTimeout(function () {
@@ -11,7 +11,6 @@ const pagAddCr = {
         }, 400);
     },
     Ouvintes: () => {
-
         pagAddCr.doc.on('change', pagAddCr.in_dt,function(e){
             // console.log('btnAction')
             // let $this = $(this)
