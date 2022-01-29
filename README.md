@@ -7,6 +7,33 @@
 [📝 Legendas](https://github.com/H7-Dev/FC_v1.0.0/blob/master/www/ASSETS/GITHUB/PAGES/legendas.md) |
 <!-- 🚩 -->
 
+
+
+
+### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
+#####  🚧⛔ 03.18 CRUDS para tb_curso
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ Insere regsitro (com imagem)
+>   - ✅ Atualiza registro (com imagem)
+>   - ✅ Deleta Registro
+>   - ✅ Selecina registro
+>   - ✅ Mostra Registros
+>   - ⬆️ recursos novos ↖️
+>
+>
+>   - ✅ **long_tap_plugin.js** Long Click/Tap Plugin (Detectar quando e por quanto um determinado el está sendo clicado)
+>   - ✅ **callPlugins.js**     arquivo js onde serão chamados todos os plugins
+>   - ✅ **triggerOutSideEls.js** detectar quando o ocorre um click fora de um determanado el.
+>   - ✅ **obter data-id** do el clicado e set no input `$('#dataId').val(self.attr('data-id'))`
+>
+>   👉 resultados 👇
+>   ![🏁 03 15 Long Click Tap Plugin](https://user-images.githubusercontent.com/93455937/150974982-635bed5a-5e91-45ae-a199-4063bfbdfb13.gif)
+>
+> 🚩 Obs.: operações crud somente para tb_curso
+
+
+
 ### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
 #####  🏁 03.15 Long Click/Tap Plugin
 >  ### 👍 recursos

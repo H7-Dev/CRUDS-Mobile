@@ -2,7 +2,10 @@ const tbCs = {
     localDB: null,
     doc: $(document),
     ctCardCrusos    : $('.pagInit > main > .container_cardCursos > main'),
-    btnAction       : '.pagAddCurso > footer > .btnAction',
+    dataId         : $('.menuOptsDt > #dataId '),
+    btnDeltarCr     : '.menuOptsDt > #btnDeltar ',
+    btnSalvar       : '.pagAddCurso > footer > .btnSalvar',
+    btnAtulizar     : '.pagViewEdit > footer > #btnAtulizar',
     in_imgSrc       : $('#in_imgSrc'),
     in_curso        : $('#in_curso'),
     in_duracao      : $('#in_duracao'),
@@ -13,39 +16,40 @@ const tbCs = {
             // console.log('init tb_curso')
             tbCs.addListeners()
             tbCs.onInit()
+
             // console.log(tbCs.in_dtBr.val())
             // console.log('datatime: '+getDtHoraFullBr())
             // tbCs.mostrar_tbCursos()
+            tbCs.mostrar_tbCursos()
         }, 500);
     },
     addListeners: () => {
-        tbCs.doc.on('click', tbCs.btnAction,function(e){
+        tbCs.select_tb_mercados('1712022195953-602')
+
+        tbCs.doc.on('click', tbCs.btnSalvar,function(e){
             e.preventDefault();
-            let $this = $(this)
-                b     = $this.html()
-            console.log($this)
-            // console.log(b)
-            if (b == 'Salvar Novo Curso') {
-                // console.log('check: ok => Salvar Novo Curso')
-                // console.log(getDtHoraFullBr())
-                tbCs.salvar()
-            } else
-            if (b == 'Atualizar Registro') {
-                console.log('check: ok => Atualizar Registro')
-                // var getId = tbCs._id.val()
-                // tbCs.atualizarPessoa(getId)
-            }
-            // tbCs.mostrar_tbCursos()
+            tbCs.salvar()
         });
-        $(document).on("click", '.btnEditarMercado', function () {
-            tbCs.tratarPagForms(true, false)
-            // tbCs.select_tb_mercados($(this).attr('id-data'))
-        })
-        $(document).on("click", '.btnDeleteMercado', function () {
-            // console.log($(this))
-            console.log($(this).attr('id'))
-            tbCs.deletarPessoa($(this).attr('id'))
-        })
+        tbCs.doc.on('click', tbCs.btnAtulizar,function(e){
+            e.preventDefault();
+            let id = app_p1.in_gID.val()
+            tbCs.atualizar(id)
+        });
+        tbCs.doc.on('click', tbCs.btnDeltarCr,function(e){
+            e.preventDefault();
+            let id = tbCs.dataId.val()
+            console.log('id...: '+id)
+            tbCs.deletarPessoa(id)
+        });
+        // $(document).on("click", '.btnEditarMercado', function () {
+        //     tbCs.tratarPagForms(true, false)
+        //     // tbCs.select_tb_mercados($(this).attr('id-data'))
+        // })
+        // $(document).on("click", '.btnDeleteMercado', function () {
+        //     // console.log($(this))
+        //     console.log($(this).attr('id'))
+        //     tbCs.deletarPessoa($(this).attr('id'))
+        // })
 
         // tbCs.mostrar_tbCursos()
     },
@@ -118,29 +122,43 @@ const tbCs = {
                 // alert("Erro: Não é possível executar uma inserção " + e + ".")
             }
             } else{
-
             }
-
         }
     },
-    atualizarPessoa: function atualizarPessoa(_id) {
-        if (tbCs.in_pesNome.val() == "" || tbCs.in_pesIdade.val() == "") {
-            bd.updateStatus("Error: 'Amount' and 'Name' are required fields!");
+    atualizar: function atualizar(_id) {
+        console.log(_id)
+        console.log($(app_p1.in_dtBrB).val())
+        if ($(app_p1.in_curso).val() == "" || $(app_p1.in_duracao).val() == "") {
+            bd.updateStatus("Erro: 'Montante' e 'Nome' são campos obrigatórios!");
         } else {
-            // var confirmUpdate;
             if (confirm("Confirme para atualizar")) {
                 console.log("Autorizado | OK!")
-                var query = "update tbCs set c_compraVenda=?, c_valor=?, c_resultLP=? where id=?;";
+                var query = "update tb_curso set "+
+                "c_img=?, "+
+                "c_curso=?, "+
+                "c_duracao=?, "+
+                "c_dt=?, "+
+                "c_dtMod=? "+
+                "where id=?;";
                 try {
                     bd.initDB().transaction(function (transaction) {
-                        transaction.executeSql(query, [tbCs.in_pesNome.val(), tbCs.in_pesIdade.val(), tbCs.in_pesEmail.val(), _id], function (transaction, results) {
+                        transaction.executeSql(query, [
+                            $(app_p1.in_imgSrc).val(),
+                            $(app_p1.in_curso).val(),
+                            $(app_p1.in_duracao).val(),
+                            $(app_p1.in_dtBrB).val(),
+                            getDtHoraFullBr(),
+                            _id],
+                            function (transaction, results) {
                             if (!results.rowsAffected) {
-                                console.log(tbCs.in_pesNome.val());
+                                console.log($(app_p1.in_curso).val());
                                 bd.updateStatus("Error: No rows affected");
+                                alert("Error: Registro não inserido")
                             } else {
+                                alert("Atualizado com sucesso! ID: " + results.rowsAffected)
                                 bd.updateStatus("Atualizado | linhas afetadas: " + results.rowsAffected);
-                                tbCs.tratarPagForms(false, false)
-                                tbCs.limparForms()
+                                // tbCs.tratarPagForms(false, false)
+                                // tbCs.limparForms()
                             }
                         }, bd.errorHandler)
                     });
@@ -154,12 +172,16 @@ const tbCs = {
         }
     },
     deletarPessoa: function deletarPessoa(_id) {
-        querySelc = "SELECT * FROM tbCs where id=?;";
+        query = "SELECT * FROM tb_curso where id=?;";
         try {
             bd.initDB().transaction(function (transaction) {
-                transaction.executeSql(querySelc, [_id], function (transaction, results) {
-                    var rows = results.rows[0]
-                    if (confirm("Tem certeza que deseja excluír? " + '\n' + 'Id        | ' + rows.id + "\n" + 'Nome | ' + rows.c_compraVenda + "\n" + 'E-mail | ' + rows.c_resultLP)) {
+                transaction.executeSql(query, [_id], function (transaction, results) {
+                var rows = results.rows[0]
+
+
+                    console.log(rows.in_curso)
+                    // if (confirm("Tem certeza que deseja excluír? " + '\n' + 'Id        | ' + rows.id + "\n" + 'Nome | ' + rows.c_curso)) {
+                    if (confirm("Tem certeza que deseja excluír? ")) {
                         excluirRegistro()
                     } else {
                         console.log("Negado | CANCELAR!")
@@ -173,13 +195,14 @@ const tbCs = {
         }
 
         function excluirRegistro() {
-            var query = "delete from tbCs where id=?;";
+            var query = "delete from tb_curso where id=?;";
             try {
                 bd.initDB().transaction(function (transaction) {
                     transaction.executeSql(query, [_id], function (transaction, results) {
 
                         if (!results.rowsAffected) {
                             bd.updateStatus("Error: Sem linhas afetadas.");
+                            console.log("Error: Sem linhas afetadas.");
                         } else {
                             bd.updateStatus("Linhas excluídas:" + results.rowsAffected);
                             tbCs.mostrar_tbCursos()
@@ -257,18 +280,27 @@ const tbCs = {
         // var id = htmlLIElement.getAttribute("id");
         // var id = '2310202119825776';
 
-        query = "SELECT * FROM tbCs where id=?;";
+        query = "SELECT * FROM tb_curso where id=?;";
         try {
             bd.initDB().transaction(function (transaction) {
                 transaction.executeSql(query, [_id], function (transaction, results) {
-                    var rows = results.rows[0]
-                    // console.log(rows.c_compraVenda)
-                    // console.log(rows.c_valor)
-                    // console.log(rows.c_resultLP)
-                    tbCs._id.val(rows.id)
-                    tbCs.in_pesNome.val(rows.c_compraVenda)
-                    tbCs.in_pesIdade.val(rows.c_valor)
-                    tbCs.in_pesEmail.val(rows.c_resultLP)
+                var rows = results.rows[0]
+
+                dt = rows.c_dt;
+                console.log(rows.c_dt)
+                arr = dt.split("/").reverse();
+                splitDia = dt.split('/')[0]
+                splitMes = dt.split('/')[1]
+                splitAno = dt.split('/')[2]
+                dtFmUS = splitAno+'-'+splitMes+'-'+splitDia
+
+                console.log($(app_p1.in_imgSrc))
+                $(app_p1.imgSrc).css('background-image', 'url('+rows.c_img+')');
+                $(app_p1.in_imgSrc).val(rows.c_img)
+                $(app_p1.in_curso).val(rows.c_curso)
+                $(app_p1.in_duracao).val(rows.c_duracao)
+                $(app_p1.in_dt).val(dtFmUS)
+
 
                 }, function (transaction, error) {
                     bd.updateStatus("Error: " + error.code + "<br>Message: " + error.message);
@@ -279,7 +311,7 @@ const tbCs = {
         }
     },
     limparForms: function () {
-        tbCs.in_pesNome.val('')
+        tb_curso.in_pesNome.val('')
         tbCs.in_pesIdade.val('')
         tbCs.in_duracao.val('')
         tbCs.btn_action.html('Salvar Registro')
