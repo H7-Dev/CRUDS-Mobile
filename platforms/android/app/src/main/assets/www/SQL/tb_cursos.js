@@ -287,14 +287,14 @@ const tbCs = {
                 var rows = results.rows[0]
 
                 dt = rows.c_dt;
-                console.log(rows.c_dt)
+                // console.log(rows.c_dt)
                 arr = dt.split("/").reverse();
                 splitDia = dt.split('/')[0]
                 splitMes = dt.split('/')[1]
                 splitAno = dt.split('/')[2]
                 dtFmUS = splitAno+'-'+splitMes+'-'+splitDia
 
-                console.log($(app_p1.in_imgSrc))
+                // console.log($(app_p1.in_imgSrc))
                 $(app_p1.imgSrc).css('background-image', 'url('+rows.c_img+')');
                 $(app_p1.in_imgSrc).val(rows.c_img)
                 $(app_p1.in_curso).val(rows.c_curso)

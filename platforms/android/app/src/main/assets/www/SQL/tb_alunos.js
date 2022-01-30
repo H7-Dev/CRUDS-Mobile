@@ -1,57 +1,42 @@
-const tbCs = {
+const tbAls = {
     localDB: null,
     doc: $(document),
     ctCardCrusos    : $('.pagInit > main > .container_cardCursos > main'),
     dataId         : $('.menuOptsDt > #dataId '),
     btnDeltarCr     : '.menuOptsDt > #btnDeltar ',
-    btnSalvar       : '.pagAddCurso > footer > .btnSalvar',
+    btnSalvar       : '.pagAddAluno > footer > .btnSalvar',
     btnAtulizar     : '.pagViewEdit > footer > #btnAtulizar',
-    in_imgSrc       : $('#in_imgSrc'),
-    in_curso        : $('#in_curso'),
-    in_duracao      : $('#in_duracao'),
-    in_dtBr         : $('#in_dtBr'),
     in_dtimeFullBr  : getDtHoraFullBr(),
     init: () => {
         setTimeout(function () {
             // console.log('init tb_curso')
-            tbCs.addListeners()
-            tbCs.onInit()
+            tbAls.addListeners()
+            tbAls.onInit()
 
-            // console.log(tbCs.in_dtBr.val())
-            // console.log('datatime: '+getDtHoraFullBr())
-            // tbCs.mostrar_tbCursos()
-            tbCs.mostrar_tbCursos()
+            tbAls.mostrar_tbCursos()
+            console.log('Testea hj')
+            console.log(pag2.in_imgSrc)
+            console.log(pag2.in_nome)
+            console.log(pag2.in_curso)
+            console.log(pag2.in_dtBr)
         }, 500);
     },
     addListeners: () => {
-        tbCs.select_tb_mercados('1712022195953-602')
-
-        tbCs.doc.on('click', tbCs.btnSalvar,function(e){
+        tbAls.doc.on('click', tbAls.btnSalvar,function(e){
             e.preventDefault();
-            tbCs.salvar()
+            tbAls.salvar()
         });
-        tbCs.doc.on('click', tbCs.btnAtulizar,function(e){
+        tbAls.doc.on('click', tbAls.btnAtulizar,function(e){
             e.preventDefault();
             let id = app_p1.in_gID.val()
-            tbCs.atualizar(id)
+            tbAls.atualizar(id)
         });
-        tbCs.doc.on('click', tbCs.btnDeltarCr,function(e){
+        tbAls.doc.on('click', tbAls.btnDeltarCr,function(e){
             e.preventDefault();
-            let id = tbCs.dataId.val()
+            let id = tbAls.dataId.val()
             console.log('id...: '+id)
-            tbCs.deletarPessoa(id)
+            tbAls.deletarPessoa(id)
         });
-        // $(document).on("click", '.btnEditarMercado', function () {
-        //     tbCs.tratarPagForms(true, false)
-        //     // tbCs.select_tb_mercados($(this).attr('id-data'))
-        // })
-        // $(document).on("click", '.btnDeleteMercado', function () {
-        //     // console.log($(this))
-        //     console.log($(this).attr('id'))
-        //     tbCs.deletarPessoa($(this).attr('id'))
-        // })
-
-        // tbCs.mostrar_tbCursos()
     },
     onInit: function onInit() {
         try {
@@ -59,7 +44,7 @@ const tbCs = {
                 bd.updateStatus("Error: DB not supported");
             } else {
                 bd.initDB();
-                tbCs.mostrar_tbCursos()
+                tbAls.mostrar_tbCursos()
             }
         } catch (e) {
             if (e == 2) {
@@ -78,18 +63,16 @@ const tbCs = {
         return localDB = window.openDatabase(shortName, version, displayName, maxSize);
     },
     salvar: function salvar() {
-        // console.log('salvar()')
-        if (tbCs.in_curso.val() == "") {
-            // console.log('salvar(validar)')
-            bd.updateStatus("Error: Campo(s) Compra e Venda são requeridos!");
-            alert("Campo(s) requirido(s) \nCursos")
+        if (pag2.in_nome.val() == "") {
+            bd.updateStatus("Error: Campo(s) Nome são requeridos!");
+            alert("Error: Campo(s) Nome são requeridos!")
         } else {
             if (confirm("Confirme para salvar")) {
-                var query = "insert into tb_curso (" +
+                var query = "insert into tb_alunos (" +
                 "id," +
                 "c_img," +
+                "c_nome," +
                 "c_curso," +
-                "c_duracao," +
                 "c_dt, c_dtMod) VALUES (" +
                 "?, " +
                 "?, " +
@@ -101,10 +84,10 @@ const tbCs = {
                 localDB.transaction(function (transaction) {
                     console.log(getDtHoraFullBr())
                     transaction.executeSql(query, [gID.gerarID(),
-                        tbCs.in_imgSrc.val(),
-                        tbCs.in_curso.val(),
-                        tbCs.in_duracao.val(),
-                        tbCs.in_dtBr.val(),
+                        pag2.in_imgSrc.val(),
+                        pag2.in_nome.val(),
+                        pag2.in_curso.val(),
+                        pag2.in_dtBr.val(),
                         getDtHoraFullBr()], function (transaction, results) {
                         if (!results.rowsAffected) {
                             bd.updateStatus("Error: Registro não inserido");
@@ -112,14 +95,14 @@ const tbCs = {
                         } else {
                             bd.updateStatus("Inserido com sucesso! ID: " + results.insertId);
                             alert("Inserido com sucesso! ID: " + results.insertId)
-                            // tbCs.mostrar_tbCursos();
-                            // tbCs.tratarPagForms(false, true)
+                            // tbAls.mostrar_tbCursos();
+                            // tbAls.tratarPagForms(false, true)
                         }
                     }, bd.errorHandler);
                 });
             } catch (e) {
                 bd.updateStatus("Erro: Não é possível executar uma inserção " + e + ".");
-                // alert("Erro: Não é possível executar uma inserção " + e + ".")
+                alert("Erro: Não é possível executar uma inserção " + e + ".")
             }
             } else{
             }
@@ -157,8 +140,8 @@ const tbCs = {
                             } else {
                                 alert("Atualizado com sucesso! ID: " + results.rowsAffected)
                                 bd.updateStatus("Atualizado | linhas afetadas: " + results.rowsAffected);
-                                // tbCs.tratarPagForms(false, false)
-                                // tbCs.limparForms()
+                                // tbAls.tratarPagForms(false, false)
+                                // tbAls.limparForms()
                             }
                         }, bd.errorHandler)
                     });
@@ -205,7 +188,7 @@ const tbCs = {
                             console.log("Error: Sem linhas afetadas.");
                         } else {
                             bd.updateStatus("Linhas excluídas:" + results.rowsAffected);
-                            tbCs.mostrar_tbCursos()
+                            tbAls.mostrar_tbCursos()
                         }
                     }, bd.errorHandler)
                 });
@@ -263,11 +246,11 @@ const tbCs = {
 
 
                     }
-                    tbCs.ctCardCrusos.empty()
-                    tbCs.ctCardCrusos.html(listarCursos)
-                    tbCs.ctCardCrusos.append(`<button><svg height="18" viewBox="0 0 24 24"><g id="_01_align_center" data-name="01 align center"><path d="M0,3v8H11V0H3A3,3,0,0,0,0,3ZM9,9H2V3A1,1,0,0,1,3,2H9Z"/><path d="M0,21a3,3,0,0,0,3,3h8V13H0Zm2-6H9v7H3a1,1,0,0,1-1-1Z"/><path d="M13,13V24h8a3,3,0,0,0,3-3V13Zm9,8a1,1,0,0,1-1,1H15V15h7Z"/><polygon points="17 11 19 11 19 7 23 7 23 5 19 5 19 1 17 1 17 5 13 5 13 7 17 7 17 11"/></g></svg>Ver Mais </button>`)
+                    tbAls.ctCardCrusos.empty()
+                    tbAls.ctCardCrusos.html(listarCursos)
+                    tbAls.ctCardCrusos.append(`<button><svg height="18" viewBox="0 0 24 24"><g id="_01_align_center" data-name="01 align center"><path d="M0,3v8H11V0H3A3,3,0,0,0,0,3ZM9,9H2V3A1,1,0,0,1,3,2H9Z"/><path d="M0,21a3,3,0,0,0,3,3h8V13H0Zm2-6H9v7H3a1,1,0,0,1-1-1Z"/><path d="M13,13V24h8a3,3,0,0,0,3-3V13Zm9,8a1,1,0,0,1-1,1H15V15h7Z"/><polygon points="17 11 19 11 19 7 23 7 23 5 19 5 19 1 17 1 17 5 13 5 13 7 17 7 17 11"/></g></svg>Ver Mais </button>`)
                     // console.log('Registros econtrados: ' +rows.length)
-                    // tbCs.dispTotalRg_pessoa.html('Registros econtrados: '+rows.length)
+                    // tbAls.dispTotalRg_pessoa.html('Registros econtrados: '+rows.length)
                 }, function (transaction, error) {
                     bd.updateStatus("Error: " + error.code + "<br>Message: " + error.message);
                 });
@@ -312,25 +295,25 @@ const tbCs = {
     },
     limparForms: function () {
         tb_curso.in_pesNome.val('')
-        tbCs.in_pesIdade.val('')
-        tbCs.in_duracao.val('')
-        tbCs.btn_action.html('Salvar Registro')
-        tbCs.btn_action.css('backgroundColor', 'green')
+        tbAls.in_pesIdade.val('')
+        tbAls.in_duracao.val('')
+        tbAls.btn_action.html('Salvar Registro')
+        tbAls.btn_action.css('backgroundColor', 'green')
     },
     tratarPagForms: function tratarPagForms(_boolean, _boolInsert) {
             if (_boolean && _boolInsert == false)  {
                 console.log('tratarPagForms:.......' + _boolean)
-                tbCs.btn_action.html('Atualizar Registro')
-                tbCs.btn_action.css('backgroundColor', 'goldenrod')
+                tbAls.btn_action.html('Atualizar Registro')
+                tbAls.btn_action.css('backgroundColor', 'goldenrod')
             } else
             if (_boolean == false && _boolInsert == false){
-                tbCs.btn_action.html('Salvar Registro')
-                tbCs.btn_action.css('backgroundColor', 'green')
+                tbAls.btn_action.html('Salvar Registro')
+                tbAls.btn_action.css('backgroundColor', 'green')
             }
     },
     filtA_tb_mercados: function mostrar_tbCursos() {
-        // var query = "SELECT * FROM tbCs ORDER BY c_compraVenda;";
-        var query = "SELECT * FROM tbCs;";
+        // var query = "SELECT * FROM tbAls ORDER BY c_compraVenda;";
+        var query = "SELECT * FROM tbAls;";
         try {
             localDB.transaction(function (transaction) {
                 transaction.executeSql(query, [], function (transaction, results) {
@@ -377,7 +360,7 @@ const tbCs = {
                     $('#tbodyPessoa').empty();
                     $('#cardMainP2').html(lisarPessoa);
                     // console.log('Registros econtrados: ' +rows.length)
-                    tbCs.dispTotalRg_pessoa.html('Registros econtrados: '+rows.length)
+                    tbAls.dispTotalRg_pessoa.html('Registros econtrados: '+rows.length)
                 }, function (transaction, error) {
                     bd.updateStatus("Error: " + error.code + "<br>Message: " + error.message);
                 });
@@ -387,4 +370,4 @@ const tbCs = {
         }
     }
 }
-tbCs.init()
+tbAls.init()

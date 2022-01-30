@@ -5,7 +5,7 @@ const testeInit = {
     btnFechar     : '#inibtnFechar',
     init: () => {
         setTimeout(function () {
-            console.log('init teste -g')
+            // console.log('init teste -g')
             testeInit.Ouvintes()
         }, 400);
     },

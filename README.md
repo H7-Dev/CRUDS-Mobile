@@ -28,7 +28,7 @@
 >   - ✅ **obter data-id** do el clicado e set no input `$('#dataId').val(self.attr('data-id'))`
 >
 >   👉 resultados 👇
->   ![🏁 03 15 Long Click Tap Plugin](https://user-images.githubusercontent.com/93455937/150974982-635bed5a-5e91-45ae-a199-4063bfbdfb13.gif)
+>   ![]()
 >
 > 🚩 Obs.: operações crud somente para tb_curso
 
