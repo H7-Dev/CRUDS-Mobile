@@ -1,24 +1,25 @@
 const tbAls = {
     localDB: null,
     doc: $(document),
-    ctCardCrusos    : $('.pagInit > main > .container_cardCursos > main'),
-    dataId         : $('.menuOptsDt > #dataId '),
+    cardPessoas     : $('.pagInit > main > .container_cardPessoas'),
+    posEl           : $('.pagInit > main > .container_cardPessoas > span'),
+    dataId          : $('.menuOptsDt > #dataId '),
     btnDeltarCr     : '.menuOptsDt > #btnDeltar ',
     btnSalvar       : '.pagAddAluno > footer > .btnSalvar',
     btnAtulizar     : '.pagViewEdit > footer > #btnAtulizar',
     in_dtimeFullBr  : getDtHoraFullBr(),
     init: () => {
         setTimeout(function () {
-            // console.log('init tb_curso')
+            // console.log('init tb_alunos')
             tbAls.addListeners()
             tbAls.onInit()
 
-            tbAls.mostrar_tbCursos()
-            console.log('Testea hj')
-            console.log(pag2.in_imgSrc)
-            console.log(pag2.in_nome)
-            console.log(pag2.in_curso)
-            console.log(pag2.in_dtBr)
+            tbAls.mostrar_tbAlunos()
+            // console.log('Testea hj')
+            // console.log(pag2.in_imgSrc)
+            // console.log(pag2.in_nome)
+            // console.log(pag2.in_curso)
+            // console.log(pag2.in_dtBr)
         }, 500);
     },
     addListeners: () => {
@@ -44,7 +45,7 @@ const tbAls = {
                 bd.updateStatus("Error: DB not supported");
             } else {
                 bd.initDB();
-                tbAls.mostrar_tbCursos()
+                tbAls.mostrar_tbAlunos()
             }
         } catch (e) {
             if (e == 2) {
@@ -95,7 +96,7 @@ const tbAls = {
                         } else {
                             bd.updateStatus("Inserido com sucesso! ID: " + results.insertId);
                             alert("Inserido com sucesso! ID: " + results.insertId)
-                            // tbAls.mostrar_tbCursos();
+                            tbAls.mostrar_tbAlunos()
                             // tbAls.tratarPagForms(false, true)
                         }
                     }, bd.errorHandler);
@@ -116,7 +117,7 @@ const tbAls = {
         } else {
             if (confirm("Confirme para atualizar")) {
                 console.log("Autorizado | OK!")
-                var query = "update tb_curso set "+
+                var query = "update tb_alunos set "+
                 "c_img=?, "+
                 "c_curso=?, "+
                 "c_duracao=?, "+
@@ -155,7 +156,7 @@ const tbAls = {
         }
     },
     deletarPessoa: function deletarPessoa(_id) {
-        query = "SELECT * FROM tb_curso where id=?;";
+        query = "SELECT * FROM tb_alunos where id=?;";
         try {
             bd.initDB().transaction(function (transaction) {
                 transaction.executeSql(query, [_id], function (transaction, results) {
@@ -178,7 +179,7 @@ const tbAls = {
         }
 
         function excluirRegistro() {
-            var query = "delete from tb_curso where id=?;";
+            var query = "delete from tb_alunos where id=?;";
             try {
                 bd.initDB().transaction(function (transaction) {
                     transaction.executeSql(query, [_id], function (transaction, results) {
@@ -188,7 +189,7 @@ const tbAls = {
                             console.log("Error: Sem linhas afetadas.");
                         } else {
                             bd.updateStatus("Linhas excluídas:" + results.rowsAffected);
-                            tbAls.mostrar_tbCursos()
+                            tbAls.mostrar_tbAlunos()
                         }
                     }, bd.errorHandler)
                 });
@@ -197,45 +198,55 @@ const tbAls = {
             }
         }
     },
-    mostrar_tbCursos: function mostrar_tbCursos() {
-        // console.log($('.pagInit > main > .container_cardCursos > main'))
-        // var query = "SELECT * FROM tb_curso ORDER BY c_duracao DESC;";
-        var query = "SELECT * FROM tb_curso ORDER BY c_duracao LIMIT 3;";
-        // var query = "SELECT * FROM tb_curso ORDER BY c_duracao;";
-        // var query = "SELECT * FROM tb_curso;";
+    mostrar_tbAlunos: function mostrar_tbAlunos() {
+        console.log(tbAls.cardPessoas)
+        console.log(tbAls.posEl)
+        // var query = "SELECT * FROM tb_alunos ORDER BY c_duracao DESC;";
+        var query = "SELECT * FROM tb_alunos ORDER BY c_nome LIMIT 8;";
+        // var query = "SELECT * FROM tb_alunos ORDER BY c_duracao;";
+        // var query = "SELECT * FROM tb_alunos;";
         try {
             localDB.transaction(function (transaction) {
                 transaction.executeSql(query, [], function (transaction, results) {
                     var rows = results.rows;
                     // console.log(rows)
-                    var listarCursos = '';
+                    var listarAlunos = '';
+                    var setTitulo    = '';
 
                     for (var i = 0; i < rows.length; i++) {
                         // console.log(rows[i].c_dtMod)
-                        let originalString = new String(rows[i].c_dtMod) // ❗❗ é necessário convert o valor que do banco de dados em uma string
-                            seperarEntraEpacos = originalString.split(" "); // ❗❗ separa (split) os valores que estivem entre espaçoes em branco, neste caso, a data da hora
-                            seperarDataHora = new String(seperarEntraEpacos[0]) //
+                        // let originalString = new String(rows[i].c_dtMod) // ❗❗ é necessário convert o valor que do banco de dados em uma string
+                        //     seperarEntraEpacos = originalString.split(" "); // ❗❗ separa (split) os valores que estivem entre espaçoes em branco, neste caso, a data da hora
+                        //     seperarDataHora = new String(seperarEntraEpacos[0]) //
 
-                        let semana = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
-                            mes = ["Janeiro","Fervereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
-                            data = seperarDataHora;
-                            arr = data.split("/").reverse();
-                            splitData = data.split('/')[0]
-                            splitAno = data.split('/')[2]
-                            teste = new Date(arr[0], arr[1] - 1, arr[2]);
-                            dia = teste.getDay();
-                            nomeMes = teste.getMonth();
-                        var dataSetada = semana[dia] + ', '+splitData+ ' de ' +mes[nomeMes] + ' de ' + splitAno
+                        // let semana = ["Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado"];
+                        //     mes = ["Janeiro","Fervereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+                        //     data = seperarDataHora;
+                        //     arr = data.split("/").reverse();
+                        //     splitData = data.split('/')[0]
+                        //     splitAno = data.split('/')[2]
+                        //     teste = new Date(arr[0], arr[1] - 1, arr[2]);
+                        //     dia = teste.getDay();
+                        //     nomeMes = teste.getMonth();
+                        // var dataSetada = semana[dia] + ', '+splitData+ ' de ' +mes[nomeMes] + ' de ' + splitAno
 
 
-                        listarCursos += `
-                        <div class="cardCursos" data-id="${rows[i].id}">
-                            <div class="img" style="background-image: url(${rows[i].c_img});"></div>
-                            <span>${rows[i].c_curso}</span>
+                        // listarAlunos += `
+                        // <div class="cardCursos" data-id="${rows[i].id}">
+                        //     <div class="img" style="background-image: url(${rows[i].c_img});"></div>
+                        //     <span>${rows[i].c_curso}</span>
+                        // </div>
+                        // `
+                        listarAlunos += `
+                        <div class="cardPessoas">
+                            <div class="col1 row1-4 foto" style="background-image: url(${rows[i].c_img});"></div>
+                            <span class="col2 row1"><b>Nome:</b>${rows[i].c_nome}</span>
+                            <span class="col2 row2"><b>Curso: </b>${rows[i].c_curso}</span>
+                            <span class="col2 row3"><b>Início: </b>Segunda-feira, 12 de Dezembro de 2021</span>
+                            <span class="col"></span>
                         </div>
                         `
-
-
+                        setTitulo = `<span>Pessoas</span>`
                         // console.log('...... ... ... .......')
                         // console.log('Cursos....: '+rows[i].c_curso)
                         // console.log('Img....: '+rows[i].c_img)
@@ -244,11 +255,14 @@ const tbAls = {
                         // console.log('Data Mod..: '+rows[i].c_dtMod)
                         // console.log(dataSetada)
 
-
                     }
-                    tbAls.ctCardCrusos.empty()
-                    tbAls.ctCardCrusos.html(listarCursos)
-                    tbAls.ctCardCrusos.append(`<button><svg height="18" viewBox="0 0 24 24"><g id="_01_align_center" data-name="01 align center"><path d="M0,3v8H11V0H3A3,3,0,0,0,0,3ZM9,9H2V3A1,1,0,0,1,3,2H9Z"/><path d="M0,21a3,3,0,0,0,3,3h8V13H0Zm2-6H9v7H3a1,1,0,0,1-1-1Z"/><path d="M13,13V24h8a3,3,0,0,0,3-3V13Zm9,8a1,1,0,0,1-1,1H15V15h7Z"/><polygon points="17 11 19 11 19 7 23 7 23 5 19 5 19 1 17 1 17 5 13 5 13 7 17 7 17 11"/></g></svg>Ver Mais </button>`)
+                    tbAls.cardPessoas.empty()
+                    // tbAls.cardPessoas.html(listarAlunos)
+                    // tbAls.posEl.append(listarAlunos)
+                    tbAls.cardPessoas.html(setTitulo)
+                    tbAls.cardPessoas.append(listarAlunos)
+                    // tbAls.posEl.append(listarAlunos)
+
                     // console.log('Registros econtrados: ' +rows.length)
                     // tbAls.dispTotalRg_pessoa.html('Registros econtrados: '+rows.length)
                 }, function (transaction, error) {
@@ -263,7 +277,7 @@ const tbAls = {
         // var id = htmlLIElement.getAttribute("id");
         // var id = '2310202119825776';
 
-        query = "SELECT * FROM tb_curso where id=?;";
+        query = "SELECT * FROM tb_alunos where id=?;";
         try {
             bd.initDB().transaction(function (transaction) {
                 transaction.executeSql(query, [_id], function (transaction, results) {
@@ -294,7 +308,7 @@ const tbAls = {
         }
     },
     limparForms: function () {
-        tb_curso.in_pesNome.val('')
+        tb_alunos.in_pesNome.val('')
         tbAls.in_pesIdade.val('')
         tbAls.in_duracao.val('')
         tbAls.btn_action.html('Salvar Registro')
@@ -311,7 +325,7 @@ const tbAls = {
                 tbAls.btn_action.css('backgroundColor', 'green')
             }
     },
-    filtA_tb_mercados: function mostrar_tbCursos() {
+    filtA_tb_mercados: function mostrar_tbAlunos() {
         // var query = "SELECT * FROM tbAls ORDER BY c_compraVenda;";
         var query = "SELECT * FROM tbAls;";
         try {
