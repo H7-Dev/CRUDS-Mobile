@@ -1,6 +1,7 @@
 const pag3 = {
     doc             : $(document),
     btnCriarBackup  : '.pagBackup > main > .fazerBackup > button:first-child',
+    btnVoltar  : '.pagBackup > header > .btnVoltar',
     init: () => {
         setTimeout(function () {
             console.log('init teste -g')
@@ -8,7 +9,18 @@ const pag3 = {
         }, 400);
     },
     Ouvintes: () => {
-        // → exemplo de evento on, ou seja para els criados de forma dinâmica, neste caso, adicina o evento click a um els criado após o dom ser carregado
+        pag3.doc.on("click", pag3.btnVoltar, function () {
+            console.log($(this))
+            setTimeout(function () {
+                //* Abaixo a função que aplica o efeito de transição
+                app.altElEfects(
+                    'fadeOutUp',    // * transição de saída
+                    $('.pagBackup'),      // * el de saída
+                    'fadeIn',       // * transição de entrada
+                    $('.menuInit') // * el de entrada
+                )
+            }, 700)
+        })
         pag3.doc.on('click', pag3.btnCriarBackup, function (e) {
             console.log('Evento Click Funcional!')
             console.log('Inicial teste de calback')

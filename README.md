@@ -11,6 +11,36 @@
 
 
 ### ⚜️ ramo => 03.00-banco-de-dados-e-tabelas
+#####  🚧⛔ 03.31 backup/exportar banco de dados form mobile
+>  ### 👍 recursos
+>   - ⬇️ recursos novos ↙️
+>   - ✅ Criar backup completo do banco de dados
+>   - ✅ Exportar o backup no formato json (sem encodeURI nem Criptografia)
+>   - ✅ salve o arquivo json no caminho `file:///storage/emulated/0/Android/data/br.com.crudsMob/backupMob-A3.json`
+>   - ⬆️ recursos novos ↖️
+>
+>   - ✅ Insere regsitro (com imagem)
+>   - ✅ Atualiza registro (com imagem)
+>   - ✅ Deleta Registro
+>   - ✅ Selecina registro
+>   - ✅ Mostra Registros
+>   - ✅ **long_tap_plugin.js** Long Click/Tap Plugin (Detectar quando e por quanto um determinado el está sendo clicado)
+>   - ✅ **callPlugins.js**     arquivo js onde serão chamados todos os plugins
+>   - ✅ **triggerOutSideEls.js** detectar quando o ocorre um click fora de um determanado el.
+>   - ✅ **obter data-id** do el clicado e set no input `$('#dataId').val(self.attr('data-id'))`
+>
+>   👉 resultados 👇
+>   ![🚧⛔ 03 31 backup-exportar banco de dados form mobile](https://user-images.githubusercontent.com/93455937/152147130-f276fdf6-b35b-40ca-800b-5451c001915b.gif)
+>
+> 🚩 Obs.:
+>    * Nome do arquivo de backup estático (sem opção de mudar o nome)
+>    *
+
+
+
+
+
+
 #####  🚧⛔ 03.18 CRUDS para tb_curso
 >  ### 👍 recursos
 >   - ⬇️ recursos novos ↙️

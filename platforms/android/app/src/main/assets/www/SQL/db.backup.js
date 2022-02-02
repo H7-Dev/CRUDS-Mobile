@@ -45,12 +45,12 @@ $(document).ready(function () {
                 tb_alunos: tb_alunos,
                 tb_curso: tb_curso
             }
-            console.log('Amostra MOB-A5B')
+            console.log('Amostra MOB-B3')
             var serializedData = JSON.stringify(data, null, 2)
             // console.log(serializedData)
             $('#dispRegistro').text(serializedData)
             var obj = data,
-                dataJson = "text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(obj))
+                dataJson = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(obj))
                 // salvarBackup = `<a href="data:${dataJson}" download="backup.json">Salvar backup</a>`
                 console.log(dataJson)
 
@@ -58,9 +58,9 @@ $(document).ready(function () {
 
             var fileTransfer = new FileTransfer()
             console.log(fileTransfer)
-            var uri = encodeURI('data:text/json;charset=utf-8,Amostra inicial 4')
-
-            fileUrl = 'file:///storage/emulated/0/Android/data/br.com.crudsMob/backupMob-A1.json'
+            // var uri = encodeURI('data:text/json;charset=utf-8,Amostra inicial 4')
+            var uri = dataJson
+            fileUrl = 'file:///storage/emulated/0/Android/data/br.com.crudsMob/backupMob-A3.json'
             fileTransfer.download(
                 uri,
                 fileUrl,
