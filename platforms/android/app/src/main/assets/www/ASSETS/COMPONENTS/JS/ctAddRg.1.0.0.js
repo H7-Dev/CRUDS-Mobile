@@ -42,7 +42,19 @@ const ctAddRg = {
             console.log('Teste Btn B')
             let $this = $(this)
             setTimeout(function() {
-                ctAddRg.mostrar_pagAddCurso($this)
+                ctAddRg.mostrar_pagAddAlunos($this)
+                ctAddRg.remove_ctAddRg($this)
+
+                setTimeout(function () {
+                    //* Abaixo a função que aplica o efeito de transição
+                    app.altElEfects(
+                        'fadeOutUp',    // * transição de saída
+                        $('.menuInit'),      // * el de saída
+                        'fadeIn',       // * transição de entrada
+                        $('.pagAddAluno') // * el de entrada
+                    )
+                    console.log($('.pagAddAluno').find('header > input').val(gID.gerarID()))
+                }, 700)
             }, 1000);
         })
     },
@@ -51,6 +63,10 @@ const ctAddRg = {
     },
     mostrar_pagAddCurso: function(_el){
         console.log(_el)
+    },
+    mostrar_pagAddAlunos: function(_el){
+        console.log(_el)
     }
+    // 1sfdgsafg
 }
 ctAddRg.init()

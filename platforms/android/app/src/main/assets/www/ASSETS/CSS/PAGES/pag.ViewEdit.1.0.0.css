@@ -2,11 +2,11 @@
   background-color: lightcoral;
   min-height: 100vh;
   width: 100%;
-  grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
   grid-template-rows: min-content 1fr min-content;
   position: relative;
   overflow: hidden;
 }
+
 .pagViewEdit > header {
   background-color: white;
   padding: 0 5px;
@@ -21,6 +21,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   border-bottom: 0.2px solid #0026ff;
 }
+
 .pagViewEdit > header > button {
   background-color: white;
   padding: 4px;
@@ -32,6 +33,7 @@
   border: none;
   outline: none;
 }
+
 .pagViewEdit > header > span {
   width: 100%;
   color: black;
@@ -39,6 +41,7 @@
   font-family: "Open Sans ExtraBold", "Segoe UI", sans-serif;
   text-align: center;
 }
+
 .pagViewEdit > main {
   background-color: white;
   padding: 25px 5px 5px 5px;
@@ -54,6 +57,7 @@
   align-content: center;
   overflow: scroll;
 }
+
 .pagViewEdit > main > label {
   padding: 4px;
   height: -webkit-fit-content;
@@ -69,12 +73,14 @@
   grid-template-rows: auto 1fr;
   align-items: center;
 }
+
 .pagViewEdit > main > label > span {
   width: 100%;
   color: #9d9ea2;
   font-size: 0.9rem;
   font-family: "Open Sans Bold", "Segoe UI", sans-serif;
 }
+
 .pagViewEdit > main > label > input {
   font-size: 1rem;
   font-family: "Open Sans SemiBold", "Segoe UI", sans-serif;
@@ -86,30 +92,16 @@
   outline: none;
   border-radius: 4px;
 }
-.pagViewEdit > main > label > input::-moz-placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  font-size: 1rem;
-  font-family: "Open Sans Regular", "Segoe UI", sans-serif;
-  color: #b9babe;
-  opacity: 1;
-  /* Firefox */
-}
-.pagViewEdit > main > label > input:-ms-input-placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  font-size: 1rem;
-  font-family: "Open Sans Regular", "Segoe UI", sans-serif;
-  color: #b9babe;
-  opacity: 1;
-  /* Firefox */
-}
+
 .pagViewEdit > main > label > input::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  font-size: 1rem;
-  font-family: "Open Sans Regular", "Segoe UI", sans-serif;
+  font-size: 1.0rem;
+  font-family: 'Open Sans Regular','Segoe UI',sans-serif;
   color: #b9babe;
   opacity: 1;
   /* Firefox */
 }
+
 .pagViewEdit > footer {
   background-color: #f0f0eb;
   padding: 0.5rem 1rem;
@@ -118,6 +110,7 @@
   display: grid;
   justify-items: center;
 }
+
 .pagViewEdit > footer > button {
   color: white;
   background-color: #5f74a0;
@@ -128,4 +121,5 @@
   border-radius: 4px;
   outline: none;
   border: none;
-}/*# sourceMappingURL=pag.ViewEdit.1.0.0.css.map */
+}
+/*# sourceMappingURL=pag.ViewEdit.1.0.0.css.map */

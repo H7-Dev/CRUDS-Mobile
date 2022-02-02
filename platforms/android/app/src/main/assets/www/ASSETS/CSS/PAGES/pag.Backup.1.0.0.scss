@@ -1,0 +1,179 @@
+.pagBackup  {
+
+    background-color: blue;
+    // background-color: #f5f5f5;
+    height: 100vh;
+    width: 100%;
+
+    display: none;
+    // align-items: center;
+    // justify-items: center;
+    grid-template-rows: min-content 1fr;
+    position: relative;
+    overflow: hidden;
+
+    > header {
+
+        background-color: white;
+        padding: 0 5px;
+        min-height: 48px;
+        min-width: 100%;
+
+        display: grid;
+        gap: 10px;
+        grid-auto-flow: column;
+        /* justify-content: flex-start; */
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        border-bottom: 0.2px solid red;
+
+        > button {
+            background-color: white;
+            padding: 4px;
+            max-width: 28px;
+
+            display: grid;
+            align-items: center;
+            justify-items: center;
+
+            border-radius: 50%;
+            border: none;
+            outline:none;
+
+        }
+        > span {
+            width: 100%;
+            color: black;
+            font-size: 0.9rem;
+            font-family: 'Open Sans ExtraBold','Segoe UI',sans-serif;
+            text-align: center;
+        }
+    }
+    > main {
+        background-color: white;
+        // padding: 25px 5px 5px 5px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        justify-items: center;
+        /* grid-template-rows: min-content min-content min-content; */
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        align-content: center;
+        overflow: scroll;
+
+        > section.fazerBackup {
+            background-color: white;
+            padding: 15px 10px  25px 5px;
+            height: 100%;
+            width: 100%;
+
+
+            display: grid;
+            // justify-content: center;
+
+            > button:first-child {
+                background-color: aliceblue;
+                padding: 15px;
+                min-height: fit-content;
+                height: 180px;
+                width: 180px;
+
+
+                display: grid;
+                justify-content: center;
+                align-content: center;
+                justify-self: center;
+
+                border-radius: 50%;
+                border: 1px solid white;
+                outline: none;
+
+                > svg {
+                    fill: #b1d7f8;
+                    height: 120px
+                }
+                > span {
+                    color: #8bc5f8;
+                    font-size: 1.2rem;
+                    font-family: 'Oswald Light';
+                    // font-weight: 700;
+                    margin: 3px 0px 8px 0px;
+                }
+
+            }
+            > textarea {
+                background-color: gainsboro;
+                padding: 8px;
+                min-width: 85%;
+                max-width: 85%;
+                justify-self: center;
+                border: 1px solid gray;
+            }
+            > button:nth-child(3) {
+                background-color: dodgerblue;
+                color: #0052ff;
+                font-size: 1.2rem;
+                font-family: 'Oswald Light';
+
+                padding: 15px;
+                height: 32px;
+                width: 180px;
+
+                display: grid;
+                justify-content: center;
+                align-content: center;
+                justify-self: end;
+                align-self: end;
+
+                border-radius: 4px;
+                border: 1px solid white;
+                outline: none;
+            }
+            > button:nth-child(4) {
+                background-color: #90df90;
+                color: #2c812c;
+                font-size: 1.2rem;
+                font-family: 'Oswald Light';
+
+                padding: 15px;
+                height: 32px;
+                width: 180px;
+
+                display: grid;
+                justify-content: center;
+                align-content: center;
+                justify-self: end;
+                align-self: end;
+
+                border-radius: 4px;
+                border: 1px solid white;
+                outline: none;
+            }
+        }
+    }
+    > footer{
+        background-color: rgb(235, 240, 240);
+        padding: 0.5rem 1.0rem;
+        min-height: 48px;
+        min-width: 100%;
+
+        display: none;
+        justify-items: center;
+        // gap: 10px;
+        > button {
+            color: white;
+            background-color: cadetblue;
+            padding: 0.4rem;
+            width: fit-content;
+
+            border-radius: 4px;
+            outline: none;
+            border: none;
+
+        }
+    }
+}

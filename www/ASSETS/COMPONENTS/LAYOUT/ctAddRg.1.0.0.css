@@ -12,6 +12,7 @@ div.overAddRg {
   transform: translate(-50%, 0);
   z-index: 99;
 }
+
 div.overAddRg div.ctAddRg {
   background-color: white;
   padding: 0.5rem;
@@ -25,6 +26,7 @@ div.overAddRg div.ctAddRg {
   overflow: hidden;
   border-radius: 8px;
 }
+
 div.overAddRg div.ctAddRg > header {
   padding: 0 8px;
   height: 32px;
@@ -33,8 +35,9 @@ div.overAddRg div.ctAddRg > header {
   flex-direction: row;
   justify-content: space-between;
   font-size: 1.1rem;
-  font-family: "Oswald Light", "Segoe UI", sans-serif;
+  font-family: 'Oswald Light','Segoe UI', sans-serif;
 }
+
 div.overAddRg div.ctAddRg > header button {
   background-color: transparent;
   color: red;
@@ -51,6 +54,7 @@ div.overAddRg div.ctAddRg > header button {
   border-radius: 50%;
   outline: none;
 }
+
 div.overAddRg div.ctAddRg > main {
   height: 100%;
   width: 100%;
@@ -59,6 +63,7 @@ div.overAddRg div.ctAddRg > main {
   align-items: center;
   justify-items: center;
 }
+
 div.overAddRg div.ctAddRg > main > button {
   padding: 8px 4px;
   min-width: 75%;
@@ -66,13 +71,16 @@ div.overAddRg div.ctAddRg > main > button {
   border: 0;
   border-radius: 4px;
   font-size: 0.9rem;
-  font-family: "Open Sans Regular", "Segoe UI", sans-serif;
+  font-family: 'Open Sans Regular','Segoe UI', sans-serif;
 }
+
 div.overAddRg div.ctAddRg > main > button:first-child {
   background-color: lightslategray;
   align-self: end;
 }
+
 div.overAddRg div.ctAddRg > main > button:nth-child(2) {
   background-color: lightsteelblue;
   align-self: flex-start;
-}/*# sourceMappingURL=ctAddRg.1.0.0.css.map */
+}
+/*# sourceMappingURL=ctAddRg.1.0.0.css.map */

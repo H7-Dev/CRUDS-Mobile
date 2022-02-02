@@ -1,13 +1,13 @@
 .p01-00 {
-  font-size: 1rem !important;
+  font-size: 1.0rem !important;
 }
 
 .p01-01 {
-  font-size: 1.1rem !important;
+  font-size: 1.10rem !important;
 }
 
 .p01-02 {
-  font-size: 1.2rem !important;
+  font-size: 1.20rem !important;
 }
 
 .col1 {
@@ -1628,16 +1628,21 @@
 .justify-all-end {
   justify-self: flex-end;
   justify-items: flex-end;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
 }
 
 .justify-all-start {
   justify-self: flex-start;
   justify-items: flex-start;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
 }
 
 .align-justify-self--center {
+  -ms-flex-item-align: center;
   -ms-grid-row-align: center;
   align-self: center;
   -ms-grid-column-align: center;
@@ -1645,8 +1650,10 @@
 }
 
 .a-j-s-center {
+  -ms-flex-item-align: center;
   -ms-grid-row-align: center;
   align-self: center;
   -ms-grid-column-align: center;
   justify-self: center;
-}/*# sourceMappingURL=H.lib.v1.0.0.css.map */
+}
+/*# sourceMappingURL=H.lib.v1.0.0.css.map */
