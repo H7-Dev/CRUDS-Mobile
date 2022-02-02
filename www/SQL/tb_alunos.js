@@ -199,8 +199,8 @@ const tbAls = {
         }
     },
     mostrar_tbAlunos: function mostrar_tbAlunos() {
-        console.log(tbAls.cardPessoas)
-        console.log(tbAls.posEl)
+        // console.log(tbAls.cardPessoas)
+        // console.log(tbAls.posEl)
         // var query = "SELECT * FROM tb_alunos ORDER BY c_duracao DESC;";
         var query = "SELECT * FROM tb_alunos ORDER BY c_nome LIMIT 8;";
         // var query = "SELECT * FROM tb_alunos ORDER BY c_duracao;";

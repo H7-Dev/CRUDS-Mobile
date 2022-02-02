@@ -1,1 +1,9 @@
-{"version":3,"sources":["sttyle.scss"],"names":[],"mappings":"AAAA;EAEI,qBAAA;AAAJ","file":"sttyle.css"}
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAA;EAEA,gBAAgB,EAAE,GAAG;CAExB",
+    "sources": [
+        "sttyle.scss"
+    ],
+    "names": [],
+    "file": "sttyle.css"
+}

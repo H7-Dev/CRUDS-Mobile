@@ -45,6 +45,7 @@
 }
 
 .sombra-d01 {
+  -webkit-box-shadow: 0px -1px 6px 0px rgba(0, 0, 0, 0.31);
   box-shadow: 0px -1px 6px 0px rgba(0, 0, 0, 0.31);
 }
 
@@ -102,6 +103,7 @@ div.clickSwipeAreaTrans {
   background-color: lightcoral !important;
   border: 1px solid lightcoral !important;
 }
+
 .SELC-1 svg {
   fill: #003c8c !important;
   stroke: #003c8c !important;
@@ -112,6 +114,7 @@ div.clickSwipeAreaTrans {
   background-color: #f0808067 !important;
   border: 1px solid #f0808067 !important;
 }
+
 .SELC-2 svg {
   fill: #003c8c !important;
   stroke: #003c8c !important;
@@ -122,6 +125,7 @@ div.clickSwipeAreaTrans {
   background-color: #f0808067 !important;
   border: 0px solid #647dff !important;
 }
+
 .SELC-3 span {
   color: #003c8c !important;
 }
@@ -151,21 +155,7 @@ span.rippleElement {
   transform: translate(-50%, -50%);
   pointer-events: none;
   border-radius: 50%;
-  -webkit-animation: animate 1s linear forwards;
-          animation: animate 1s linear forwards;
-}
-
-@-webkit-keyframes animate {
-  0% {
-    width: 0px;
-    height: 0px;
-    opacity: 0.5;
-  }
-  100% {
-    width: 500px;
-    height: 500px;
-    opacity: 0;
-  }
+  animation: animate 1.0s linear forwards;
 }
 
 @keyframes animate {
@@ -179,4 +169,5 @@ span.rippleElement {
     height: 500px;
     opacity: 0;
   }
-}/*# sourceMappingURL=base.css.map */
+}
+/*# sourceMappingURL=base.css.map */

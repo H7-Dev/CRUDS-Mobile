@@ -47,7 +47,7 @@
                 localDB.transaction(function (transaction) {
                     transaction.executeSql(query, [], bd.nullDataHandler, bd.errorHandler);
                     bd.updateStatus("tb_curso | status: ok");
-                    console.log("tb_curso | status: ok")
+                    // console.log("tb_curso | status: ok")
                 });
             } catch (e) {
                 bd.updateStatus("Erro: Não é possível criar tb_curso 'itens' " + e + ".");
@@ -65,7 +65,7 @@
                 localDB.transaction(function (transaction) {
                     transaction.executeSql(queryAlunos, [], bd.nullDataHandler, bd.errorHandler);
                     bd.updateStatus("tb_alunos | status: ok")
-                    console.log("tb_alunos | status: ok")
+                    // console.log("tb_alunos | status: ok")
                 });
             } catch (e) {
                 bd.updateStatus("Erro: Não é possível criar tb_curso 'itens' " + e + ".");
