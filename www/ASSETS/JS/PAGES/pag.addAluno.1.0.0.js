@@ -9,7 +9,7 @@ const pag2 = {
     btnAction  : '.pagAddAluno > footer > .btnAction',
     init: () => {
         setTimeout(function () {
-            console.log('init => pag add aluno')
+            // console.log('init => pag add aluno')
             pag2.Ouvintes()
         }, 400);
     },
@@ -19,7 +19,7 @@ const pag2 = {
             // console.log('btnAction')
             // let $this = $(this)
             setTimeout(function() {
-                console.log(pag2.tratarDtString())
+                // console.log(pag2.tratarDtString())
                 pag2.in_dtBr.val(pag2.tratarDtString())
             }, 1000);
         })

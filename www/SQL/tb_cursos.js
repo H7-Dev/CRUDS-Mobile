@@ -177,9 +177,8 @@ const tbCs = {
             bd.initDB().transaction(function (transaction) {
                 transaction.executeSql(query, [_id], function (transaction, results) {
                 var rows = results.rows[0]
-
-
-                    console.log(rows.in_curso)
+                    console.log(rows)
+                    
                     // if (confirm("Tem certeza que deseja excluír? " + '\n' + 'Id        | ' + rows.id + "\n" + 'Nome | ' + rows.c_curso)) {
                     if (confirm("Tem certeza que deseja excluír? ")) {
                         excluirRegistro()

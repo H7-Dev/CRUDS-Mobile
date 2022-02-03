@@ -27,17 +27,17 @@ const tbAls = {
             e.preventDefault();
             tbAls.salvar()
         });
-        tbAls.doc.on('click', tbAls.btnAtulizar,function(e){
-            e.preventDefault();
-            let id = app_p1.in_gID.val()
-            tbAls.atualizar(id)
-        });
-        tbAls.doc.on('click', tbAls.btnDeltarCr,function(e){
-            e.preventDefault();
-            let id = tbAls.dataId.val()
-            console.log('id...: '+id)
-            tbAls.deletarPessoa(id)
-        });
+        // tbAls.doc.on('click', tbAls.btnAtulizar,function(e){
+        //     e.preventDefault();
+        //     let id = app_p1.in_gID.val()
+        //     tbAls.atualizar(id)
+        // });
+        // tbAls.doc.on('click', tbAls.btnDeltarCr,function(e){
+        //     e.preventDefault();
+        //     let id = tbAls.dataId.val()
+        //     // console.log('id...: '+id)
+        //     tbAls.deletarPessoa(id)
+        // });
     },
     onInit: function onInit() {
         try {
@@ -153,49 +153,6 @@ const tbAls = {
                 console.log("Negado | CANCELAR!")
             }
 
-        }
-    },
-    deletarPessoa: function deletarPessoa(_id) {
-        query = "SELECT * FROM tb_alunos where id=?;";
-        try {
-            bd.initDB().transaction(function (transaction) {
-                transaction.executeSql(query, [_id], function (transaction, results) {
-                var rows = results.rows[0]
-
-
-                    console.log(rows.in_curso)
-                    // if (confirm("Tem certeza que deseja excluír? " + '\n' + 'Id        | ' + rows.id + "\n" + 'Nome | ' + rows.c_curso)) {
-                    if (confirm("Tem certeza que deseja excluír? ")) {
-                        excluirRegistro()
-                    } else {
-                        console.log("Negado | CANCELAR!")
-                    }
-                }, function (transaction, error) {
-                    bd.updateStatus("Error: " + error.code + "<br>Message: " + error.message);
-                });
-            });
-        } catch (e) {
-            bd.updateStatus("Error: Não é possível selecionar dados do db " + e + ".");
-        }
-
-        function excluirRegistro() {
-            var query = "delete from tb_alunos where id=?;";
-            try {
-                bd.initDB().transaction(function (transaction) {
-                    transaction.executeSql(query, [_id], function (transaction, results) {
-
-                        if (!results.rowsAffected) {
-                            bd.updateStatus("Error: Sem linhas afetadas.");
-                            console.log("Error: Sem linhas afetadas.");
-                        } else {
-                            bd.updateStatus("Linhas excluídas:" + results.rowsAffected);
-                            tbAls.mostrar_tbAlunos()
-                        }
-                    }, bd.errorHandler)
-                });
-            } catch (e) {
-                bd.updateStatus("Error: Não é possível executar um exclusão " + e + ".");
-            }
         }
     },
     mostrar_tbAlunos: function mostrar_tbAlunos() {

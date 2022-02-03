@@ -15,7 +15,7 @@ const pagAddCr = {
             // console.log('btnAction')
             // let $this = $(this)
             setTimeout(function() {
-                console.log(pagAddCr.tratarDtString())
+                // console.log(pagAddCr.tratarDtString())
                 pagAddCr.in_dtBr.val(pagAddCr.tratarDtString())
             }, 1000);
         })

@@ -26,9 +26,9 @@ const app_p1 = {
     },
     Ouvintes: () => {
         app_p1.doc.on('change', app_p1.in_dt,function(e){
-            console.log('THIS')
+            // console.log('THIS')
             setTimeout(function() {
-                console.log(app_p1.tratarDtString())
+                // console.log(app_p1.tratarDtString())
                 app_p1.in_dtBr.val(app_p1.tratarDtString())
             }, 400);
         })
@@ -47,7 +47,7 @@ const app_p1 = {
         })
         app_p1.doc.on('click', app_p1.btnVoltar, function (e) {
             let $this = $(this)
-            console.log($this)
+            // console.log($this)
             setTimeout(function () {
                 //* Abaixo a função que aplica o efeito de transição
                 app.altElEfects(
@@ -60,7 +60,7 @@ const app_p1 = {
         })
     },
     exe_callbackComParametros: function (_el) {
-        console.log(_el)
+        // console.log(_el)
     },
     tratarDtString: function () {
         let a = new String(app_p1.in_dt.val()).split("-").reverse()
